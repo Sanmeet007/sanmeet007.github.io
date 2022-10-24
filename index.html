@@ -51,7 +51,7 @@
 
     <!-- Linking stylesheet -->
 
-    <link rel="stylesheet" href="./assets/css/style.all.css" title="" type="" />
+    <link rel="stylesheet" href="./assets/css/style.css" title="" type="" />
 
     <!-- FontAwsome icons  CSS and JavaScript -->
     <link
@@ -117,15 +117,28 @@
             ></menu-box>
 
             <nav id="mob-nav" class="mob-nav">
-              <div class="search-input">
-                <input
-                  class="search"
-                  type="search"
-                  name="search"
-                  id="search"
-                  placeholder="Search"
-                />
-              </div>
+              <form action="#" class="flex-box gap mt-3">
+                <div class="form-element search-input">
+                  <label data-shrink="false" for="search" id="search-label"
+                    >Search
+                  </label>
+                  <div class="element">
+                    <input
+                      aria-invalid="false"
+                      id="search"
+                      type="search"
+                      value=""
+                      name="search"
+                    />
+                    <fieldset aria-hidden="true">
+                      <legend><span>Search</span></legend>
+                    </fieldset>
+                  </div>
+                </div>
+                <button class="icon-button">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
 
               <ul class="mob-ul moveR">
                 <li><a href="">Home</a></li>
@@ -199,19 +212,26 @@
           <br />
           <form>
             <div class="inline-form">
-              <div class="form-input-element">
-                <label class="hidden transform_label_start" for="subscribe"
-                  >Email Address
-                </label>
-                <input
-                  onfocusout="hide_label(this)"
-                  onfocusin="show_label(this)"
-                  type="email"
-                  name="subscribe"
-                  id="subscribe"
-                  placeholder="Email address"
-                />
+              <div class="form-element">
+                <label
+                  data-shrink="false"
+                  for="outlined-basic"
+                  id="outlined-basic-label"
+                  >Email Address</label
+                >
+                <div class="element">
+                  <input
+                    aria-invalid="false"
+                    id="outlined-basic"
+                    type="text"
+                    value=""
+                  />
+                  <fieldset aria-hidden="true">
+                    <legend><span>Email Address</span></legend>
+                  </fieldset>
+                </div>
               </div>
+
               <button type="submit">
                 <i class="margin-right fas fa-link"></i>Connect With Me
               </button>
@@ -287,9 +307,7 @@
           ></lottie-player>
         </div>
         <div class="right-col right-ani">
-          <small class="placeholder uppercase transform_end"
-            >Who is sanmeet</small
-          >
+          <small class="uppercase transform_end">Who is sanmeet</small>
           <h2><i class="circle-icon fas fa-seedling"></i> A Bit About Me</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
@@ -557,63 +575,80 @@
           <br />
         </div>
         <div class="right-col">
-          <form class="form" method="get" accept-charset="utf-8">
+          <form class="form margin-form" method="get" accept-charset="utf-8">
             <h3>Send me a Message</h3>
-            <div class="form-input-element">
-              <label class="hidden transform_label_start" for="name"
+            <div class="form-element full-width">
+              <label data-shrink="false" for="user-name" id="user-name-label"
                 >Name</label
               >
-              <input
-                onfocusout="hide_label(this)"
-                onfocusin="show_label(this)"
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Name"
-              />
+              <div class="element">
+                <input
+                  aria-invalid="false"
+                  id="user-name"
+                  type="text"
+                  value=""
+                  name="user-name"
+                />
+                <fieldset aria-hidden="true">
+                  <legend><span>Name</span></legend>
+                </fieldset>
+              </div>
             </div>
-
-            <div class="form-input-element">
-              <label class="hidden transform_label_start" for="email_id"
-                >Email
-              </label>
-              <input
-                onfocusout="hide_label(this)"
-                onfocusin="show_label(this)"
-                type="email"
-                name="email_id"
-                id="email_id"
-                placeholder="Email"
-              />
-            </div>
-
-            <div class="form-input-element">
-              <label class="hidden transform_label_start" for="subject">
-                Subject</label
+            <div class="form-element full-width">
+              <label
+                data-shrink="false"
+                for="email-address"
+                id="email-address-label"
+                >Email Address</label
               >
-              <input
-                onfocusout="hide_label(this)"
-                onfocusin="show_label(this)"
-                type="subject"
-                name="subject"
-                id="subject"
-                placeholder="Subject"
-              />
+              <div class="element">
+                <input
+                  aria-invalid="false"
+                  id="email-address"
+                  type="text"
+                  value=""
+                  name="email-address"
+                />
+                <fieldset aria-hidden="true">
+                  <legend><span>Email Address</span></legend>
+                </fieldset>
+              </div>
+            </div>
+            <div class="form-element full-width">
+              <label data-shrink="false" for="subject" id="subject-label"
+                >Subject</label
+              >
+              <div class="element">
+                <input
+                  aria-invalid="false"
+                  id="subject"
+                  type="text"
+                  value=""
+                  name="subject"
+                />
+                <fieldset aria-hidden="true">
+                  <legend><span>Subject</span></legend>
+                </fieldset>
+              </div>
             </div>
 
-            <div class="form-input-element">
-              <label class="hidden transform_label_start" for="message">
+            <div class="form-element full-width">
+              <label class="transform_label_start" for="message">
                 Message
               </label>
-              <textarea
-                onfocusout="hide_label(this)"
-                onfocusin="show_label(this)"
-                name="message"
-                id="message"
-                rows="8"
-                cols="40"
-                placeholder="Tell me about your project..."
-              ></textarea>
+              <div class="element">
+                <textarea
+                  aria-invalid="false"
+                  name="message"
+                  id="message"
+                  rows="8"
+                  cols="40"
+                ></textarea>
+
+                <fieldset aria-hidden="true">
+                  <legend><span>Message</span></legend>
+                </fieldset>
+              </div>
             </div>
 
             <button class="btn" type="submit">Send Message</button>
@@ -722,5 +757,30 @@
       type="text/javascript"
       charset="utf-8"
     ></script>
+
+    <script>
+      const formElements = document.querySelectorAll(".form-element");
+      formElements.forEach((formElement) => {
+        const input =
+          formElement.querySelector("input") ||
+          formElement.querySelector("textarea");
+        const label = formElement.querySelector("label");
+        const legend = formElement.querySelector("legend");
+        const fieldset = formElement.querySelector("fieldset");
+
+        input.addEventListener("focusin", () => {
+          label.classList.add("label-focused");
+          legend.classList.add("legend-focused");
+          fieldset.classList.add("fieldset-focused");
+        });
+        input.addEventListener("focusout", () => {
+          if (input.value === "") {
+            label.classList.remove("label-focused");
+            legend.classList.remove("legend-focused");
+          }
+          fieldset.classList.remove("fieldset-focused");
+        });
+      });
+    </script>
   </body>
 </html>
