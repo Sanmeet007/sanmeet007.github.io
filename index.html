@@ -1,594 +1,726 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width  , initial-scale=1">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width  , initial-scale=1" />
 
-  <meta http-equiv="Cache-control" content="public" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-16x16.png">
-  <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5e3aee">
-  <meta name="msapplication-TileColor" content="#5e3aee">
-  <meta name="msapplication-config" content="./favicon/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="Cache-control" content="public" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link
+      rel="mask-icon"
+      href="./favicon/safari-pinned-tab.svg"
+      color="#5e3aee"
+    />
+    <meta name="msapplication-TileColor" content="#5e3aee" />
+    <meta name="msapplication-config" content="./favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="dark light" />
 
-  <!-- Website title -->
-  <title> Portfolio </title>
+    <!-- Website title -->
+    <title>Portfolio</title>
 
-  <!-- Linking Google fonts  -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Linking Google fonts  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Roboto:ital@0;1&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Roboto:ital@0;1&family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
 
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Linking stylesheet -->
+    <!-- Linking stylesheet -->
 
-  <link rel="stylesheet" href="./assets/css/style.all.css" title="" type="" />
+    <link rel="stylesheet" href="./assets/css/style.all.css" title="" type="" />
 
+    <!-- FontAwsome icons  CSS and JavaScript -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      type="text/css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/regular.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
 
-  <!-- FontAwsome icons  CSS and JavaScript -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/regular.min.js" type="text/javascript" charset="utf-8"></script>
+    <!-- Lottie Animation -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-  <!-- Lottie Animation -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- Jquery  -->
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <!-- Owl Coursel Slider  -->
 
-  <!-- Jquery  -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-  <!-- Owl Coursel Slider  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      type="text/css"
+    />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" type="text/css" />
+    <!-- Gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+  </head>
+  <body>
+    <!-- Modals -->
+    <div class="modal" id="nav-modal" onclick="toggle_nav()"></div>
 
-  <!-- Gsap -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <!-- Header -->
+    <header>
+      <div class="header">
+        <div class="mobile-header">
+          <div class="logo-div">
+            <logo>
+              <a href="#">
+                <img src="logo.svg" alt="" />
+                <text>
+                  <heading> Sanmeet </heading>
+                  <sub-heading> Web developer </sub-heading>
+                </text>
+              </a>
+            </logo>
+          </div>
+          <div class="custom-button">
+            <a href="#work"
+              ><button title="Work Section">
+                <i class="st fas fa-cog"></i><span class="uppercase">Work</span>
+              </button></a
+            >
+          </div>
+          <div class="menu">
+            <menu-box onclick="toggle_nav()"
+              ><i class="fas fa-bars"></i
+            ></menu-box>
 
-</head>
-<body>
-  <!-- Modals -->
-  <div class="modal" id="nav-modal" onclick="toggle_nav()"></div>
+            <nav id="mob-nav" class="mob-nav">
+              <div class="search-input">
+                <input
+                  class="search"
+                  type="search"
+                  name="search"
+                  id="search"
+                  placeholder="Search"
+                />
+              </div>
 
-  <!-- Header -->
-  <header>
-    <div class="header">
-      <div class="mobile-header">
-        <div class="logo-div">
-          <logo>
-            <a href="#">
-              <img src="logo.svg" alt="" />
-              <text>
-                <heading>
-                  Sanmeet
-                </heading>
-                <sub-heading>
-                  Web developer
-                </sub-heading>
-              </text>
-            </a>
-          </logo>
+              <ul class="mob-ul moveR">
+                <li><a href="">Home</a></li>
+                <li><a href="">About </a></li>
+                <li><a href="">contact</a></li>
+                <li><a href="">blog</a></li>
+                <li><a href="">Recent Posts</a></li>
+              </ul>
+
+              <hr class="light-line" />
+              <br />
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+              <br />
+            </nav>
+          </div>
         </div>
-        <div class="custom-button">
-          <a href="#work"><button title="Work Section"><i class="st fas fa-cog"></i><span class="uppercase">Work</span> </button></a>
-        </div>
-        <div class="menu">
-          <menu-box onclick="toggle_nav()"><i class='fas fa-bars'></i></menu-box>
-
-          <nav id="mob-nav" class="mob-nav">
-            <div class="search-input">
-              <input class="search" type="search" name="search" id="search" placeholder="Search" />
-
-            </div>
-
-            <ul class="mob-ul moveR">
-              <li><a href="">Home</a></li>
-              <li><a href="">About </a></li>
-              <li><a href="">contact</a></li>
-              <li><a href="">blog</a></li>
-              <li><a href="">Recent Posts</a></li>
+        <div class="desktop-header">
+          <div class="logo-div">
+            <logo>
+              <a href="#">
+                <img src="logo.svg" alt="" />
+                <text>
+                  <heading> Sanmeet </heading>
+                  <sub-heading> Web developer </sub-heading>
+                </text>
+              </a>
+            </logo>
+          </div>
+          <div class="desk-nav staggered-fader-header">
+            <ul>
+              <li class="stag"><a href="">Home</a></li>
+              <li class="stag"><a href="">About</a></li>
+              <li class="stag"><a href="">Work</a></li>
+              <li class="stag"><a href="">Blog</a></li>
             </ul>
+          </div>
 
-            <hr class="light-line">
-            <br>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-whatsapp"></i></a>
-              <a href="#"><i class="fab fa-github"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-            <br>
-          </nav>
+          <div class="desk-links fader">
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-github"></i></a>
+            <a href=""><i class="fab fa-facebook"></i></a>
+            <a href=""><i class="fab fa-whatsapp"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
       </div>
-      <div class="desktop-header">
-        <div class="logo-div">
-          <logo>
-            <a href="#">
-              <img src="logo.svg" alt="" />
-              <text>
-                <heading>
-                  Sanmeet
-                </heading>
-                <sub-heading>
-                  Web developer
-                </sub-heading>
-              </text>
-            </a>
-          </logo>
-        </div>
-        <div class="desk-nav staggered-fader-header">
-          <ul>
-            <li class="stag"><a href="">Home</a></li>
-            <li class="stag"><a href="">About</a></li>
-            <li class="stag"><a href="">Work</a></li>
-            <li class="stag"><a href="">Blog</a></li>
-          </ul>
-        </div>
+    </header>
 
-        <div class="desk-links fader">
-          <a href=""><i class=" fab fa-twitter"></i></a>
-          <a href=""><i class=" fab fa-github"></i></a>
-          <a href=""><i class=" fab fa-facebook"></i></a>
-          <a href=""><i class=" fab fa-whatsapp"></i></a>
-          <a href=""><i class=" fab fa-instagram"></i></a>
+    <!-- Hero section -->
+    <section class="hero">
+      <div class="bg-img"></div>
+      <div class="col-2">
+        <div class="left-col forward-ani">
+          <h1 class="extra bold">
+            Building digital products, brands<i
+              class="circle-icon fas fa-pencil-ruler"
+            ></i
+            ><span class="accent">experience.</span>
+          </h1>
+          <p>
+            A <strong>Product Designer</strong> and
+            <strong>Visual Developer</strong> in SF. I specialize in UI/UX
+            Design, Responsive Web Design, and Visual Development
+          </p>
+          <br />
+          <form>
+            <div class="inline-form">
+              <div class="form-input-element">
+                <label class="hidden transform_label_start" for="subscribe"
+                  >Email Address
+                </label>
+                <input
+                  onfocusout="hide_label(this)"
+                  onfocusin="show_label(this)"
+                  type="email"
+                  name="subscribe"
+                  id="subscribe"
+                  placeholder="Email address"
+                />
+              </div>
+              <button type="submit">
+                <i class="margin-right fas fa-link"></i>Connect With Me
+              </button>
+            </div>
+          </form>
+          <br />
+        </div>
+        <div class="right-col slider fader delay">
+          <div class="heading-contain">
+            <h4>
+              My Work
+              <a href="#" class="inline-right accent small">
+                view all <i class="fas fa-angle-double-right"></i
+              ></a>
+            </h4>
+          </div>
+          <div class="owl-carousel owl-carousel1 owl-theme">
+            <div class="card">
+              <img src="./assets/img/sample-1.webp" alt="sample-1" />
+            </div>
+            <div class="card">
+              <img src="./assets/img/sample-2.webp" alt="sample-2" />
+            </div>
+            <div class="card">
+              <img src="./assets/img/sample-3.webp" alt="sample-3" />
+            </div>
+            <div class="card">
+              <img src="./assets/img/sample-4.webp" alt="sample-4" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        </div>
-
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero section -->
-  <section class="hero">
-    <div class="bg-img"></div>
-    <div class="col-2">
-      <div class="left-col forward-ani">
-        <h1 class="extra bold">Building digital products, brands<i class="circle-icon fas fa-pencil-ruler"></i><span class="accent">experience.</span> </h1>
-        <p>
-          A <strong>Product Designer</strong> and <strong>Visual Developer</strong> in SF.
-          I specialize in UI/UX Design, Responsive Web Design,
-          and Visual Development
-        </p>
-        <br>
-        <form>
-          <div class="inline-form">
-            <div class="form-input-element">
-              <label class="hidden transform_label_start" for="subscribe">Email Address </label>
-              <input onfocusout="hide_label(this)" onfocusin="show_label(this)" type="email" name="subscribe" id="subscribe" placeholder="Email address" />
-            </div>
-            <button type="submit"><i class="margin-right fas fa-link"></i>Connect With Me</button>
-          </div>
-        </form>
-        <br>
-      </div>
-      <div class="right-col slider fader delay">
-        <div class="heading-contain">
-          <h4>My Work  <a href="#" class="inline-right accent small"> view all <i class="fas fa-angle-double-right"></i></a></h4>
-        </div>
-        <div class="owl-carousel owl-carousel1 owl-theme">
-          <div class="card">
-            <img src="./assets/img/sample-1.webp" alt="sample-1" />
-          </div>
-          <div class="card">
-            <img src="./assets/img/sample-2.webp" alt="sample-2" />
-          </div>
-          <div class="card">
-            <img src="./assets/img/sample-3.webp" alt="sample-3" />
-          </div>
-          <div class="card">
-            <img src="./assets/img/sample-4.webp" alt="sample-4" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Values -->
-  <section class="values showcase staggered-fader">
-    <div class="item stag">
-      <div class="number">
-        1.2k
-      </div>
-      <br>
-      <div class="text uppercase">
-        Happy Client's
-        <!-- Satisfied Customer's-->
-      </div>
-    </div>
-    <div class="item stag">
-      <div class="number">
-        2
-      </div>
-      <br>
-      <div class="text uppercase">
-        Year's of Experience
-      </div>
-    </div>
-    <div class="item stag">
-      <div class="number">
-        100
-      </div>
-      <br>
-      <div class="text uppercase">
-        Projects Completed
-      </div>
-    </div>
-    <div class="item stag">
-      <div class="number">
-        40
-      </div>
-      <br>
-      <div class="text uppercase">
-        Design Awards
-      </div>
-    </div>
-  </section>
-
-  <!-- About me Section -->
-  <section class="about--me" id="about-me">
-    <div class="col-2">
-      <div class="flex-centered left-col left-ani">
-        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_n9ryrmts.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
-      </div>
-      <div class="right-col right-ani">
-        <small class="placeholder uppercase  transform_end">Who is sanmeet</small>
-        <h2><i class="circle-icon fas fa-seedling"></i> A Bit About Me </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue vehicula diam, eget placerat metus malesuada et. Morbi ullamcorper hendrerit tempor.
-          <br>
-          <br>
-          Suspendisse porttitor laoreet dui, non porttitor turpis accumsan sed. Aliquam mollis elit quis magna cursus dictum. Vivamus est urna, facilisis eu aliquet in, rutrum vel quam.
-        </p>
-        <br>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Skills -->
-  <section class="skill-section overflow" id="skills">
-    <br>
-    <div class="center padding-inline">
-      <small class=" uppercase  transform_end">What i do</small>
-      <h2><i class="circle-icon fas fa-code"></i> My Skills </h2>
-      Crazy full Stack Developer who wants to explore every tech stack.
-    </div>
-    <div class="skills">
-      <div class="diamond--grid  r-ani">
-        <div class="card ani-n css-ani">
-          <div>
-            <div class="card--hovered">
-              <span> 90%</span>
-            </div>
-            <img src="./assets/svg/css.svg" alt="CSS" />
-          </div>
-        </div>
-        <div class="card ani-n">
-          <div>
-            <div class="card--hovered">
-              <span> 90%</span>
-            </div>
-            <img src="./assets/svg/js.svg" alt="Js" />
-          </div>
-        </div>
-        <div class="card ani-n html-ani">
-          <div>
-            <div class="card--hovered">
-              <span> 90%</span>
-            </div>
-            <img src="./assets/svg/html.svg" alt="HTML" />
-          </div>
-        </div>
-        <div class="card ani-n">
-          <div>
-            <div class="card--hovered">
-              <span> 90%</span>
-            </div>
-            <img src="./assets/svg/vue.svg" alt="VUE JS" />
-          </div>
-        </div>
-        <div class="card ani-n">
-          <div>
-            <div class="card--hovered">
-              <span> 90%</span>
-            </div>
-            <img src="./assets/svg/react.svg" alt="REACT Js" />
-          </div>
-        </div>
-        <div class="card ani-n">
-          <div>
-            <div class="card--hovered">
-              <span> 90%</span>
-            </div>
-            <img src="./assets/svg/php.svg" alt="PHP" />
-          </div>
-        </div>
-        <div class="card ani-n node-ani">
-          <div>
-            <div class="card--hovered">
-              <span> 90%</span>
-            </div>
-            <img src="./assets/svg/node-js.svg" alt="NODE Js" />
-          </div>
-        </div>
-        <div class="card ani-n">
-          <div>
-            <div class="card--hovered">
-              <span> 90%</span>
-            </div>
-            <img src="./assets/svg/flutter.svg" alt="FLUTTER" />
-          </div>
-        </div>
-        <div class="card ani-n mysql-ani">
-          <div>
-            <div class="card--hovered">
-              <span> 90%</span>
-            </div>
-            <img src="./assets/svg/mysql.svg" alt="MYSQL" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services  -->
-  <section class="services mob-center" id="customer-services">
-    <div class="col-temp">
-      <div class="left-col fader">
+    <!-- Values -->
+    <section class="values showcase staggered-fader">
+      <div class="item stag">
+        <div class="number">1.2k</div>
         <br />
-        <small class=" uppercase  transform_end">What services i provide</small>
-        <h2><i class="circle-icon fas fa-handshake"></i> What can i do for customers </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue vehicula diam, eget placerat metus malesuada et. Morbi ullamcorper hendrerit tempor.
-        </p>
-        <button class="btn"><i class="fas fa-mobile-alt neutral margin-right"></i>Call me </button>
-      </div>
-      <div class="triangular--grid">
-        <div class="card moveR">
-          <icon style="color: var(--icon-2)">
-            <i class=" fas fa-paint-brush"></i>
-          </icon>
-          <h2>Product Design & UI/UX </h2>
-          <p>
-            Websites , applications or other design related tasks. I love taking digital problems
-          </p>
-        </div>
-        <div class="card moveL">
-          <icon style="color: var(--icon-3)">
-            <i class=" fas fa-drafting-compass"></i>
-          </icon>
-          <h2>Strategy & Direction </h2>
-          <p>
-            Defining the problem identifying the scope and finally organising
-          </p>
-        </div>
-        <div class="card moveR">
-          <icon style="color: var(--icon-1)">
-            <i class="fas fa-magic"></i>
-          </icon>
-          <h2>Motion graphics and animation </h2>
-          <p>
-            Every interaction you apply to your brand makes you stronger and more priority
-          </p>
+        <div class="text uppercase">
+          Happy Client's
+          <!-- Satisfied Customer's-->
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Projects masonary layout -->
-  <section id="work" class="project--section mob-center">
-    <br />
-    <small class=" uppercase  transform_end">What services i provide</small>
-    <h2><i class="circle-icon fas fa-handshake"></i> What can i do for customers <span style="color: red"> ( Under Construction ! )</span></h2>
-
-    <div class="projects">
-
-      <div class="card">
-        <img class="fill" src="./assets/img/sample-2.webp" alt="" />
-      </div>
-      <div class="card">
-        <img class="fill" src="./assets/img/sample-3.webp" alt="" />
-      </div>
-      <div class="card">
-        <img class="fill" src="./assets/img/sample-5.webp" alt="" />
-      </div>
-      <div class="card">
-        <img class="fill" src="./assets/img/sample-6.webp" alt="" />
-      </div>
-      <div class="card">
-        <img class="fill" src="./assets/img/sample-7.webp" alt="" />
-      </div>
-      <div class="card">
-        <img class="fill" src="./assets/img/sample-1.webp" alt="" />
-      </div>
-      <div class="card">
-        <img class="fill" src="./assets/img/sample-10.webp" alt="" />
-      </div>
-      <div class="card">
-        <img class="fill" src="./assets/img/sample-9.webp" alt="" />
-      </div>
-      <div class="card">
-        <img class="fill" src="./assets/img/sample-8.webp" alt="" />
-      </div>
-
-    </div>
-  </section>
-
-
-
-  <!-- Friends -->
-  <section class="honourable--mentions">
-    <h3>Friends  <a href="#" class="inline-right accent small">more <i class="fas fa-angle-double-right"></i></a></h3>
-    <div class="values staggered-fader">
       <div class="item stag">
-        <img src="./assets/svg/dribble.svg" alt="Dribble" />
+        <div class="number">2</div>
+        <br />
+        <div class="text uppercase">Year's of Experience</div>
       </div>
       <div class="item stag">
-        <img src="./assets/svg/iconscout.svg" alt="Iconscout" />
+        <div class="number">100</div>
+        <br />
+        <div class="text uppercase">Projects Completed</div>
       </div>
       <div class="item stag">
-        <img src="./assets/svg/google.svg" alt="Google" />
+        <div class="number">40</div>
+        <br />
+        <div class="text uppercase">Design Awards</div>
       </div>
-      <div class="item stag">
-        <img src="./assets/svg/firebase.svg" alt="Firebase" />
-      </div>
-    </div>
-  </section>
+    </section>
 
-
-  <!-- Contact Me  -->
-  <section class="contact--me fader">
-    <div class="col-2">
-      <div class="left-col">
-
-        <h2>I've been <span class="accent">waiting for an incredible</span> project </h2>
-        <p>
-          Fill in the form or <a class="mail-link" href="mailto: ssanmeet123@gmail.com">Send me an email</a>
+    <!-- About me Section -->
+    <section class="about--me" id="about-me">
+      <div class="col-2">
+        <div class="flex-centered left-col left-ani">
+          <lottie-player
+            src="https://assets6.lottiefiles.com/packages/lf20_n9ryrmts.json"
+            background="transparent"
+            speed="1"
+            style="width: 100%; height: 100%"
+            loop
+            autoplay
+          ></lottie-player>
+        </div>
+        <div class="right-col right-ani">
+          <small class="placeholder uppercase transform_end"
+            >Who is sanmeet</small
+          >
+          <h2><i class="circle-icon fas fa-seedling"></i> A Bit About Me</h2>
           <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+            congue vehicula diam, eget placerat metus malesuada et. Morbi
+            ullamcorper hendrerit tempor.
+            <br />
+            <br />
+            Suspendisse porttitor laoreet dui, non porttitor turpis accumsan
+            sed. Aliquam mollis elit quis magna cursus dictum. Vivamus est urna,
+            facilisis eu aliquet in, rutrum vel quam.
+          </p>
+          <br />
+        </div>
+      </div>
+    </section>
 
-            <div class="contact--icons">
-              <br />
-              <div class="vertical-center">
-                <i class="circle-icon-reverse fas fa-phone"></i> <a class="link margin-left" href="tel:+918146123102"> +91-8146123102</a>
+    <!-- Skills -->
+    <section class="skill-section overflow" id="skills">
+      <br />
+      <div class="center padding-inline">
+        <small class="uppercase transform_end">What i do</small>
+        <h2><i class="circle-icon fas fa-code"></i> My Skills</h2>
+        Crazy full Stack Developer who wants to explore every tech stack.
+      </div>
+      <div class="skills">
+        <div class="diamond--grid r-ani">
+          <div class="card ani-n css-ani">
+            <div>
+              <div class="card--hovered">
+                <span> 90%</span>
               </div>
-              <br />
-              <div class="vertical-center">
-                <i class="circle-icon-reverse fas fa-envelope-open"></i> <a class="link margin-left" href="mailto: ssanmeet123@gmail.com"> ssanmeet123@gmail.com</a>
-              </div>
-              <br />
-              <div class="vertical-center">
-                <i class="circle-icon-reverse fas fa-map-marker-alt"></i> <a class="link margin-left" href="http://maps.google.com/?q=Punjab"> Punjab , India</a>
-              </div>
-              <br />
+              <img src="./assets/svg/css.svg" alt="CSS" />
             </div>
-
-            <br>
           </div>
-          <div class="right-col">
-            <form class="form" method="get" accept-charset="utf-8">
-              <h3> Send me a Message </h3>
-              <div class="form-input-element">
-                <label class="hidden transform_label_start" for="name">Name</label>
-                <input onfocusout="hide_label(this)" onfocusin="show_label(this)" type="text" name="name" id="name" placeholder="Name" />
+          <div class="card ani-n">
+            <div>
+              <div class="card--hovered">
+                <span> 90%</span>
               </div>
-
-              <div class="form-input-element">
-                <label class="hidden transform_label_start" for="email_id">Email </label>
-                <input onfocusout="hide_label(this)" onfocusin="show_label(this)" type="email" name="email_id" id="email_id" placeholder="Email" />
+              <img src="./assets/svg/js.svg" alt="Js" />
+            </div>
+          </div>
+          <div class="card ani-n html-ani">
+            <div>
+              <div class="card--hovered">
+                <span> 90%</span>
               </div>
-
-              <div class="form-input-element">
-                <label class="hidden transform_label_start" for="subject"> Subject</label>
-                <input onfocusout="hide_label(this)" onfocusin="show_label(this)" type="subject" name="subject" id="subject" placeholder="Subject" />
+              <img src="./assets/svg/html.svg" alt="HTML" />
+            </div>
+          </div>
+          <div class="card ani-n">
+            <div>
+              <div class="card--hovered">
+                <span> 90%</span>
               </div>
-
-              <div class="form-input-element">
-                <label class="hidden transform_label_start" for="message"> Message </label>
-                <textarea onfocusout="hide_label(this)" onfocusin="show_label(this)" name="message" id="message" rows="8" cols="40" placeholder="Tell me about your project..."></textarea>
+              <img src="./assets/svg/vue.svg" alt="VUE JS" />
+            </div>
+          </div>
+          <div class="card ani-n">
+            <div>
+              <div class="card--hovered">
+                <span> 90%</span>
               </div>
-
-              <button class="btn" type="submit"> Send Message</button>
-            </form>
+              <img src="./assets/svg/react.svg" alt="REACT Js" />
+            </div>
+          </div>
+          <div class="card ani-n">
+            <div>
+              <div class="card--hovered">
+                <span> 90%</span>
+              </div>
+              <img src="./assets/svg/php.svg" alt="PHP" />
+            </div>
+          </div>
+          <div class="card ani-n node-ani">
+            <div>
+              <div class="card--hovered">
+                <span> 90%</span>
+              </div>
+              <img src="./assets/svg/node-js.svg" alt="NODE Js" />
+            </div>
+          </div>
+          <div class="card ani-n">
+            <div>
+              <div class="card--hovered">
+                <span> 90%</span>
+              </div>
+              <img src="./assets/svg/flutter.svg" alt="FLUTTER" />
+            </div>
+          </div>
+          <div class="card ani-n mysql-ani">
+            <div>
+              <div class="card--hovered">
+                <span> 90%</span>
+              </div>
+              <img src="./assets/svg/mysql.svg" alt="MYSQL" />
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-
-      <!-- Footer -->
-      <footer>
-        <div class="footer-top">
-          <logo>
-            <a href="#">
-              <img src="logo-light.svg" alt="" />
-              <text>
-                <heading class="neutral">
-                  Sanmeet
-                </heading>
-                <sub-heading class="placeholder">
-                  Web developer
-                </sub-heading>
-              </text>
-            </a>
-          </logo>
+    <!-- Services  -->
+    <section class="services mob-center" id="customer-services">
+      <div class="col-temp">
+        <div class="left-col fader">
+          <br />
+          <small class="uppercase transform_end">What services i provide</small>
+          <h2>
+            <i class="circle-icon fas fa-handshake"></i> What can i do for
+            customers
+          </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+            congue vehicula diam, eget placerat metus malesuada et. Morbi
+            ullamcorper hendrerit tempor.
           </p>
+          <button class="btn">
+            <i class="fas fa-mobile-alt neutral margin-right"></i>Call me
+          </button>
         </div>
-        <div class="footer-bottom flex">
-          <div>
-            <h4>Interested in collaboration ? </h4>
+        <div class="triangular--grid">
+          <div class="card moveR">
+            <icon style="color: var(--icon-2)">
+              <i class="fas fa-paint-brush"></i>
+            </icon>
+            <h2>Product Design & UI/UX</h2>
             <p>
-              Challenge Me. I really want to work with you to create more cool stuff
+              Websites , applications or other design related tasks. I love
+              taking digital problems
             </p>
           </div>
-          <div class="flex-centered">
-            <button class="btn flex-centered" style="background: var(--light-bg);">Lets Talk <span class="margin-left"><i class="fas fa-angle-right wobble"></i></span></button>
+          <div class="card moveL">
+            <icon style="color: var(--icon-3)">
+              <i class="fas fa-drafting-compass"></i>
+            </icon>
+            <h2>Strategy & Direction</h2>
+            <p>
+              Defining the problem identifying the scope and finally organising
+            </p>
+          </div>
+          <div class="card moveR">
+            <icon style="color: var(--icon-1)">
+              <i class="fas fa-magic"></i>
+            </icon>
+            <h2>Motion graphics and animation</h2>
+            <p>
+              Every interaction you apply to your brand makes you stronger and
+              more priority
+            </p>
           </div>
         </div>
-        <div class="footer-bottom extend">
-          <hr>
-          <div class="grid">
-            <div class="my-details left moveL">
-              <div class="flex column no-gap">
-                <h5 class="col-head">
-                  Contact Details
-                </h5>
-                <p class="col-body">
-                  <a> A. Punjab , India </a>
-                  <a href="tel:+918146124102"> T. +91 8146123102</a>
-                  <a href="mailto: ssanmeet123@gmail.com"> E. ssanmeet123@gmail.com</a>
-                </p>
-              </div>
+      </div>
+    </section>
+
+    <!-- Projects masonary layout -->
+    <section id="work" class="project--section mob-center">
+      <br />
+      <small class="uppercase transform_end">What services i provide</small>
+      <h2>
+        <i class="circle-icon fas fa-handshake"></i> What can i do for customers
+        <span style="color: red"> ( Under Construction ! )</span>
+      </h2>
+
+      <div class="projects">
+        <div class="card">
+          <img class="fill" src="./assets/img/sample-2.webp" alt="" />
+        </div>
+        <div class="card">
+          <img class="fill" src="./assets/img/sample-3.webp" alt="" />
+        </div>
+        <div class="card">
+          <img class="fill" src="./assets/img/sample-5.webp" alt="" />
+        </div>
+        <div class="card">
+          <img class="fill" src="./assets/img/sample-6.webp" alt="" />
+        </div>
+        <div class="card">
+          <img class="fill" src="./assets/img/sample-7.webp" alt="" />
+        </div>
+        <div class="card">
+          <img class="fill" src="./assets/img/sample-1.webp" alt="" />
+        </div>
+        <div class="card">
+          <img class="fill" src="./assets/img/sample-10.webp" alt="" />
+        </div>
+        <div class="card">
+          <img class="fill" src="./assets/img/sample-9.webp" alt="" />
+        </div>
+        <div class="card">
+          <img class="fill" src="./assets/img/sample-8.webp" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Friends -->
+    <section class="honourable--mentions">
+      <h3>
+        Friends
+        <a href="#" class="inline-right accent small"
+          >more <i class="fas fa-angle-double-right"></i
+        ></a>
+      </h3>
+      <div class="values staggered-fader">
+        <div class="item stag">
+          <img src="./assets/svg/dribble.svg" alt="Dribble" />
+        </div>
+        <div class="item stag">
+          <img src="./assets/svg/iconscout.svg" alt="Iconscout" />
+        </div>
+        <div class="item stag">
+          <img src="./assets/svg/google.svg" alt="Google" />
+        </div>
+        <div class="item stag">
+          <img src="./assets/svg/firebase.svg" alt="Firebase" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Me  -->
+    <section class="contact--me fader">
+      <div class="col-2">
+        <div class="left-col">
+          <h2>
+            I've been
+            <span class="accent">waiting for an incredible</span> project
+          </h2>
+          <p>
+            Fill in the form or
+            <a class="mail-link" href="mailto: ssanmeet123@gmail.com"
+              >Send me an email</a
+            >
+          </p>
+
+          <p></p>
+
+          <div class="contact--icons">
+            <br />
+            <div class="vertical-center">
+              <i class="circle-icon-reverse fas fa-phone"></i>
+              <a class="link margin-left" href="tel:+918146123102">
+                +91-8146123102</a
+              >
             </div>
-            <div class="about--me--details  left moveL">
-              <div class="flex column no-gap">
-                <h5 class="col-head">
-                  About Me
-                </h5>
-                <p class="col-body">
-                  <a class="" href="#about-me">About</a>
-                  <a class="" href="#work">Projects</a>
-                  <a class="" href="#skills">Skills</a>
-                  <a class="" href="#customer-services">Customer services</a>
-                </p>
-              </div>
+            <br />
+            <div class="vertical-center">
+              <i class="circle-icon-reverse fas fa-envelope-open"></i>
+              <a class="link margin-left" href="mailto: ssanmeet123@gmail.com">
+                ssanmeet123@gmail.com</a
+              >
             </div>
-            <div class="social--details  left moveL">
-              <div class="flex column no-gap flex-start">
-                <h5 class="col-head">
-                  Follow Me
-                </h5>
-                <p class="col-body">
-                  <a class="" href="#">Facebook</a>
-                  <a class="" href="#">Instagram</a>
-                  <a class="" href="#">Github</a>
-                </p>
-              </div>
+            <br />
+            <div class="vertical-center">
+              <i class="circle-icon-reverse fas fa-map-marker-alt"></i>
+              <a
+                class="link margin-left"
+                href="http://maps.google.com/?q=Punjab"
+              >
+                Punjab , India</a
+              >
             </div>
-            <div class="products--details  left moveL">
-              <div class="flex column no-gap">
-                <h5 class="col-head">
-                  My Products
-                </h5>
-                <p class="col-body">
-                  <a class="" href="#">MonsterPress ( Backend )</a>
-                  <a class="" href="#">Js / Jquery Plugins</a>
-                  <a class="" href="#">File Manager</a>
-                </p>
-              </div>
+            <br />
+          </div>
+
+          <br />
+        </div>
+        <div class="right-col">
+          <form class="form" method="get" accept-charset="utf-8">
+            <h3>Send me a Message</h3>
+            <div class="form-input-element">
+              <label class="hidden transform_label_start" for="name"
+                >Name</label
+              >
+              <input
+                onfocusout="hide_label(this)"
+                onfocusin="show_label(this)"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Name"
+              />
+            </div>
+
+            <div class="form-input-element">
+              <label class="hidden transform_label_start" for="email_id"
+                >Email
+              </label>
+              <input
+                onfocusout="hide_label(this)"
+                onfocusin="show_label(this)"
+                type="email"
+                name="email_id"
+                id="email_id"
+                placeholder="Email"
+              />
+            </div>
+
+            <div class="form-input-element">
+              <label class="hidden transform_label_start" for="subject">
+                Subject</label
+              >
+              <input
+                onfocusout="hide_label(this)"
+                onfocusin="show_label(this)"
+                type="subject"
+                name="subject"
+                id="subject"
+                placeholder="Subject"
+              />
+            </div>
+
+            <div class="form-input-element">
+              <label class="hidden transform_label_start" for="message">
+                Message
+              </label>
+              <textarea
+                onfocusout="hide_label(this)"
+                onfocusin="show_label(this)"
+                name="message"
+                id="message"
+                rows="8"
+                cols="40"
+                placeholder="Tell me about your project..."
+              ></textarea>
+            </div>
+
+            <button class="btn" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-top">
+        <logo>
+          <a href="#">
+            <img src="logo-light.svg" alt="" />
+            <text>
+              <heading class="neutral"> Sanmeet </heading>
+              <sub-heading class="placeholder"> Web developer </sub-heading>
+            </text>
+          </a>
+        </logo>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="footer-bottom flex">
+        <div>
+          <h4>Interested in collaboration ?</h4>
+          <p>
+            Challenge Me. I really want to work with you to create more cool
+            stuff
+          </p>
+        </div>
+        <div class="flex-centered">
+          <button class="btn flex-centered" style="background: var(--light-bg)">
+            Lets Talk
+            <span class="margin-left"
+              ><i class="fas fa-angle-right wobble"></i
+            ></span>
+          </button>
+        </div>
+      </div>
+      <div class="footer-bottom extend">
+        <hr />
+        <div class="grid">
+          <div class="my-details left moveL">
+            <div class="flex column no-gap">
+              <h5 class="col-head">Contact Details</h5>
+              <p class="col-body">
+                <a> A. Punjab , India </a>
+                <a href="tel:+918146124102"> T. +91 8146123102</a>
+                <a href="mailto: ssanmeet123@gmail.com">
+                  E. ssanmeet123@gmail.com</a
+                >
+              </p>
             </div>
           </div>
-          <hr />
-          <copyright>2021 © Sanmeet's Creation All rights are reserved </copyright>
+          <div class="about--me--details left moveL">
+            <div class="flex column no-gap">
+              <h5 class="col-head">About Me</h5>
+              <p class="col-body">
+                <a class="" href="#about-me">About</a>
+                <a class="" href="#work">Projects</a>
+                <a class="" href="#skills">Skills</a>
+                <a class="" href="#customer-services">Customer services</a>
+              </p>
+            </div>
+          </div>
+          <div class="social--details left moveL">
+            <div class="flex column no-gap flex-start">
+              <h5 class="col-head">Follow Me</h5>
+              <p class="col-body">
+                <a class="" href="#">Facebook</a>
+                <a class="" href="#">Instagram</a>
+                <a class="" href="#">Github</a>
+              </p>
+            </div>
+          </div>
+          <div class="products--details left moveL">
+            <div class="flex column no-gap">
+              <h5 class="col-head">My Products</h5>
+              <p class="col-body">
+                <a class="" href="#">MonsterPress ( Backend )</a>
+                <a class="" href="#">Js / Jquery Plugins</a>
+                <a class="" href="#">File Manager</a>
+              </p>
+            </div>
+          </div>
         </div>
-      </footer>
+        <hr />
+        <copyright
+          >2021 © Sanmeet's Creation All rights are reserved
+        </copyright>
+      </div>
+    </footer>
 
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" type="text/javascript" charset="utf-8"></script>
-      <script src="./assets/js/animate.js" type="text/javascript" charset="utf-8"></script>
-      <script src="./assets/js/main.js" type="text/javascript" charset="utf-8"></script>
-
-    </body>
-  </html>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="./assets/js/animate.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="./assets/js/main.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>
