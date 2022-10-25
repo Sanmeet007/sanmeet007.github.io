@@ -63,13 +63,16 @@
   --padding-max: 8%;
   --max-width: 2000px;
 
+  --clr-white: whitesmoke;
   --modal-clr: rgba(0, 0, 0, 0.8);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --clr-accent: #5e3aee;
+  html {
+    color-scheme: dark;
+  }
 
+  :root {
     --clr-white: whitesmoke;
     --link-clr-light: #9f9f9f;
 
@@ -110,6 +113,9 @@
 }
 
 @media (prefers-color-scheme: light) {
+  html {
+    color-scheme: light;
+  }
   body {
     background-color: whitesmoke;
   }
@@ -125,6 +131,28 @@
   }
   .form-element fieldset {
     border-color: rgba(42, 42, 42, 0.23);
+  }
+  .icon-button {
+    color: white;
+  }
+  button {
+    color: white;
+  }
+  h2 i,
+  h1 i {
+    color: white;
+  }
+  .about--me {
+    color: whitesmoke;
+  }
+  .about--me h1,
+  .about--me h2,
+  .about--me h3,
+  .about--me h4 {
+    color: whitesmoke;
+  }
+  .about--me p {
+    color: rgb(188, 188, 188);
   }
 }
 
@@ -327,10 +355,12 @@ menu-box {
   justify-content: center;
   height: 2.5rem;
   width: 2.5rem;
-  color: var(--clr-dark);
   font-size: 1.5rem;
   transform: rotate(0deg);
   transition: 0.5s ease;
+}
+menu-box i {
+  color: var(--clr-dark);
 }
 .rotate_start {
   transform: rotate(0deg);
@@ -1611,7 +1641,6 @@ icon {
   outline: none;
   font: inherit;
   letter-spacing: inherit;
-  color: currentcolor;
   border: 0px;
   box-sizing: content-box;
   background-color: transparent;
