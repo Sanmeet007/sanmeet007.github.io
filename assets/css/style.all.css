@@ -905,10 +905,6 @@ small {
   padding-block: 1em;
 }
 
-.heading-contain {
-  /* padding: 0.2em 2em; */
-}
-
 .heading-contain h1 .heading-contain h2,
 .heading-contain h3,
 .heading-contain h4 {
