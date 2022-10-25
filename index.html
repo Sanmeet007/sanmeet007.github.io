@@ -815,7 +815,7 @@
         const email = connectWithMeForm["email_addr"].value;
 
         try {
-          await fetch("http://localhost/connect", {
+          await fetch("https://sanmeet007.pythonanywhere.com/connect", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -841,7 +841,7 @@
         const message = contactMeForm["message"].value;
         const subject = contactMeForm["subject"].value;
         try {
-          await fetch("http://localhost", {
+          await fetch("https://sanmeet007.pythonanywhere.com/", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
