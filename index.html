@@ -884,6 +884,7 @@
           );
           const data = await response.json();
           hideLoadingAndShowSnackBar(false);
+          connectWithMeForm.reset();
         } catch (E) {
           hideLoadingAndShowSnackBar(true);
         }
@@ -921,6 +922,7 @@
           );
           const data = await response.json();
           hideLoadingAndShowSnackBar(false);
+          contactMeForm.reset();
         } catch (E) {
           hideLoadingAndShowSnackBar(true);
         }
