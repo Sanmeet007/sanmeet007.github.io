@@ -884,14 +884,20 @@
           );
 
           if (response.status === 200) {
-            hideLoadingAndShowSnackBar(false);
-            connectWithMeForm.reset();
-            connectWithMeForm
-              .querySelectorAll(".form-element")
-              .forEach((el) => {
-                el.querySelector("label").classList.remove("label-focused");
-                el.querySelector("legend").classList.remove("legend-focused");
-              });
+            const data = await response.json();
+
+            if (data.error === "false") {
+              hideLoadingAndShowSnackBar(false);
+              connectWithMeForm.reset();
+              connectWithMeForm
+                .querySelectorAll(".form-element")
+                .forEach((el) => {
+                  el.querySelector("label").classList.remove("label-focused");
+                  el.querySelector("legend").classList.remove("legend-focused");
+                });
+            } else {
+              hideLoadingAndShowSnackBar(true);
+            }
           } else {
             hideLoadingAndShowSnackBar(true);
           }
@@ -937,14 +943,18 @@
               }),
             }
           );
-          const data = await response.json();
           if (response.status === 200) {
-            hideLoadingAndShowSnackBar(false);
-            contactMeForm.reset();
-            contactMeForm.querySelectorAll(".form-element").forEach((el) => {
-              el.querySelector("label").classList.remove("label-focused");
-              el.querySelector("legend").classList.remove("legend-focused");
-            });
+            const data = await response.json();
+            if (data.error === "false") {
+              hideLoadingAndShowSnackBar(false);
+              contactMeForm.reset();
+              contactMeForm.querySelectorAll(".form-element").forEach((el) => {
+                el.querySelector("label").classList.remove("label-focused");
+                el.querySelector("legend").classList.remove("legend-focused");
+              });
+            } else {
+              hideLoadingAndShowSnackBar(true);
+            }
           } else {
             hideLoadingAndShowSnackBar(true);
           }
