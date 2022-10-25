@@ -882,9 +882,19 @@
               }),
             }
           );
-          const data = await response.json();
-          hideLoadingAndShowSnackBar(false);
-          connectWithMeForm.reset();
+
+          if (response.status === 200) {
+            hideLoadingAndShowSnackBar(false);
+            connectWithMeForm.reset();
+            connectWithMeForm
+              .querySelectorAll(".form-element")
+              .forEach((el) => {
+                el.querySelector("label").classList.remove("label-focused");
+                el.querySelector("legend").classList.remove("legend-focused");
+              });
+          } else {
+            hideLoadingAndShowSnackBar(true);
+          }
         } catch (E) {
           hideLoadingAndShowSnackBar(true);
         }
@@ -899,10 +909,17 @@
         e.preventDefault();
         showLoading();
 
-        const email = contactMeForm["email-address"].value;
-        const username = contactMeForm["user-name"].value;
-        const message = contactMeForm["message"].value;
-        const subject = contactMeForm["subject"].value;
+        const { emailEl, subjectEl, messageEl, usernameEl } = {
+          emailEl: contactMeForm["email-address"],
+          usernameEl: contactMeForm["user-name"],
+          messageEl: contactMeForm["message"],
+          subjectEl: contactMeForm["subject"],
+        };
+
+        const email = emailEl.value;
+        const username = usernameEl.value;
+        const message = messageEl.value;
+        const subject = subjectEl.value;
 
         try {
           const response = await fetch(
@@ -921,8 +938,16 @@
             }
           );
           const data = await response.json();
-          hideLoadingAndShowSnackBar(false);
-          contactMeForm.reset();
+          if (response.status === 200) {
+            hideLoadingAndShowSnackBar(false);
+            contactMeForm.reset();
+            contactMeForm.querySelectorAll(".form-element").forEach((el) => {
+              el.querySelector("label").classList.remove("label-focused");
+              el.querySelector("legend").classList.remove("legend-focused");
+            });
+          } else {
+            hideLoadingAndShowSnackBar(true);
+          }
         } catch (E) {
           hideLoadingAndShowSnackBar(true);
         }
