@@ -766,63 +766,6 @@
       </div>
     </footer>
 
-    <style>
-      .loader {
-        position: fixed;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(4px);
-        display: grid;
-        place-content: center;
-        font-size: 2rem;
-        color: var(--clr-accent);
-        transition: 200ms ease-in;
-        visibility: hidden;
-        opacity: 0;
-        z-index: 1000;
-        pointer-events: none;
-      }
-      .fade-in {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-      }
-      .snackbar {
-        position: fixed;
-        z-index: 1000;
-        bottom: 0;
-        right: 0;
-        min-height: 10px;
-        min-width: 10px;
-        margin: 1rem;
-        font-size: 1rem;
-      }
-      .snackbar-message {
-        border-radius: 4px;
-        padding: 10px;
-        visibility: visible;
-        opacity: 1;
-        transition: 400ms ease;
-      }
-      .hidden-o {
-        visibility: hidden;
-        opacity: 0;
-      }
-      .snackbar-message i {
-        margin-right: 5px;
-      }
-      .error {
-        background-color: rgb(120, 28, 0);
-        color: rgb(255, 178, 171);
-      }
-      .success {
-        background-color: rgb(0, 54, 29);
-        color: rgb(114, 227, 148);
-      }
-      .hidden {
-        display: none;
-      }
-    </style>
     <div class="loader" role="dialog" id="loader">
       <div class="spinner">
         <i class="fas fa-circle-notch fa-spin"></i>
