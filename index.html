@@ -230,6 +230,7 @@
                   <div class="element">
                     <input
                       aria-invalid="false"
+                      value="ssanmeet123@gmail.com"
                       id="connector"
                       name="email_addr"
                       type="email"
@@ -765,6 +766,78 @@
       </div>
     </footer>
 
+    <style>
+      .loader {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(4px);
+        display: grid;
+        place-content: center;
+        font-size: 2rem;
+        color: var(--clr-accent);
+        transition: 200ms ease-in;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 1000;
+        pointer-events: none;
+      }
+      .fade-in {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+      .snackbar {
+        position: fixed;
+        z-index: 1000;
+        bottom: 0;
+        right: 0;
+        min-height: 10px;
+        min-width: 10px;
+        margin: 1rem;
+        font-size: 1rem;
+      }
+      .snackbar-message {
+        border-radius: 4px;
+        padding: 10px;
+        visibility: visible;
+        opacity: 1;
+        transition: 400ms ease;
+      }
+      .hidden-o {
+        visibility: hidden;
+        opacity: 0;
+      }
+      .snackbar-message i {
+        margin-right: 5px;
+      }
+      .error {
+        background-color: rgb(120, 28, 0);
+        color: rgb(255, 178, 171);
+      }
+      .success {
+        background-color: rgb(0, 54, 29);
+        color: rgb(114, 227, 148);
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+    <div class="loader" role="dialog" id="loader">
+      <div class="spinner">
+        <i class="fas fa-circle-notch fa-spin"></i>
+      </div>
+    </div>
+    <div class="snackbar">
+      <div class="snackbar-message success hidden-o hidden" id="success">
+        <i class="fas fa-check-circle"></i>
+        Email sent successfully
+      </div>
+      <div class="snackbar-message error hidden-o hidden" id="error">
+        <i class="fas fa-times-circle"></i>
+        An error occured
+      </div>
+    </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
       type="text/javascript"
@@ -782,6 +855,8 @@
     ></script>
 
     <script>
+      const loader = document.getElementById("loader");
+      const snackbar = document.querySelector(".snackbar");
       const isDark = window.matchMedia("(prefers-color-scheme : dark)").matches;
 
       const formElements = document.querySelectorAll(".form-element");
@@ -810,8 +885,46 @@
       const contactMeForm = document.querySelector("#contact-me-form");
       const serachform = document.querySelector("#search-form");
       const connectWithMeForm = document.querySelector("#connect-with-me-form");
+
+      const showLoading = () => {
+        loader.classList.add("fade-in");
+      };
+
+      const hideLoadingAndShowSnackBar = (error = false) => {
+        loader.classList.remove("fade-in");
+        const [errorMessage, successMessage] = [
+          snackbar.querySelector("#error"),
+          snackbar.querySelector("#success"),
+        ];
+
+        errorMessage.classList.add("hidden-o");
+        successMessage.classList.add("hidden-o");
+
+        if (error) {
+          errorMessage.classList.remove("hidden");
+          errorMessage.classList.remove("hidden-o");
+          setTimeout(() => {
+            errorMessage.classList.add("hidden-o");
+            setTimeout(() => {
+              errorMessage.classList.add("hidden");
+            }, 420);
+          }, 2000);
+        } else {
+          successMessage.classList.remove("hidden");
+
+          successMessage.classList.remove("hidden-o");
+          setTimeout(() => {
+            successMessage.classList.add("hidden-o");
+            setTimeout(() => {
+              successMessage.classList.add("hidden");
+            }, 420);
+          }, 2000);
+        }
+      };
+
       connectWithMeForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+        showLoading();
         const email = connectWithMeForm["email_addr"].value;
 
         try {
@@ -828,9 +941,9 @@
             }
           );
           const data = await response.json();
-          console.log(data);
+          hideLoadingAndShowSnackBar(false);
         } catch (E) {
-          console.log(E);
+          hideLoadingAndShowSnackBar(true);
         }
       });
       serachform.addEventListener("submit", (e) => {
@@ -841,10 +954,13 @@
 
       contactMeForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+        showLoading();
+
         const email = contactMeForm["email-address"].value;
         const username = contactMeForm["user-name"].value;
         const message = contactMeForm["message"].value;
         const subject = contactMeForm["subject"].value;
+
         try {
           const response = await fetch(
             "https://sanmeet007.pythonanywhere.com/",
@@ -862,9 +978,9 @@
             }
           );
           const data = await response.json();
-          console.log(data);
+          hideLoadingAndShowSnackBar(false);
         } catch (E) {
-          console.log(E);
+          hideLoadingAndShowSnackBar(true);
         }
       });
     </script>
