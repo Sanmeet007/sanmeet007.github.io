@@ -97,6 +97,9 @@
   body {
     background-color: #222;
   }
+  .bg-img {
+    background-color: black;
+  }
   .bg-img,
   .contact--me {
     background-image: url(../svg/bg-2-dark.svg);
@@ -119,6 +122,10 @@
   body {
     background-color: whitesmoke;
   }
+  .bg-img {
+    background-color: white;
+  }
+
   .bg-img,
   .contact--me {
     background-image: url(../svg/bg-2.svg);
@@ -801,7 +808,6 @@ section {
   left: 0;
   top: 0;
   width: 100%;
-  background-color: var(--primary-bg);
   position: absolute;
   background-size: 100%;
   background-size: cover;
@@ -1251,7 +1257,7 @@ icon {
     display: none;
   }
 }
-@media screen and (max-width: 39.9rem) {
+@media screen and (max-width: 650px) {
   .mobile-header {
     display: flex;
   }
