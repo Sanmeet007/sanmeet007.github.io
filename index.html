@@ -241,7 +241,7 @@
                   </div>
                 </div>
 
-                <button type="submit">
+                <button type="submit" class="pointer">
                   <i class="margin-right fas fa-link"></i>Connect With Me
                 </button>
               </div>
@@ -436,7 +436,7 @@
               congue vehicula diam, eget placerat metus malesuada et. Morbi
               ullamcorper hendrerit tempor.
             </p>
-            <button class="btn">
+            <button class="btn pointer">
               <i class="fas fa-mobile-alt neutral margin-right"></i>Call me
             </button>
           </div>
@@ -673,7 +673,7 @@
                 </div>
               </div>
 
-              <button class="btn" type="submit">Send Message</button>
+              <button class="btn pointer" type="submit">Send Message</button>
             </form>
           </div>
         </div>
@@ -703,7 +703,10 @@
           </p>
         </div>
         <div class="flex-centered">
-          <button class="btn flex-centered" style="background: var(--light-bg)">
+          <button
+            class="btn flex-centered pointer"
+            style="background: var(--light-bg)"
+          >
             Lets Talk
             <span class="margin-left"
               ><i class="fas fa-angle-right wobble"></i
@@ -887,6 +890,7 @@
             const data = await response.json();
 
             if (data.error === "false") {
+              console.log(data);
               hideLoadingAndShowSnackBar(false);
               connectWithMeForm.reset();
               connectWithMeForm

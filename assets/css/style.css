@@ -1843,3 +1843,11 @@ icon {
 .hidden {
   display: none;
 }
+.pointer {
+  cursor: auto;
+}
+@media screen and (min-width: 500px) {
+  .pointer {
+    cursor: pointer;
+  }
+}
