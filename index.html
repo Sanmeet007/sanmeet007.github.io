@@ -125,7 +125,7 @@
             ></menu-box>
 
             <nav id="mob-nav" class="mob-nav">
-              <form action="#" class="flex-box mt-3">
+              <form action="#" class="flex-box mt-3" id="search-form">
                 <div class="form-element search-input">
                   <label data-shrink="false" for="search" id="search-label"
                     >Search
@@ -218,7 +218,7 @@
               Design, Responsive Web Design, and Visual Development
             </p>
             <br />
-            <form action="#">
+            <form action="#" id="connect-with-me-form">
               <div class="inline-form">
                 <div class="form-element">
                   <label
@@ -231,6 +231,7 @@
                     <input
                       aria-invalid="false"
                       id="connector"
+                      name="email_addr"
                       type="email"
                       value=""
                     />
@@ -592,7 +593,11 @@
             <br />
           </div>
           <div class="right-col">
-            <form class="form margin-form" method="get" accept-charset="utf-8">
+            <form
+              class="form margin-form"
+              accept-charset="utf-8"
+              id="contact-me-form"
+            >
               <h3>Send me a Message</h3>
               <div class="form-element full-width">
                 <label data-shrink="false" for="user-name" id="user-name-label"
@@ -622,7 +627,7 @@
                   <input
                     aria-invalid="false"
                     id="email-address"
-                    type="text"
+                    type="email"
                     value=""
                     name="email-address"
                   />
@@ -800,6 +805,57 @@
           }
           fieldset.classList.remove("fieldset-focused");
         });
+      });
+
+      const contactMeForm = document.querySelector("#contact-me-form");
+      const serachform = document.querySelector("#search-form");
+      const connectWithMeForm = document.querySelector("#connect-with-me-form");
+      connectWithMeForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = connectWithMeForm["email_addr"].value;
+
+        try {
+          await fetch("http://localhost/connect", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email,
+            }),
+          });
+        } catch (E) {
+          console.log(E);
+        }
+      });
+      serachform.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log(serachform.search.value);
+        console.log("Currently not working");
+      });
+
+      contactMeForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = contactMeForm["email-address"].value;
+        const username = contactMeForm["user-name"].value;
+        const message = contactMeForm["message"].value;
+        const subject = contactMeForm["subject"].value;
+        try {
+          await fetch("http://localhost", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email,
+              subject,
+              username,
+              message,
+            }),
+          });
+        } catch (E) {
+          console.log(E);
+        }
       });
     </script>
   </body>
