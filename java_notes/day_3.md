@@ -1,4 +1,4 @@
-# Day 4
+# Day 3
 
 ## Elements of class
 
