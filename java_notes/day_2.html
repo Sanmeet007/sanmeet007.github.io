@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2</title>
+    <meta name="color-scheme" content="dark" />
+  </head>
+  <body>
+    <h1 id="day-2">Day 2</h1>
+    <h2 id="scanner">Scanner</h2>
+    <p>
+      It is a class present <code>java.util</code> package which is used to take
+      dynamic input from user
+    </p>
+    <p>keyword =&gt; creating object of Scanner class</p>
+    <pre><code class="lang-java"> Scanner s=<span class="hljs-keyword">new</span> <span class="hljs-type">Scanner</span>(System.<span class="hljs-keyword">in</span>);
+</code></pre>
+    <p>Methods :</p>
+    <ol>
+      <li>to read integer value : <code>s.nextInt()</code></li>
+      <li>to read float value : <code>s.nextFloat()</code></li>
+      <li>to read String value : <code>s.next()</code></li>
+    </ol>
+    <p>Example code :</p>
+    <pre><code class="lang-java">
+package basic;
+import java.util;
+<span class="hljs-keyword">
+public</span> class App (){
+
+   <span class="hljs-keyword"> public</span><span class="hljs-keyword"> static</span> main(String[] args){
+        // Making<span class="hljs-built_in"> instance </span>of scanner class
+        Scanner scanner =<span class="hljs-built_in"> new </span>Scanner();
+
+       <span class="hljs-built_in"> int </span>input = 0;
+        System.out.println(<span class="hljs-string">"Enter a number"</span>);
+
+
+         // Taking integer type input
+        input = scanner.nextInt();
+
+        // Used `+` concatinates string with number<span class="hljs-built_in"> or </span>string type
+        System.out.println(<span class="hljs-string">"Entered number is : "</span>+  input);
+
+        // same for<span class="hljs-built_in"> float </span>        
+
+    }
+}
+</code></pre>
+    <blockquote>
+      <p>
+        Note : Be careful with string input as <code>.next()</code> takes values
+        with no whitespace and <code>.nextLine()</code> has weird behaviour.
+      </p>
+    </blockquote>
+    <h2 id="varargs">varargs</h2>
+    <p>
+      Take variable number of arguments. The <code>varargs</code> is just a
+      variable to store the values.
+    </p>
+    <p>Example :</p>
+    <pre><code class="lang-java">public class Example(){
+   <span class="hljs-keyword"> public</span><span class="hljs-keyword"> static</span> void main(String... varargs){
+        // here varargs can take multiple values ... similar to<span class="hljs-built_in"> array </span>of string as argurments
+    }
+}
+</code></pre>
+    <h2 id="interview-questions">Interview Questions</h2>
+    <h3 id="q-why-main-method-declared-as-public">
+      Q. Why main() method declared as public
+    </h3>
+    <p>
+      To call main() method by JVM from anywhere so main is declared as the
+      public.
+    </p>
+    <h3 id="q-why-main-method-declared-as-static">
+      Q. Why main() method declared as static
+    </h3>
+    <p>To call main() method by JVM without creating any object so.....</p>
+    <h3 id="q-why-main-method-declared-as-void">
+      Q. Why main() method declared as void
+    </h3>
+    <p>It doesn&#39;t return anything. Hence <code>void</code></p>
+    <pre><code>Main function arguments : 
+
+-<span class="ruby"> <span class="hljs-string">`String[] args`</span> <span class="hljs-symbol">:-</span> it will take command line argument
+</span>-<span class="ruby"> <span class="hljs-string">`String`</span> <span class="hljs-symbol">:-</span> it wil take any type of data
+</span>-<span class="ruby"> <span class="hljs-string">`args`</span> <span class="hljs-symbol">:-</span> is a variable of String type</span>
+</code></pre>
+    <h2 id="object-oriented-programming-in-java">
+      Object oriented programming in JAVA
+    </h2>
+    <p>There are six oop&#39;s concept in java</p>
+    <ol>
+      <li>object</li>
+      <li>class</li>
+      <li>inheritance</li>
+      <li>polymorphism</li>
+      <li>abstraction</li>
+      <li>encapsulation</li>
+    </ol>
+    <h3 id="1-object-">1. <code>object</code></h3>
+    <p>
+      It is a real world entity which consists of state and behavior.Example.
+      Pen is an object where name and color represent value of an object (state)
+      , behavior represent functionality of an object for instance Writing
+      something with pen.
+      <strong
+        >Object is memory location which is used to store value
+        temporary.</strong
+      >
+    </p>
+    <blockquote>
+      <p>
+        object contains <code>properties(variable)</code> and
+        <code>functionality(function/method)</code>
+      </p>
+    </blockquote>
+    <pre><code class="lang-java">
+<span class="hljs-keyword">class</span> <span class="hljs-title">Person</span>{
+    String name , email; <span class="hljs-comment">// props</span>
+    <span class="hljs-keyword">int</span> roll; <span class="hljs-comment">// prop</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">eat</span>(<span class="hljs-params"></span>)</span>; <span class="hljs-comment">// behaviour</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dance</span>(<span class="hljs-params"></span>)</span>; <span class="hljs-comment">// behaviour</span>
+}
+</code></pre>
+    <p>
+      Here <code>eat()</code> and <code>dance()</code> are methods i.e.
+      behaviour and name roll , name , email are properties or state of a person
+      object.
+    </p>
+    <pre><code>                    <span class="hljs-function"><span class="hljs-keyword">constructor</span> <span class="hljs-title">is</span> <span class="hljs-title">used</span> <span class="hljs-title">for</span> <span class="hljs-title">intialization</span> <span class="hljs-title">of</span> <span class="hljs-title">an</span> <span class="hljs-title">object</span>
+                        |
+                        |
+            <span class="hljs-title">refer</span> 123   |    123
+                |       |   / 
+        <span class="hljs-title">Student</span> <span class="hljs-title">s</span> = <span class="hljs-title">new</span> <span class="hljs-title">Student</span><span class="hljs-params">()</span>;</span>
+                | \
+                |  \
+                |   \
+               /     --------------------------\
+              /                                 \    
+                                                 ----------                
+    <span class="hljs-keyword">reference</span> variable <span class="hljs-keyword">is</span> a variable which                  \
+    <span class="hljs-keyword">is</span> used <span class="hljs-keyword">to</span> refer an object                               \
+                                                        +----------+
+                                                        |  object  |
+                                                        +----------+
+                                                        address <span class="hljs-number">123</span>
+
+    <span class="hljs-keyword">new</span> <span class="hljs-keyword">is</span> a keyword which <span class="hljs-keyword">is</span> used <span class="hljs-keyword">to</span> <span class="hljs-keyword">create</span> object                                                         
+</code></pre>
+    <h3 id="2-class-">2. <code>class</code></h3>
+    <p>
+      It is a logical entity or blue print/template but doesn&#39;t exits
+      physically.
+    </p>
+    <p>
+      Let us consider <code>Student</code> a class . By definition class
+      doesn&#39;t exists physically so as <code>Student</code> only there
+      instances exists (object). Eg. In a classroom we have different students
+      but a student with particular roll no. is object or instance.
+    </p>
+    <pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>{       
+    <span class="hljs-comment">// logic implement  </span>
+}
+</code></pre>
+    <p>
+      Same goes for <code>Flower</code> , flower can be rose , lotus which are
+      object of class <code>Flower</code>,
+    </p>
+    <h4 id="important">Important</h4>
+    <pre><code>- <span class="hljs-keyword">class</span> <span class="hljs-keyword">is</span> a group <span class="hljs-keyword">of</span> objects
+- <span class="hljs-keyword">class</span> <span class="hljs-keyword">name</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">object</span> <span class="hljs-keyword">name</span> are always same
+- an <span class="hljs-keyword">object</span> <span class="hljs-keyword">is</span> an instance <span class="hljs-keyword">of</span> <span class="hljs-keyword">class</span>    clas
+</code></pre>
+    <p>Example :</p>
+    <pre><code class="lang-java"><span class="hljs-attribute">      Student s</span> = new Student();
+</code></pre>
+  </body>
+</html>

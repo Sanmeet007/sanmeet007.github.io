@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3</title>
+    <meta name="color-scheme" content="dark" />
+  </head>
+  <body>
+    <h1 id="day-4">Day 4</h1>
+    <h2 id="elements-of-class">Elements of class</h2>
+    <p>class contains five elements</p>
+    <ol>
+      <li>variable</li>
+      <li>methods</li>
+      <li>constructor</li>
+      <li>instance block</li>
+      <li>static block</li>
+    </ol>
+    <h3 id="1-variable">1. Variable</h3>
+    <p>It is a memory location which is used to store data.</p>
+    <p>There are three types of variable :</p>
+    <ol>
+      <li>local variable</li>
+      <li>instance variable</li>
+      <li>static variable</li>
+    </ol>
+    <h4 id="i-local-variable">i. local variable</h4>
+    <p>
+      A variable which are declared within the method,block or constructor is
+      known as local variable. we can access local variable direct.
+    </p>
+    <h4 id="ii-instance-variable">ii. instance variable</h4>
+    <p>
+      A variable which are decided within the class but outside the method is
+      known as instance variable.
+      <strong
+        ><em
+          >we can access instance variable by using object reference</em
+        ></strong
+      >.
+    </p>
+    <h4 id="iii-static-variable">iii. static variable</h4>
+    <p>
+      A variable which are decided with static keyword. it is also known as
+      <code>class level variable</code>.
+    </p>
+    <p>There are three ways to access static variable :</p>
+    <pre><code><span class="hljs-selector-tag">a</span>. direct
+<span class="hljs-selector-tag">b</span>. using <span class="hljs-selector-tag">object</span> reference
+c. using class name
+</code></pre>
+    <hr />
+    <h4 id="examples">Examples</h4>
+    <pre><code class="lang-java">package basic;
+<span class="hljs-keyword">
+public</span> class Test
+{
+  //instance variable
+ <span class="hljs-built_in"> int </span>a=12,b=56;
+ <span class="hljs-built_in"> int </span>c=a*b;
+
+ <span class="hljs-keyword"> public</span><span class="hljs-keyword"> static</span> void main(String[] args) {
+
+    //create object 
+    Test t=new Test();
+
+    //we can access<span class="hljs-built_in"> instance </span>variable by using object reference t 
+
+    System.out.println(t.c);
+  }
+}
+</code></pre>
+    <pre><code class="lang-java">
+package basic;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Test</span>
+{
+  <span class="hljs-comment">//static variable</span>
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> a=<span class="hljs-number">12</span>,b=<span class="hljs-number">56</span>;
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> c=a*b;
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] args</span>) </span>{
+
+    <span class="hljs-comment">//create object </span>
+    Test t=<span class="hljs-keyword">new</span> Test();
+
+    <span class="hljs-comment">//2. we can access static variable by using object reference t </span>
+
+    System.<span class="hljs-keyword">out</span>.println(t.c);
+
+    <span class="hljs-comment">// 1 direct </span>
+    System.<span class="hljs-keyword">out</span>.println(c);
+
+    <span class="hljs-comment">// 3 class name </span>
+    System.<span class="hljs-keyword">out</span>.println(Test.c);
+  }
+}
+</code></pre>
+    <pre><code class="lang-java">package basic;
+//diff b/w local ,instance<span class="hljs-built_in"> and </span>static variable<span class="hljs-keyword">
+public</span> class Test
+{
+ <span class="hljs-built_in"> int </span>a;
+ <span class="hljs-keyword"> static</span><span class="hljs-built_in"> int </span>b;
+
+ <span class="hljs-keyword"> public</span><span class="hljs-keyword"> static</span> void main(String[] args) {
+
+   <span class="hljs-built_in"> int </span>c;
+    //System.out.println(c);
+
+    Test t =<span class="hljs-built_in"> new </span>Test();
+    System.out.println(t.a);
+    System.out.println(t.b);
+  }
+}
+/*
+JVM will provide by default value 0 for<span class="hljs-built_in"> instance </span>and<span class="hljs-keyword"> static</span> but<span class="hljs-built_in"> not </span>for local
+*/
+</code></pre>
+    <pre><code class="lang-java">
+package basic;
+<span class="hljs-comment">//diff b/w instance and static variable</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Test</span>
+{
+  <span class="hljs-keyword">int</span> a = <span class="hljs-number">10</span>;
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> b = <span class="hljs-number">20</span>;
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] args</span>) </span>{
+    Test t = <span class="hljs-keyword">new</span> Test();
+    System.<span class="hljs-keyword">out</span>.println(t.a);
+    System.<span class="hljs-keyword">out</span>.println(t.b);
+
+    <span class="hljs-comment">//here changed value </span>
+    t.a = <span class="hljs-number">11</span>;
+    t.b = <span class="hljs-number">22</span>;
+
+    System.<span class="hljs-keyword">out</span>.println(t.a);
+    System.<span class="hljs-keyword">out</span>.println(t.b);
+
+    <span class="hljs-comment">//creating another object </span>
+    Test t1 = <span class="hljs-keyword">new</span> Test();
+    System.<span class="hljs-keyword">out</span>.println(t1.a);  <span class="hljs-comment">//11   //10</span>
+    System.<span class="hljs-keyword">out</span>.println(t1.b);  <span class="hljs-comment">//22   //22</span>
+  }
+}
+</code></pre>
+    <h3 id="2-methods">2. Methods</h3>
+    <p>Used to write business logic(own logic)</p>
+    <p>There are two types of method :</p>
+    <ol>
+      <li>
+        <code>instance method</code> :- we can access instance method by using
+        object reference.
+      </li>
+      <li>
+        <p>
+          <code>static method</code> : It is a method that belongs to the class
+          itself rather than an instance of the class. It can be called directly
+          on the class without creating an object of that class.
+        </p>
+        <p>There are three ways to access :</p>
+        <ol>
+          <li>direct</li>
+          <li>using object</li>
+          <li>class name</li>
+        </ol>
+      </li>
+    </ol>
+    <blockquote>
+      <p>
+        Note : <code>instance method</code> can acess instance variable &amp;
+        <code>static method</code> can access static variable.
+      </p>
+    </blockquote>
+    <hr />
+    <p>Example of methods :</p>
+    <pre><code class="lang-java">package basic;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Test</span>
+{
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">show</span>(<span class="hljs-params"></span>)
+  </span>{
+    System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"hello"</span>);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">add</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b</span>)
+  </span>{
+    <span class="hljs-keyword">int</span> c=a+b;
+    System.<span class="hljs-keyword">out</span>.println(c);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] args</span>) </span>{
+
+    Test t=<span class="hljs-keyword">new</span> Test();
+    t.show();
+    t.<span class="hljs-keyword">add</span>(<span class="hljs-number">23</span>, <span class="hljs-number">40</span>);
+
+  }
+}
+</code></pre>
+    <pre><code class="lang-java">package basic;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Test</span>
+{
+  <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show</span>(<span class="hljs-params"></span>)
+  </span>{
+    System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"hello"</span>);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] args</span>) </span>{
+
+    Test t=<span class="hljs-keyword">new</span> Test();
+    t.show();
+
+    <span class="hljs-comment">//direct </span>
+    show();
+
+    <span class="hljs-comment">//class name</span>
+    Test.show();
+
+  }
+}
+</code></pre>
+    <pre><code class="lang-java">package basic;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Test</span>
+{
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">m1</span>(<span class="hljs-params"></span>)
+  </span>{
+    m3();
+    System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"hello"</span>);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">m2</span>(<span class="hljs-params"></span>)
+  </span>{
+    m4();
+    System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"hi"</span>);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">m3</span>(<span class="hljs-params"></span>)
+  </span>{
+    System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"bye"</span>);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">m4</span>(<span class="hljs-params"></span>)
+  </span>{
+    System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"tye"</span>);
+    m1();
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] args</span>) </span>{
+
+    Test t=<span class="hljs-keyword">new</span> Test();
+    t.m2();
+
+  }
+}
+</code></pre>
+  </body>
+</html>

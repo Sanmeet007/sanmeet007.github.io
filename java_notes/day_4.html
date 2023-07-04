@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 4</title>
+    <meta name="color-scheme" content="dark" />
+  </head>
+  <body>
+    <h1 id="day-4">Day 4</h1>
+    <h2 id="3-constructor">3. Constructor</h2>
+    <ul>
+      <li>
+        It is used to initialize the state of an object. constructor call and
+        executes automaticallyat the time of object creation.
+      </li>
+      <li>Class name and object name always same.</li>
+    </ul>
+    <p>There are two types of constructor :</p>
+    <ol>
+      <li><code>default constructor</code> :- no argument</li>
+      <li><code>parameterized constructor</code> :- with argument</li>
+    </ol>
+    <blockquote>
+      <p>
+        Note:- we can declared only one default constructor inside a class but
+        we can declare multiple parameterized constructor but arguments must be
+        different ithis is known as <code>constructor overloading</code>.
+      </p>
+    </blockquote>
+    <h3 id="examples">Examples</h3>
+    <pre><code class="lang-java">package basic;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> Test
+{
+  <span class="hljs-comment">//default const</span>
+  Test()
+  {
+    System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">"this is my default const"</span>);
+  }
+  <span class="hljs-comment">//parameterized const</span>
+  Test(<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b)
+  {
+    <span class="hljs-keyword">int</span> c=a+b;
+    System.out.<span class="hljs-built_in">println</span>(c);
+  }
+  Test(<span class="hljs-keyword">int</span> id,<span class="hljs-keyword">String</span> name)
+  {
+    System.out.<span class="hljs-built_in">println</span>(id+<span class="hljs-string">" "</span>+name);
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> main(<span class="hljs-keyword">String</span>[] args) {
+    Test t=<span class="hljs-keyword">new</span> Test();
+    Test t1=<span class="hljs-keyword">new</span> Test(<span class="hljs-number">10</span>,<span class="hljs-number">20</span>);
+    Test t3=<span class="hljs-keyword">new</span> Test(<span class="hljs-number">1</span>,<span class="hljs-string">"aman"</span>);
+  }
+}
+</code></pre>
+    <pre><code class="lang-java">
+package basic;
+//<span class="hljs-built_in"> instance </span>method can access<span class="hljs-built_in"> instance </span>variable<span class="hljs-keyword">
+public</span> class Test
+{
+  //<span class="hljs-built_in"> instance </span>variable
+ <span class="hljs-built_in"> int </span>a=10,b=20;
+
+  //instance method
+  void sum()
+  {
+   <span class="hljs-built_in"> int </span>c=a+b;
+    System.out.println(c);
+  }
+ <span class="hljs-keyword"> public</span><span class="hljs-keyword"> static</span> void main(String[] args) {
+    Test t=new Test();
+    t.sum();
+  }
+}
+</code></pre>
+    <pre><code class="lang-java">package basic;
+//<span class="hljs-built_in"> instance </span>method can access<span class="hljs-built_in"> instance </span>variable<span class="hljs-keyword">
+public</span> class Test
+{
+  //<span class="hljs-built_in"> instance </span>variable
+ <span class="hljs-built_in"> int </span>a=10,b=20;
+
+  //instance method
+  void sum(int a,int b)   //local variable
+  {
+   <span class="hljs-built_in"> int </span>c=a+b;
+    System.out.println(c);
+    System.out.println(this.a+this.b);
+  }
+ <span class="hljs-keyword"> public</span><span class="hljs-keyword"> static</span> void main(String[] args) {
+    Test t=new Test();
+    t.sum(30,40);
+  }
+}
+</code></pre>
+    <h3 id="q-what-is-the-main-purpose-of-constructor">
+      Q. What is the main purpose of constructor
+    </h3>
+    <p>
+      The main purpose of constructor is used to initialize instance variable
+    </p>
+    <h2 id="4-instance-block">4. instance block</h2>
+    <p>
+      It is a block which is depend object creation. if you are creating two
+      object then instance block will be executes two times.
+    </p>
+    <h3 id="example">Example</h3>
+    <pre><code class="lang-java">package basic;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Test</span>
+{
+  Test()
+  {
+    System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"this defualt"</span>);
+  }
+  {
+    <span class="hljs-comment">// This is instance block.</span>
+
+    <span class="hljs-comment">// Printed first then the above code is executed </span>
+    System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"this is my instance block"</span>);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] args</span>) </span>{
+    Test t = <span class="hljs-keyword">new</span> Test(); 
+  }
+}
+</code></pre>
+    <h2 id="5-static-block">5. static block</h2>
+    <p>It is a block which is executed before main method.</p>
+    <h3 id="example">Example</h3>
+    <pre><code class="lang-java">package basic;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Emp</span>
+{
+  Emp()
+  {
+    System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"this defualt"</span>);
+  }
+  {
+    System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"this is my instance block"</span>);
+  }
+  Emp(<span class="hljs-keyword">int</span> a)
+  {
+    System.<span class="hljs-keyword">out</span>.println(a);
+  }
+  <span class="hljs-keyword">static</span>
+  {
+    <span class="hljs-comment">// This is satic block</span>
+    System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"this is my static block"</span>);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] args</span>) </span>{
+    Emp e=<span class="hljs-keyword">new</span> Emp();
+    Emp e1=<span class="hljs-keyword">new</span> Emp(<span class="hljs-number">111</span>);
+  }
+}
+</code></pre>
+    <h2 id="-this-keyword"><code>this</code> keyword</h2>
+    <p>
+      When instance and local variable same then may be chance to create
+      ambiguity problem so to resolve the problem using
+      <code>this</code> keyword. <code>this</code> is a keyword which is used to
+      refer current instance of class or object.
+    </p>
+    <h3 id="example">Example</h3>
+    <pre><code class="lang-java">package basic;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> Emp
+{
+  <span class="hljs-comment">//instance variable</span>
+  <span class="hljs-keyword">int</span> id,salary;
+  <span class="hljs-keyword">String</span> name,post,address;
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">String</span> cmp=<span class="hljs-string">"TCS Noida"</span>;
+  <span class="hljs-comment">//parameterized const</span>
+  Emp(<span class="hljs-keyword">int</span> id,<span class="hljs-keyword">String</span> name,<span class="hljs-keyword">String</span> post,<span class="hljs-keyword">int</span> salary,<span class="hljs-keyword">String</span> address)
+  {
+    <span class="hljs-keyword">this</span>.id=id;
+    <span class="hljs-keyword">this</span>.name=name;
+    <span class="hljs-keyword">this</span>.post=post;
+    <span class="hljs-keyword">this</span>.salary=salary;
+    <span class="hljs-keyword">this</span>.address=address;
+  }
+  <span class="hljs-comment">//instance method</span>
+  <span class="hljs-keyword">void</span> show()
+  {
+    System.out.<span class="hljs-built_in">println</span>(id+<span class="hljs-string">" "</span>+name+<span class="hljs-string">" "</span>+post+<span class="hljs-string">" "</span>+salary+<span class="hljs-string">" "</span>+address+<span class="hljs-string">" "</span>+cmp);
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> main(<span class="hljs-keyword">String</span>[] args) {
+    Emp e1=<span class="hljs-keyword">new</span> Emp(<span class="hljs-number">1</span>,<span class="hljs-string">"sahil"</span>,<span class="hljs-string">"developer"</span>,<span class="hljs-number">23000</span>,<span class="hljs-string">"noida"</span>);
+    Emp e2=<span class="hljs-keyword">new</span> Emp(<span class="hljs-number">2</span>,<span class="hljs-string">"karan"</span>,<span class="hljs-string">"programmer"</span>,<span class="hljs-number">45000</span>,<span class="hljs-string">"delhi"</span>);
+    e1.show();
+    e2.show();
+  }
+}
+</code></pre>
+  </body>
+</html>
