@@ -32,29 +32,27 @@ class Test {
 
 ```java
 
-class Test
-{
-  Test()
-  {
-    this(10,20); // calling constructor 
-    System.out.println("default const");
-  }
-  
-  Test(int a)
-  {
-    System.out.println(a);
-  }
-  Test(int a,int b)
-  {
-    //this(111);
-    int c=a+b;
-    System.out.println(c);
-    //this(101);
-  }
-  public static void main(String[] args) {
-    Test t=new Test();
+class Test {
+    Test() {
+        this(10, 20); // calling constructor
+        System.out.println("default const");
+    }
 
-  }
+    Test(int a) {
+        System.out.println(a);
+    }
+
+    Test(int a, int b) {
+        // this(111);
+        int c = a + b;
+        System.out.println(c);
+        // this(101);
+    }
+
+    public static void main(String[] args) {
+        Test t = new Test();
+
+    }
 }
 ```
 
@@ -69,12 +67,13 @@ one class to another class is known as inheritance.
 - With the help of `extends` keyword we can achieve tha concept of inheritance
 
 ```java
-  class Parent {
-     //properties
-     // method
-  }
-  class Child extends Parent{
-  }  
+class Parent {
+    // properties
+    // method
+}
+
+class Child extends Parent {
+} 
 ```
 
 ### There are five types of inheritance
@@ -83,47 +82,44 @@ one class to another class is known as inheritance.
        known as .............  
 
     ```java
-        class A
-        {
+      class A {
 
-        }
-        class B extends A
-        {
+      }
 
-        }
+      class B extends A {
+
+      }
     ```
 
 1. `Multi level inheritance` : When a class inherits the properties of another class but
      these class already inherited another class is known as ...........
 
     ```java
-     class A
-     {
+      class A {
 
-     }
-     class B extends A
-     {
+      }
 
-     }
-     class C  extends B
-     {
+      class B extends A {
 
-     }
+      }
+
+      class C extends B {
+
+      }
     ```
 
 1. `Hierarchical inheritance` : When a class inherited by more than one class is known ....
 
     ```java
-        class A
-        {
+        class A{
 
         }
-        class B extends A
-        {
+
+        class B extends A{
 
         }
-        class C extends A
-        {
+
+        class C extends A{
 
         }
     ```
@@ -132,40 +128,38 @@ one class to another class is known as inheritance.
      doesn't support.
 
      ```java
-     class A
-     {
+      class A{
 
-     }
-     class B extends A
-     {
+      }
 
-     }
-     class extends A,B
-     {
+      class B extends A{
 
-     }
+      }
+
+      class extends A,B{
+
+      }
      ```
 
 1. `Hybrid inheritance` : it is a combination of hierarchical and multiple inheritance so
      doesn't support
 
     ```java
-       class A
-     {
+      class A {
 
-     }
-     class B extends A
-     {
+      }
 
-     }
-       class C  extends A
-       {
+      class B extends A {
 
-       }
-       class D extends B,C
-       {
+      }
 
-       }
+      class C extends A {
+
+      }
+
+      class D extends B,C{
+
+      }
     ```
 
 ### Examples
@@ -176,26 +170,24 @@ Single level
 
 // Single level
 
-class Parent
-{
-  void msg() { 
-    System.out.println("hello");
-  }
-  void value(int a)
-  {
-    System.out.println(a);
-  }
+class Parent {
+    void msg() {
+        System.out.println("hello");
+    }
+
+    void value(int a) {
+        System.out.println(a);
+    }
 }
 
-class Child extends :Parent
-{
-  public static void main(String[] args) {
-    Test t = new Test();
+class Child extends Parent {
+    public static void main(String[] args) {
+        Child t = new Child();
 
-    // Calling methods of parent class
-    t.msg();
-    t.value(101);
-  }
+        // Calling methods of parent class
+        t.msg();
+        t.value(101);
+    }
 }
 
 ```
@@ -206,33 +198,29 @@ Multi-level
 
 // Multi level
 
-class GrandParent 
-{
-  void msg()
-  {
-    System.out.println("hello");
-  }
-  
-}
-class Parent extends GrandParent
-{
-  void value(int a)
-  {
-    System.out.println(a);
-  }
+class GrandParent {
+    void msg() {
+        System.out.println("hello");
+    }
+
 }
 
-class Child extends Parent
-{
-  public static void main(String[] args) {
-    Test t=new Test();
+class Parent extends GrandParent {
+    void value(int a) {
+        System.out.println(a);
+    }
+}
 
-    // Calling GrandParent Class method 
-    t.msg();
+class Child extends Parent {
+    public static void main(String[] args) {
+        Child t = new Child();
 
-    // Calling Parent Class method
-    t.value(101);
-  }
+        // Calling GrandParent Class method
+        t.msg();
+
+        // Calling Parent Class method
+        t.value(101);
+    }
 }
 
 
@@ -241,60 +229,54 @@ class Child extends Parent
 Understanding concept of multi-level inheritance with example
 
 ```java
-class Demo1
-{
-  void m1()
-  {
-    System.out.println("hello");
-  }
-  
+class Demo1 {
+    void m1() {
+        System.out.println("hello");
+    }
+
 }
-class Demo2 extends Demo1
-{
-  void m2()
-  {
-    System.out.println("hi");
-  }
+
+class Demo2 extends Demo1 {
+    void m2() {
+        System.out.println("hi");
+    }
 }
-class Test extends Demo1
-{
-  public static void main(String[] args) {
-    Test t=new Test();
-    t.m1();
-    Demo2 d=new Demo2();
-    d.m2();
-  }
+
+class Test extends Demo1 {
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.m1();
+        Demo2 d = new Demo2();
+        d.m2();
+    }
 }
 ```
 
 Mulitple inheritance  -> **_NOT SUPPORTED JUST FOR UNDERSTANDING_**
 
 ```java
-class Demo1
-{
-  void m1()
-  {
-    System.out.println("hello");
-  }
-  
+class Demo1 {
+    void m1() {
+        System.out.println("hello");
+    }
+
 }
-class Demo2 extends Demo1
-{
-  void m1()
-  {
-    System.out.println("hi");
-  }
+
+class Demo2 extends Demo1 {
+    void m1() {
+        System.out.println("hi");
+    }
 }
 
 // multiple inheritance ( ERRONEOUS CODE )
-class Test extends Demo2,Demo1
-{
-  void m2()
-  {
-    System.out.println("bye");
-  }
+class Test extends Demo2,Demo1 {
+
+    void m2() {
+        System.out.println("bye");
+    }
+
   public static void main(String[] args) {
-    Test t=new Test();
+    Test t = new Test();
     t.m2();
     t.m1();
   }
