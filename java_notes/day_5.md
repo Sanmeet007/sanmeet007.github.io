@@ -30,11 +30,13 @@ class Test {
 }
 ```
 
+> Note : Calling constructor using this is done in first line of constructor [rule]
+
 ```java
 
 class Test {
     Test() {
-        this(10, 20); // calling constructor
+        this(10, 20); // calling constructor 
         System.out.println("default const");
     }
 
