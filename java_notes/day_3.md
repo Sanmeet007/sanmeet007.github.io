@@ -162,6 +162,7 @@ There are two types of method :
     1. class name
 
 > Note : `instance method` can acess instance variable & `static method` can access static variable.
+>  `instance method` can acess static variable   & `static method` can access instance variable.
 
 ---
 
