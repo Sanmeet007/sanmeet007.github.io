@@ -1,0 +1,271 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #080808;
+  --foreground: #e2e2e2;
+  --card: rgba(255, 255, 255, 0.03);
+  --card-foreground: #e2e2e2;
+  --popover: #0c0c0c;
+  --popover-foreground: #e2e2e2;
+  --primary: #e2e2e2;
+  --primary-foreground: #080808;
+  --secondary: #0c0c0c;
+  --secondary-foreground: #e2e2e2;
+  --muted: #0c0c0c;
+  --muted-foreground: #6a6a6a;
+  --accent: #0c0c0c;
+  --accent-foreground: #e2e2e2;
+  --destructive: #ff4444;
+  --destructive-foreground: #e2e2e2;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: rgba(255, 255, 255, 0.16);
+  --radius: 12px;
+
+  /* Custom portfolio tokens */
+  --text-heading: #e2e2e2;
+  --text-body: #9a9a9a;
+  --text-muted: #6a6a6a;
+  --text-ghost: #2a2a2a;
+  --text-label: #4a4a4a;
+  --bg-base: #080808;
+  --bg-alt: #0c0c0c;
+  --border-rest: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.16);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(255, 255, 255, 0.16);
+}
+
+@theme inline {
+  --font-sans: 'Sora', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    background-color: #080808;
+    color: #e2e2e2;
+    font-family: 'Sora', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Dot grid texture */
+.dot-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse at center, transparent 35%, rgba(8, 8, 8, 0.97) 100%);
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 35%, rgba(8, 8, 8, 0.97) 100%);
+}
+
+/* Section styles */
+.section-base {
+  background-color: #080808;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 140px 0;
+}
+
+.section-alt {
+  background-color: #0c0c0c;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 140px 0;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  transition: all 300ms ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-3px);
+}
+
+/* Glass chip */
+.glass-chip {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: #9a9a9a;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  color: #e2e2e2;
+  opacity: 0.5;
+  transition: opacity 180ms ease;
+}
+
+.text-link:hover {
+  opacity: 1;
+}
+
+/* Bordered transparent button CTA */
+.bordered-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  color: #c8c8c8;
+  transition: all 200ms ease;
+  text-decoration: none;
+}
+
+.bordered-button:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+  color: #e2e2e2;
+}
+
+/* Pulse animation for featured dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Typography helpers */
+.heading-xl {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  color: #e2e2e2;
+  font-size: clamp(44px, 6vw, 80px);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.heading-lg {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  color: #e2e2e2;
+  font-size: clamp(42px, 5.5vw, 72px);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.heading-md {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  color: #e2e2e2;
+  font-size: clamp(36px, 4.5vw, 56px);
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.body-text {
+  font-family: 'Sora', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #9a9a9a;
+}
+
+.mono-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  color: #4a4a4a;
+}
+
+.mono-nav {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+}
+
+/* Input styles for contact form */
+.form-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  padding: 12px 0;
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  color: #e2e2e2;
+  width: 100%;
+  transition: border-color 180ms ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-bottom-color: rgba(255, 255, 255, 0.35);
+}
+
+.form-input::placeholder {
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+}
