@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Github, Linkedin, Twitter, Calendar } from 'lucide-react'
+import { Github, Linkedin, Instagram, Calendar } from 'lucide-react'
 import { PiPaperPlaneTilt, PiEnvelopeSimple } from 'react-icons/pi'
 import { motion } from 'framer-motion'
 import { ScrollAnimation } from '@/components/scroll-animation'
@@ -29,10 +29,10 @@ const contactLinks = [
     href: 'https://linkedin.com/in/garvit-nag'
   },
   {
-    icon: Twitter,
-    label: 'twitter',
+    icon: Instagram,
+    label: 'instagram',
     value: '@garwiitt',
-    href: 'https://twitter.com/garwiitt'
+    href: 'https://instagram.com/garwiitt'
   },
 ]
 
@@ -85,7 +85,7 @@ export default function ContactPage() {
             className="mt-10 max-w-[540px]"
           >
             <p className="font-sans text-base leading-[1.9] text-[#9a9a9a]">
-              currently available and actively exploring what&apos;s next — full-time roles, meaningful projects, and the right collaborations.
+              currently available and actively exploring what&apos;s next. full-time roles, meaningful projects, and the right collaborations.
             </p>
             <p className="font-sans text-base leading-[1.9] text-[#9a9a9a] mt-3">
               if you&apos;re building something worth caring about, let&apos;s talk. i respond within 24 hours.

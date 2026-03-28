@@ -11,23 +11,23 @@ const experiences = [
     year: '2025',
     title: 'freelance web developer',
     subtitle: 'ongoing',
-    description: 'working with clients on web application development — frontend engineering, full-stack builds, and custom integrations.',
+    description: 'partnering closely with founders and businesses to architect full-stack web applications. managing end-to-end lifecycles, from initial ui/ux system design to robust next.js frontend execution, backed by scalable architectures.',
     link: null
   },
   {
     icon: PiBriefcase,
     year: '2025',
     title: 'software development intern',
-    subtitle: 'stardom · jan 2025 – jun 2025',
-    description: 'built key cms functionalities — product management, content creation, secure user authentication.',
+    subtitle: 'stardom',
+    description: 'architected an ssr-first admin cms using next.js and appwrite, eliminating static redeploy cycles. bypassed serverless payload limits via direct client-to-storage media uploads, and heavily optimized backend bandwidth while enforcing strict mime-type validation.',
     link: null
   },
   {
     icon: PiTrophy,
-    year: 'oct 2024',
+    year: '2024',
     title: 'google genai exchange hackathon',
     subtitle: 'winner, network 18 track · google & devfolio',
-    description: 'built credify — perceptual fingerprinting that survives format changes, hierarchical content attribution tracking, and gemini api integration for real-time media fact enrichment.',
+    description: 'won first place in the network 18 track. developed an innovative solution to combat video misinformation by engineering a robust media attribution and tampering detection system, running multiple pre-trained models concurrently for real-time analysis.',
     link: { text: 'view credify', href: '/build/credify' }
   },
 ]
@@ -39,7 +39,7 @@ const education = [
     grade: 'CGPA: 8.04',
     period: '2021 – 2025',
     current: true,
-    blurb: 'most growth came from side projects and hackathons — grinding on problems that actually mattered.',
+    blurb: 'most growth came from side projects and hackathons. grinding on problems that actually mattered.',
   },
   {
     degree: '12th Grade · Science Stream',
@@ -87,13 +87,15 @@ export function ExperienceEducationSection() {
                   <StaggerItem key={index}>
                     <div className={`flex gap-5 py-6 ${index < experiences.length - 1 ? 'border-b border-[rgba(255,255,255,0.06)]' : ''}`}>
                       {/* Icon + Year */}
-                      <div className="w-[72px] flex flex-col items-start gap-2.5 flex-shrink-0">
-                        <div className="border border-[rgba(255,255,255,0.15)] rounded-lg p-2 flex items-center justify-center h-9 w-9">
-                          <exp.icon size={16} className="text-[#9a9a9a]" />
+                      <div className="w-[72px] flex flex-col items-start shrink-0">
+                        <div className="w-9 flex flex-col items-center gap-2.5">
+                          <div className="border border-[rgba(255,255,255,0.15)] rounded-lg p-2 flex items-center justify-center h-9 w-9">
+                            <exp.icon size={16} className="text-[#9a9a9a]" />
+                          </div>
+                          <span className="font-mono text-[10px] tracking-widest text-[#5a5a5a] text-center">
+                            {exp.year}
+                          </span>
                         </div>
-                        <span className="font-mono text-[10px] tracking-[0.1em] text-[#5a5a5a]">
-                          {exp.year}
-                        </span>
                       </div>
 
                       {/* Content */}
@@ -138,19 +140,19 @@ export function ExperienceEducationSection() {
             </ScrollAnimation>
 
             {/* Vertical timeline */}
-            <div className="relative flex-1 flex flex-col">
+            <div className="relative flex-1 flex flex-col h-full">
               {/* Connecting line */}
-              <div className="absolute left-[11px] top-3 bottom-0 w-px bg-gradient-to-b from-[rgba(255,255,255,0.15)] via-[rgba(255,255,255,0.06)] to-transparent" />
+              <div className="absolute left-[11px] top-3 bottom-6 w-px bg-gradient-to-b from-[rgba(255,255,255,0.15)] via-[rgba(255,255,255,0.06)] to-transparent" />
 
-              <div className="flex flex-col justify-between flex-1 gap-5">
+              <div className="flex flex-col justify-between flex-1 h-full gap-5">
                 {education.map((edu, index) => (
-                  <div key={index} className="flex gap-5 relative group">
+                  <div key={index} className="flex gap-5 relative group flex-1">
                     {/* Node */}
                     <div className="w-[22px] flex-shrink-0 flex flex-col items-center pt-1.5">
-                      <div className={`w-[10px] h-[10px] rounded-full border flex-shrink-0 flex items-center justify-center ${
+                      <div className={`w-[10px] h-[10px] rounded-full border flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${
                         edu.current
-                          ? 'border-[rgba(255,255,255,0.3)] bg-[rgba(255,255,255,0.06)]'
-                          : 'border-[rgba(255,255,255,0.15)] bg-[#080808]'
+                          ? 'border-[rgba(255,255,255,0.3)] bg-[rgba(255,255,255,0.06)] group-hover:border-[rgba(255,255,255,0.5)] group-hover:bg-[rgba(255,255,255,0.15)]'
+                          : 'border-[rgba(255,255,255,0.15)] bg-[#080808] group-hover:border-[rgba(255,255,255,0.3)] group-hover:bg-[#111111]'
                       }`}>
                         {edu.current && (
                           <div className="w-[4px] h-[4px] rounded-full bg-[#9a9a9a]" />
@@ -159,26 +161,26 @@ export function ExperienceEducationSection() {
                     </div>
 
                     {/* Content card */}
-                    <div className="flex-1 bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] rounded-lg p-4">
-                      <div className="flex items-start justify-between gap-3 mb-1.5">
-                        <div>
-                          <p className="font-mono text-[10px] tracking-[0.1em] text-[#5a5a5a] uppercase mb-1.5">
-                            {edu.period}
-                          </p>
-                          <h3 className="font-sans font-semibold text-[14px] text-[#d8d8d8] leading-[1.4]">
-                            {edu.degree}
-                          </h3>
-                        </div>
-                        <span className="flex-shrink-0 font-mono text-[10px] tracking-[0.08em] text-[#5a5a5a] border border-[rgba(255,255,255,0.08)] rounded px-2 py-0.5 mt-0.5">
+                    <div className="flex-1 flex flex-col bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] rounded-lg p-5 transition-all duration-300 group-hover:bg-[rgba(255,255,255,0.04)] group-hover:border-[rgba(255,255,255,0.12)]">
+                      <div className="mb-2">
+                        <p className="font-mono text-[10px] tracking-[0.1em] text-[#5a5a5a] uppercase mb-1.5">
+                          {edu.period}
+                        </p>
+                        <h3 className="font-sans font-semibold text-[14px] text-[#d8d8d8] leading-[1.4]">
+                          {edu.degree}
+                        </h3>
+                      </div>
+                      <p className="font-sans text-[12px] text-[#7a7a7a]">
+                        {edu.institution}
+                      </p>
+                      <p className="font-sans text-[12px] leading-[1.7] text-[#6a6a6a] mt-2 mb-4">
+                        {edu.blurb}
+                      </p>
+                      <div className="mt-auto">
+                        <span className="inline-block flex-shrink-0 font-mono text-[10px] tracking-[0.1em] text-[#5a5a5a] border border-[rgba(255,255,255,0.08)] rounded px-2 py-0.5">
                           {edu.grade}
                         </span>
                       </div>
-                      <p className="font-sans text-[12px] text-[#7a7a7a] mt-1">
-                        {edu.institution}
-                      </p>
-                      <p className="font-sans text-[12px] leading-[1.7] text-[#6a6a6a] mt-2">
-                        {edu.blurb}
-                      </p>
                     </div>
                   </div>
                 ))}

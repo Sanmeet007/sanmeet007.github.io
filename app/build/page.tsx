@@ -51,7 +51,7 @@ export default function BuildPage() {
             transition={{ duration: 0.55, ease: 'easeOut', delay: 0.2 }}
             className="font-sans font-normal text-[clamp(14px,1.8vw,16px)] leading-[1.9] text-[#6a6a6a] mt-8 max-w-[600px]"
           >
-            a collection of projects ranging from ai systems to saas platforms — all built because they seemed genuinely useful.
+            a collection of projects ranging from ai systems to saas platforms. all built because they seemed genuinely useful.
           </motion.p>
 
           {/* Filter Tags — right under the description */}
@@ -177,15 +177,19 @@ export default function BuildPage() {
             <h2 className="heading-md">There&apos;s more where that came from.</h2>
           </ScrollAnimation>
 
-          <ScrollAnimation delay={1}>
+          <ScrollAnimation delay={1} className="mt-12 flex items-center justify-center w-full">
+            <div className="flex-1 max-w-[200px] h-px bg-gradient-to-r from-transparent to-[rgba(255,255,255,0.15)] mr-6 hidden md:block" />
             <Link 
               href="https://github.com/Garvit-Nag"
               target="_blank"
-              className="bordered-button inline-flex"
+              className="bordered-button group inline-flex"
             >
-              <Github size={14} strokeWidth={1.5} />
-              view all on github
+              <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+                <Github size={14} strokeWidth={1.5} />
+                view all on github
+              </span>
             </Link>
+            <div className="flex-1 max-w-[200px] h-px bg-gradient-to-l from-transparent to-[rgba(255,255,255,0.15)] ml-6 hidden md:block" />
           </ScrollAnimation>
         </div>
       </section>

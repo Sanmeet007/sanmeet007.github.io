@@ -1,91 +1,109 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { Github, Linkedin, Twitter } from 'lucide-react'
+import Link from "next/link";
+import { Github, Linkedin, ArrowUpRight } from "lucide-react";
+import { PiXLogo } from "react-icons/pi";
 
 export function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] border-t border-[rgba(255,255,255,0.06)]">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-16">
-        {/* Footer inner - 3 column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8 pb-8 border-b border-[rgba(255,255,255,0.04)]">
-          {/* Left column */}
-          <div className="flex flex-col gap-6">
-            <span className="font-sora font-bold text-base text-[#e2e2e2]">gn.</span>
-            <p className="font-sora font-normal text-sm text-[#6a6a6a] leading-relaxed">
-              mostly just trying to build stuff that works well and feels right.
+    <footer className="bg-[#080808] border-t border-[rgba(255,255,255,0.05)] pt-16 pb-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-12 mb-16">
+          <div className="max-w-[420px] pr-8 lg:pr-16">
+            <Link
+              href="/"
+              className="font-sans font-bold text-[18px] text-[#e2e2e2] mb-6 block hover:opacity-80 hover:scale-105 origin-left transition-all duration-300 w-fit"
+            >
+              gn.
+            </Link>
+            <p className="font-sans text-[13px] text-[#8a8a8a] leading-[1.8] mb-6">
+              open to new opportunities, collaborations, or just a good
+              conversation about tech and design.
             </p>
-            <div className="flex gap-6">
+            <a
+              href="mailto:garvit1505@gmail.com"
+              className="inline-flex items-center gap-2 font-mono text-[12px] tracking-[0.1em] lowercase text-[#e2e2e2] border border-[rgba(255,255,255,0.1)] rounded-md px-5 py-2.5 hover:bg-[rgba(255,255,255,0.05)] transition-colors group"
+            >
+              <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+                let's talk
+                <ArrowUpRight size={14} />
+              </span>
+            </a>
+          </div>
+
+          <div className="flex flex-col gap-5">
+            <span className="font-mono text-xs tracking-[0.15em] text-[#4a4a4a] uppercase">
+              navigate
+            </span>
+            <div className="flex flex-col gap-3 font-mono text-[13px] tracking-[0.1em] lowercase text-[#7a7a7a] items-start">
+              <Link
+                href="/"
+                className="hover:text-[#e2e2e2] hover:scale-105 origin-left transition-all duration-300"
+              >
+                ~/home
+              </Link>
+              <Link
+                href="/about"
+                className="hover:text-[#e2e2e2] hover:scale-105 origin-left transition-all duration-300"
+              >
+                ~/about
+              </Link>
+              <Link
+                href="/builds"
+                className="hover:text-[#e2e2e2] hover:scale-105 origin-left transition-all duration-300"
+              >
+                ~/builds
+              </Link>
+              <Link
+                href="/contact"
+                className="hover:text-[#e2e2e2] hover:scale-105 origin-left transition-all duration-300"
+              >
+                ~/contact
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-5">
+            <span className="font-mono text-xs tracking-[0.15em] text-[#4a4a4a] uppercase">
+              connect
+            </span>
+            <div className="flex flex-row gap-5 text-[#8a8a8a] items-center">
               <a
                 href="https://github.com/Garvit-Nag"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#6a6a6a] hover:text-[#e2e2e2] transition-colors duration-180"
-                aria-label="GitHub"
+                className="hover:text-[#e2e2e2] hover:scale-110 transition-all duration-300"
+                aria-label="Github"
               >
-                <Github size={16} strokeWidth={1.5} />
+                <Github size={18} />
               </a>
               <a
                 href="https://linkedin.com/in/garvit-nag"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#6a6a6a] hover:text-[#e2e2e2] transition-colors duration-180"
+                className="hover:text-[#e2e2e2] hover:scale-110 transition-all duration-300"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={16} strokeWidth={1.5} />
+                <Linkedin size={18} />
               </a>
               <a
                 href="https://twitter.com/garvit1505"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#6a6a6a] hover:text-[#e2e2e2] transition-colors duration-180"
-                aria-label="Twitter"
+                className="hover:text-[#e2e2e2] hover:scale-110 transition-all duration-300"
+                aria-label="X"
               >
-                <Twitter size={16} strokeWidth={1.5} />
+                <PiXLogo size={18} />
               </a>
             </div>
-          </div>
-
-          {/* Center column */}
-          <div className="flex flex-col gap-4">
-            <span className="font-mono text-xs tracking-[0.15em] text-[#4a4a4a] uppercase">navigate</span>
-            <nav className="space-y-2">
-              <Link href="/" className="block font-mono text-xs text-[#6a6a6a] hover:text-[#c8c8c8] transition-colors duration-180">
-                ~/home
-              </Link>
-              <Link href="/about" className="block font-mono text-xs text-[#6a6a6a] hover:text-[#c8c8c8] transition-colors duration-180">
-                ~/about
-              </Link>
-              <Link href="/build" className="block font-mono text-xs text-[#6a6a6a] hover:text-[#c8c8c8] transition-colors duration-180">
-                ~/build
-              </Link>
-              <Link href="/contact" className="block font-mono text-xs text-[#6a6a6a] hover:text-[#c8c8c8] transition-colors duration-180">
-                ~/contact
-              </Link>
-            </nav>
-          </div>
-
-          {/* Right column */}
-          <div className="flex flex-col gap-4">
-            <span className="font-mono text-xs tracking-[0.15em] text-[#4a4a4a] uppercase">reach out</span>
-            <a href="mailto:garvit1505@gmail.com" className="font-sora font-normal text-sm text-[#9a9a9a] hover:text-[#e2e2e2] transition-colors duration-180">
-              garvit1505@gmail.com
-            </a>
-            <a
-              href="mailto:garvit1505@gmail.com"
-              className="bordered-button w-fit"
-            >
-              let's build something
-              <span>↗</span>
-            </a>
           </div>
         </div>
 
         {/* Footer bottom */}
-        <div className="text-center font-mono text-xs text-[#3a3a3a] pt-5">
-          gn. · made with way too many console logs · 2025
+        <div className="flex items-center justify-center pt-6 border-t border-[rgba(255,255,255,0.05)] font-mono text-[12px] tracking-[0.05em] text-[#8a8a8a]">
+          <span>gn. · made with way too many console logs · 2026</span>
         </div>
       </div>
     </footer>
-  )
+  );
 }

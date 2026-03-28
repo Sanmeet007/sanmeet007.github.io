@@ -57,7 +57,7 @@ export function HeroSection() {
               className="font-sans font-normal text-lg leading-[1.9] text-[#9a9a9a] max-w-[500px]"
               suppressHydrationWarning
             >
-              i build innovative web applications with clean, functional code — occasionally pausing to have existential conversations with my console logs.
+              i build innovative web applications with clean, functional code, occasionally pausing to have existential conversations with my console logs.
             </motion.p>
 
             <div className="h-8" />
@@ -69,13 +69,17 @@ export function HeroSection() {
               className="flex items-center gap-4 flex-wrap"
               suppressHydrationWarning
             >
-              <Link href="/about" className="bordered-button">
-                learn more
-                <ArrowRight size={16} strokeWidth={1.5} />
-              </Link>
-              <Link href="/resume.pdf" target="_blank" className="bordered-button">
-                resume
-                <FileText size={16} strokeWidth={1.5} />
+              <button onClick={() => document.getElementById('featured')?.scrollIntoView({ behavior: 'smooth' })} className="bordered-button group">
+                <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+                  learn more
+                  <ArrowRight size={16} strokeWidth={1.5} />
+                </span>
+              </button>
+              <Link href="/Resume.pdf" target="_blank" className="bordered-button group">
+                <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+                  resume
+                  <FileText size={16} strokeWidth={1.5} />
+                </span>
               </Link>
             </motion.div>
           </div>

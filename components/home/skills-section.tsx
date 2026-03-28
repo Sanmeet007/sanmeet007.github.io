@@ -16,7 +16,7 @@ const steps = [
   },
   {
     philosophy: "if the interface needs explaining, it's broken.",
-    description: "i care about things that feel effortless to use. next.js is my default — fast, clean, no unnecessary weight.",
+    description: "i care about things that feel effortless to use. next.js is my default. fast, clean, no unnecessary weight.",
     chips: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion'],
     label: 'frontend',
   },
@@ -34,7 +34,7 @@ const steps = [
   },
   {
     philosophy: "real ml. from training to deployment.",
-    description: "shipped actual ai-native apps, not just wrappers. rag pipelines, model integrations — done the work.",
+    description: "shipped actual ai-native apps, not just wrappers. rag pipelines, model integrations. done the work.",
     chips: ['TensorFlow', 'Scikit-learn', 'Keras', 'Pandas', 'NumPy', 'Matplotlib', 'Gemini API'],
     label: 'ai / ml',
   },
@@ -165,11 +165,15 @@ export function SkillsSection() {
           </div>
         </div>
 
-        <ScrollAnimation delay={2} className="mt-12 flex justify-center">
-          <Link href="/about" className="bordered-button inline-flex">
-            see the full stack
-            <ArrowRight size={14} strokeWidth={1.5} />
+        <ScrollAnimation delay={2} className="mt-16 flex items-center justify-center w-full">
+          <div className="flex-1 max-w-[200px] h-px bg-gradient-to-r from-transparent to-[rgba(255,255,255,0.15)] mr-6 hidden md:block" />
+          <Link href="/about" className="bordered-button group inline-flex">
+            <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+              see the full stack
+              <ArrowRight size={14} strokeWidth={1.5} />
+            </span>
           </Link>
+          <div className="flex-1 max-w-[200px] h-px bg-gradient-to-l from-transparent to-[rgba(255,255,255,0.15)] ml-6 hidden md:block" />
         </ScrollAnimation>
       </div>
     </section>
