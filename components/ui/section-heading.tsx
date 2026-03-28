@@ -1,22 +1,24 @@
-import { ReactNode } from 'react'
-
 interface SectionHeadingProps {
-  title: string
-  icon: ReactNode
+  title?: string
+  label: string
 }
 
-export function SectionHeading({ title, icon }: SectionHeadingProps) {
+export function SectionHeading({ title, label }: SectionHeadingProps) {
   return (
-    <div className="flex flex-col gap-6 w-full mb-6">
-      <div className="flex items-center gap-4">
-        <div className="flex items-center justify-center min-w-[48px] h-12 rounded-lg border border-[rgba(255,255,255,0.15)] bg-[rgba(255,255,255,0.02)] text-[#e2e2e2] shadow-sm">
-          {icon}
-        </div>
-        <div className="h-px flex-1 bg-gradient-to-r from-[rgba(255,255,255,0.15)] to-transparent" />
+    <div className={`flex flex-col w-full mb-6 ${title ? 'gap-6' : ''}`}>
+      {/* Geometric line + label */}
+      <div className="flex items-center gap-3">
+        <span className="block w-1.5 h-1.5 rounded-full bg-[#5a5a5a] flex-shrink-0" />
+        <span className="block w-5 h-px bg-gradient-to-r from-[#5a5a5a] to-transparent flex-shrink-0" />
+        <span className="font-mono text-[11px] tracking-[0.12em] text-[#787878] uppercase">
+          {label}
+        </span>
       </div>
-      <h2 className="font-sans font-bold text-[clamp(36px,5vw,56px)] text-[#e2e2e2] tracking-[-0.02em] leading-[1.1] capitalize">
-        {title}
-      </h2>
+      {title && (
+        <h2 className="font-sans font-bold text-[clamp(36px,5vw,56px)] text-[#e2e2e2] tracking-[-0.02em] leading-[1.1] capitalize">
+          {title}
+        </h2>
+      )}
     </div>
   )
 }

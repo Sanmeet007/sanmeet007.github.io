@@ -1,47 +1,75 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, User } from 'lucide-react'
+import { ArrowRight, ChevronRight } from 'lucide-react'
 import { ScrollAnimation } from '@/components/scroll-animation'
 import { SectionHeading } from '@/components/ui/section-heading'
 
+const snapshots = [
+  { label: 'building', value: 'something new' },
+  { label: 'into lately', value: 'agents & llm tooling' },
+  { label: 'fueled by', value: 'football & late nights' },
+]
+
 export function BriefAboutSection() {
   return (
-    <section 
-      data-section="4"
+    <section
+      data-section="5"
       className="section-alt"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <ScrollAnimation>
-          <SectionHeading 
-            title="a bit about me" 
-            icon={<User size={18} strokeWidth={1.5} />} 
-          />
-        </ScrollAnimation>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left: heading + CTAs */}
+          <div>
+            <ScrollAnimation>
+              <SectionHeading label="the person" />
+            </ScrollAnimation>
 
-        <ScrollAnimation delay={1}>
-          <p className="font-sans text-xl md:text-2xl text-[#8a8a8a] mt-2 mb-8 lowercase">
-            engineer passionate about design, detail, and doing things right.
-          </p>
-        </ScrollAnimation>
+            <ScrollAnimation delay={1}>
+              <div className="max-w-[520px]">
+                <h2 className="font-sans font-bold text-[clamp(36px,4.5vw,58px)] tracking-[-0.02em] leading-[1.1] text-[#e2e2e2]">
+                  The person behind the code.
+                </h2>
+                <h3 className="font-sans font-bold text-[clamp(36px,4.5vw,58px)] tracking-[-0.02em] leading-[1.1] text-[#303030]">
+                  The story so far.
+                </h3>
+              </div>
+            </ScrollAnimation>
 
-        <ScrollAnimation delay={2}>
-          <div className="font-sans font-normal text-base leading-[1.9] text-[#9a9a9a] max-w-[640px] mt-8 flex flex-col gap-4">
-            <p>
-              i build web apps that are clean, fast, and make sense — using tech that actually excites me. turning messy problems into stuff people genuinely enjoy using is my favorite kind of challenge. always on the lookout for new ideas and challenges.
-            </p>
-            <p>
-              when i'm not coding, i'm probably watching football, arguing over tactics, or hoping barça doesn't bottle it (and yeah, i still believe in spurs).
-            </p>
+            <ScrollAnimation delay={2} className="mt-8">
+              <div className="flex gap-3">
+                <Link href="/about" className="bordered-button">
+                  read the full story
+                  <ArrowRight size={14} strokeWidth={1.5} />
+                </Link>
+                <Link href="/contact" className="bordered-button">
+                  get in touch
+                  <ArrowRight size={14} strokeWidth={1.5} />
+                </Link>
+              </div>
+            </ScrollAnimation>
           </div>
-        </ScrollAnimation>
 
-        <ScrollAnimation delay={3}>
-          <Link href="/about" className="bordered-button mt-8 inline-flex">
-            read the full story
-            <ArrowRight size={14} strokeWidth={1.5} />
-          </Link>
-        </ScrollAnimation>
+          {/* Right: plain underlined items with geometric accents + scale hover */}
+          <ScrollAnimation delay={1} className="hidden lg:block">
+            <div className="flex flex-col">
+              {snapshots.map((item, i) => (
+                <div
+                  key={item.label}
+                  className="group flex items-center gap-4 py-5 border-b border-[rgba(255,255,255,0.07)] cursor-default hover:translate-x-1 transition-transform duration-200"
+                >
+                  <ChevronRight size={14} strokeWidth={2} className="text-[#5a5a5a] flex-shrink-0 group-hover:text-[#9a9a9a] transition-colors duration-200" />
+                  <span className="font-mono text-[10px] tracking-[0.15em] text-[#6a6a6a] uppercase w-24 flex-shrink-0 group-hover:text-[#8a8a8a] transition-colors duration-200">
+                    {item.label}
+                  </span>
+                  <span className="font-sans text-[15px] text-[#a0a0a0] ml-auto group-hover:text-[#e2e2e2] transition-colors duration-200">
+                    {item.value}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </ScrollAnimation>
+        </div>
       </div>
     </section>
   )

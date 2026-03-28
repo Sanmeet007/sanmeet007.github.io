@@ -1,12 +1,13 @@
 'use client'
 
-import { Compass, Trophy, Gamepad2, Film, BookOpen, Star, PenLine, Activity, Mountain } from 'lucide-react'
+import { Gamepad2, Film, BookOpen, PenLine, Activity, Mountain } from 'lucide-react'
+import { PiTrophy, PiStarFour } from 'react-icons/pi'
 import { ScrollAnimation, StaggerContainer, StaggerItem } from '@/components/scroll-animation'
 import { SectionHeading } from '@/components/ui/section-heading'
 
 const hobbies = [
   {
-    icon: Trophy,
+    icon: PiTrophy,
     name: 'football',
     description: 'watching, arguing tactics, praying barça holds it together',
     tags: ['la liga', 'premier league', 'tactics']
@@ -30,7 +31,7 @@ const hobbies = [
     tags: ['tech', 'fiction', 'philosophy']
   },
   {
-    icon: Star,
+    icon: PiStarFour,
     name: 'astronomy',
     description: 'scale that makes your problems feel tiny',
     tags: ['cosmos', 'physics']
@@ -63,14 +64,14 @@ export function HobbiesSection() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <ScrollAnimation>
-          <SectionHeading 
-            title="beyond the code" 
-            icon={<Compass size={18} strokeWidth={1.5} />} 
+          <SectionHeading
+            title="beyond the code"
+            label="offline"
           />
         </ScrollAnimation>
 
         <ScrollAnimation delay={1}>
-          <p className="font-sans text-xl md:text-2xl text-[#8a8a8a] mt-2 mb-8 lowercase">when the laptop closes.</p>
+          <p className="font-sans text-xl md:text-2xl text-[#8a8a8a] mt-2 mb-8">When the laptop closes.</p>
         </ScrollAnimation>
 
         <StaggerContainer className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
