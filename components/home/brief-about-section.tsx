@@ -62,13 +62,17 @@ export function BriefAboutSection() {
         <ScrollAnimation delay={2} className="mt-20 flex items-center justify-center w-full">
           <div className="flex-1 max-w-[200px] h-px bg-gradient-to-r from-transparent to-[rgba(255,255,255,0.15)] mr-6 hidden md:block" />
           <div className="flex gap-4">
-            <Link href="/about" className="bordered-button">
-              read the full story
-              <ArrowRight size={14} strokeWidth={1.5} />
+            <Link href="/about" className="bordered-button group">
+              <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+                read the full story
+                <ArrowRight size={14} strokeWidth={1.5} />
+              </span>
             </Link>
-            <Link href="/contact" className="bordered-button">
-              get in touch
-              <ArrowRight size={14} strokeWidth={1.5} />
+            <Link href="/contact" className="bordered-button group">
+              <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+                get in touch
+                <ArrowRight size={14} strokeWidth={1.5} />
+              </span>
             </Link>
           </div>
           <div className="flex-1 max-w-[200px] h-px bg-gradient-to-l from-transparent to-[rgba(255,255,255,0.15)] ml-6 hidden md:block" />

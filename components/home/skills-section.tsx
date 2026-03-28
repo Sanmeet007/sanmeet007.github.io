@@ -167,9 +167,11 @@ export function SkillsSection() {
 
         <ScrollAnimation delay={2} className="mt-16 flex items-center justify-center w-full">
           <div className="flex-1 max-w-[200px] h-px bg-gradient-to-r from-transparent to-[rgba(255,255,255,0.15)] mr-6 hidden md:block" />
-          <Link href="/about" className="bordered-button inline-flex">
-            see the full stack
-            <ArrowRight size={14} strokeWidth={1.5} />
+          <Link href="/about" className="bordered-button group inline-flex">
+            <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+              see the full stack
+              <ArrowRight size={14} strokeWidth={1.5} />
+            </span>
           </Link>
           <div className="flex-1 max-w-[200px] h-px bg-gradient-to-l from-transparent to-[rgba(255,255,255,0.15)] ml-6 hidden md:block" />
         </ScrollAnimation>

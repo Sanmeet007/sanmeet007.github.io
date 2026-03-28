@@ -25,7 +25,7 @@ export function Navigation() {
         {/* Logo */}
         <Link 
           href="/" 
-          className="font-sans font-bold text-[16px] text-[#e2e2e2] hover:opacity-80 transition-opacity cursor-target"
+          className="font-sans font-bold text-[16px] text-[#e2e2e2] hover:opacity-80 hover:scale-105 transition-all duration-300 cursor-target inline-block"
         >
           gn.
         </Link>
@@ -36,7 +36,7 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className={`font-mono text-[13px] tracking-[0.1em] lowercase transition-opacity relative cursor-target ${
+              className={`font-mono text-[13px] tracking-[0.1em] lowercase transition-all duration-300 relative cursor-target inline-block hover:scale-[1.03] ${
                 isActive(link.href) 
                   ? 'opacity-100' 
                   : 'opacity-40 hover:opacity-70'
@@ -54,21 +54,25 @@ export function Navigation() {
           <Link
             href="https://v1.garvitnag.com"
             target="_blank"
-            className="flex items-center gap-1.5 font-mono text-[11px] tracking-[0.1em] lowercase text-[#a0a0a0] border border-[rgba(255,255,255,0.1)] rounded-md px-2.5 py-1 hover:bg-[rgba(255,255,255,0.05)] hover:text-[#e2e2e2] transition-colors cursor-target"
+            className="flex items-center gap-1.5 font-mono text-[11px] tracking-[0.1em] lowercase text-[#a0a0a0] border border-[rgba(255,255,255,0.1)] rounded-md px-2.5 py-1 hover:bg-[rgba(255,255,255,0.05)] hover:text-[#e2e2e2] hover:scale-[1.03] transition-all duration-300 cursor-target"
           >
-            <History size={12} strokeWidth={1.5} />
-            old portfolio
+            <span className="flex items-center gap-1.5 align-middle">
+              <History size={12} strokeWidth={1.5} />
+              old portfolio
+            </span>
           </Link>
           
           <div className="w-px h-4 bg-[rgba(255,255,255,0.15)] mx-1" />
 
           <Link
-            href="/resume.pdf"
+            href="/Resume.pdf"
             target="_blank"
-            className="flex items-center gap-1.5 font-mono text-[13px] tracking-[0.1em] lowercase opacity-40 hover:opacity-100 transition-opacity cursor-target"
+            className="flex items-center gap-1.5 font-mono text-[13px] tracking-[0.1em] lowercase opacity-40 hover:opacity-100 hover:scale-[1.03] transition-all duration-300 cursor-target"
           >
-            resume
-            <FileText size={14} strokeWidth={1.5} />
+            <span className="flex items-center gap-1.5 align-middle">
+               resume
+               <FileText size={14} strokeWidth={1.5} />
+            </span>
           </Link>
         </div>
       </div>

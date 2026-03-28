@@ -18,13 +18,17 @@ export function ForwardNudge() {
         <ScrollAnimation delay={1} className="mt-12 flex items-center justify-center w-full">
           <div className="flex-1 max-w-[200px] h-px bg-gradient-to-r from-transparent to-[rgba(255,255,255,0.15)] mr-6 hidden md:block" />
           <div className="flex items-center justify-center gap-4 flex-wrap">
-            <Link href="/build" className="bordered-button inline-flex">
-              explore my work
-              <ArrowRight size={14} strokeWidth={1.5} />
+            <Link href="/build" className="bordered-button group inline-flex">
+              <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+                explore my work
+                <ArrowRight size={14} strokeWidth={1.5} />
+              </span>
             </Link>
-            <Link href="/contact" className="bordered-button inline-flex">
-              get in touch
-              <Mail size={14} strokeWidth={1.5} />
+            <Link href="/contact" className="bordered-button group inline-flex">
+              <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+                get in touch
+                <Mail size={14} strokeWidth={1.5} />
+              </span>
             </Link>
           </div>
           <div className="flex-1 max-w-[200px] h-px bg-gradient-to-l from-transparent to-[rgba(255,255,255,0.15)] ml-6 hidden md:block" />

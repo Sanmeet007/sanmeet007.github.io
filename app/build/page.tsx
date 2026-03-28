@@ -182,10 +182,12 @@ export default function BuildPage() {
             <Link 
               href="https://github.com/Garvit-Nag"
               target="_blank"
-              className="bordered-button inline-flex"
+              className="bordered-button group inline-flex"
             >
-              <Github size={14} strokeWidth={1.5} />
-              view all on github
+              <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+                <Github size={14} strokeWidth={1.5} />
+                view all on github
+              </span>
             </Link>
             <div className="flex-1 max-w-[200px] h-px bg-gradient-to-l from-transparent to-[rgba(255,255,255,0.15)] ml-6 hidden md:block" />
           </ScrollAnimation>
