@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Calendar, Github, ExternalLink, Star } from 'lucide-react'
+import { ArrowRight, Calendar, Github, ExternalLink } from 'lucide-react'
 import { ScrollAnimation, StaggerContainer, StaggerItem } from '@/components/scroll-animation'
 import { getFeaturedProjects } from '@/lib/projects'
 import { SectionHeading } from '@/components/ui/section-heading'
@@ -17,9 +17,9 @@ export function FeaturedWorkSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <ScrollAnimation className="mb-8">
-          <SectionHeading 
-            title="featured work" 
-            icon={<Star size={18} strokeWidth={1.5} />} 
+          <SectionHeading
+            title="featured work"
+            label="craft"
           />
         </ScrollAnimation>
 

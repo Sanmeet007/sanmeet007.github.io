@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { Trophy, Briefcase, BookOpen, ArrowUpRight } from 'lucide-react'
+import { Briefcase, BookOpen, ArrowUpRight } from 'lucide-react'
+import { PiTrophy } from 'react-icons/pi'
 import { ScrollAnimation, StaggerContainer, StaggerItem } from '@/components/scroll-animation'
 import { SectionHeading } from '@/components/ui/section-heading'
 
@@ -15,7 +16,7 @@ const experiences = [
     link: { text: 'view project', href: '#' }
   },
   {
-    icon: Trophy,
+    icon: PiTrophy,
     year: 'oct 2024',
     title: 'gen ai exchange hackathon',
     subtitle: 'winner, network 18 track · google & devfolio',
@@ -23,7 +24,7 @@ const experiences = [
     link: { text: 'view credify', href: '/build/credify' }
   },
   {
-    icon: Trophy,
+    icon: PiTrophy,
     year: 'sept 2024',
     title: 'smart india hackathon',
     subtitle: 'internal winner, aicte id: 1728',
@@ -48,9 +49,9 @@ export function ExperienceSection() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <ScrollAnimation>
-          <SectionHeading 
-            title="experience & achievements" 
-            icon={<Trophy size={18} strokeWidth={1.5} />} 
+          <SectionHeading
+            title="experience & achievements"
+            label="milestones"
           />
         </ScrollAnimation>
 

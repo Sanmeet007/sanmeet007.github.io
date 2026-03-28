@@ -1,6 +1,6 @@
 'use client'
 
-import { GraduationCap, Calendar } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 import { ScrollAnimation, StaggerContainer, StaggerItem } from '@/components/scroll-animation'
 import { SectionHeading } from '@/components/ui/section-heading'
 
@@ -33,9 +33,9 @@ export function EducationSection() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <ScrollAnimation>
-          <SectionHeading 
-            title="academic background" 
-            icon={<GraduationCap size={18} strokeWidth={1.5} />} 
+          <SectionHeading
+            title="academic background"
+            label="roots"
           />
         </ScrollAnimation>
 

@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Navigation } from '@/components/navigation'
 import { StepCounter } from '@/components/step-counter'
-import { DotGrid } from '@/components/dot-grid'
+import { GlobalBackground } from '@/components/global-background'
 
 const sora = Sora({ 
   subsets: ['latin'],
@@ -52,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${sora.variable} ${jetbrainsMono.variable}`} data-scroll-behavior="smooth">
       <body className="font-sans antialiased bg-[#080808] text-[#e2e2e2]">
-        <DotGrid />
+        <GlobalBackground />
         <Navigation />
         <StepCounter />
         <main className="relative z-10">

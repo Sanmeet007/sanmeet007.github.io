@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Layers, Calendar, Github, ExternalLink, Info, ArrowRight } from 'lucide-react'
+import { Calendar, Github, ExternalLink, Info } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ScrollAnimation, StaggerContainer, StaggerItem } from '@/components/scroll-animation'
 import { Footer } from '@/components/footer'
@@ -18,10 +18,10 @@ export default function BuildPage() {
 
   return (
     <>
-      {/* Header Section */}
-      <section 
+      {/* Header + Projects Section */}
+      <section
         data-section="1"
-        className="section-base pt-32"
+        className="bg-transparent pt-32 pb-[140px]"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
@@ -29,36 +29,37 @@ export default function BuildPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: 'easeOut' }}
           >
-            <SectionHeading 
-              title="selected work" 
-              icon={<Layers size={18} strokeWidth={1.5} />} 
-            />
+            <SectionHeading label="builds" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: 'easeOut', delay: 0.1 }}
+          >
+            <h1 className="font-sans font-bold text-[clamp(48px,5.5vw,76px)] text-[#e2e2e2] tracking-[-0.02em] leading-[1.1]">
+              Things i&apos;ve built.
+            </h1>
+            <h2 className="font-sans font-bold text-[clamp(48px,5.5vw,76px)] text-[#303030] tracking-[-0.02em] leading-[1.1]">
+              The ones that shipped.
+            </h2>
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: 'easeOut', delay: 0.1 }}
-            className="font-sans text-xl md:text-2xl text-[#8a8a8a] mt-2 mb-8 lowercase"
-          >
-            things i&apos;ve built.
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: 'easeOut', delay: 0.2 }}
-            className="font-sans font-normal text-[clamp(14px,1.8vw,16px)] leading-[1.9] text-[#6a6a6a] mt-6 max-w-[600px]"
+            className="font-sans font-normal text-[clamp(14px,1.8vw,16px)] leading-[1.9] text-[#6a6a6a] mt-8 max-w-[600px]"
           >
             a collection of projects ranging from ai systems to saas platforms — all built because they seemed genuinely useful.
           </motion.p>
 
-          {/* Filter Tags */}
+          {/* Filter Tags — right under the description */}
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: 'easeOut', delay: 0.3 }}
-            className="flex flex-wrap gap-3 mt-8"
+            className="flex flex-wrap gap-3 mt-10 mb-10"
           >
             {categories.map((category) => (
               <button
@@ -74,15 +75,7 @@ export default function BuildPage() {
               </button>
             ))}
           </motion.div>
-        </div>
-      </section>
 
-      {/* Projects Grid Section */}
-      <section 
-        data-section="2"
-        className="section-alt"
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory}
@@ -175,13 +168,13 @@ export default function BuildPage() {
       </section>
 
       {/* Closer Section */}
-      <section 
-        data-section="3"
+      <section
+        data-section="2"
         className="section-base"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <ScrollAnimation>
-            <h2 className="heading-md">there&apos;s more where that came from.</h2>
+            <h2 className="heading-md">There&apos;s more where that came from.</h2>
           </ScrollAnimation>
 
           <ScrollAnimation delay={1}>

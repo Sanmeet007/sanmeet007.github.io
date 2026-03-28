@@ -10,7 +10,7 @@ export function HeroSection() {
   return (
     <section
       data-section="1"
-      className="relative min-h-screen flex items-center justify-center bg-[#080808] overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-transparent overflow-hidden"
       suppressHydrationWarning
     >
       <BackgroundCircles />

@@ -105,13 +105,11 @@
 
 /* Section styles */
 .section-base {
-  background-color: #080808;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 140px 0;
 }
 
 .section-alt {
-  background-color: #0c0c0c;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 140px 0;
 }
@@ -126,8 +124,9 @@
 }
 
 .glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.16);
-  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.03);
 }
 
 /* Glass chip */

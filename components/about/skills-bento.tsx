@@ -1,78 +1,163 @@
 'use client'
 
-import { Layers } from 'lucide-react'
+import { useState } from 'react'
+import { Terminal, Monitor, ArrowRight, Database, Sun, Code2 } from 'lucide-react'
 import { ScrollAnimation } from '@/components/scroll-animation'
 import { SectionHeading } from '@/components/ui/section-heading'
 
+const skillRows = [
+  {
+    icon: Terminal,
+    name: 'Languages',
+    hint: 'foundation',
+    chips: [
+      { label: 'Python', hi: true },
+      { label: 'TypeScript', hi: true },
+      { label: 'JavaScript', hi: true },
+      { label: 'SQL', hi: false },
+      { label: 'C / C++', hi: false },
+    ],
+  },
+  {
+    icon: Monitor,
+    name: 'Frontend',
+    hint: 'what users see',
+    chips: [
+      { label: 'Next.js', hi: true },
+      { label: 'React', hi: true },
+      { label: 'Tailwind CSS', hi: true },
+      { label: 'Framer Motion', hi: false },
+    ],
+  },
+  {
+    icon: ArrowRight,
+    name: 'Backend & APIs',
+    hint: 'what powers it',
+    chips: [
+      { label: 'FastAPI', hi: true },
+      { label: 'Flask', hi: true },
+      { label: 'Express.js', hi: false },
+      { label: 'Appwrite', hi: false },
+      { label: 'Firebase', hi: false },
+      { label: 'Clerk', hi: false },
+      { label: 'Stripe', hi: false },
+    ],
+  },
+  {
+    icon: Database,
+    name: 'Data & Storage',
+    hint: 'persistence layer',
+    chips: [
+      { label: 'PostgreSQL', hi: true },
+      { label: 'MongoDB', hi: true },
+      { label: 'Pinecone', hi: true },
+      { label: 'Redis', hi: false },
+      { label: 'Supabase', hi: false },
+    ],
+  },
+  {
+    icon: Sun,
+    name: 'AI / ML',
+    hint: 'intelligence',
+    chips: [
+      { label: 'TensorFlow', hi: true },
+      { label: 'Scikit-learn', hi: true },
+      { label: 'Keras', hi: false },
+      { label: 'Pandas', hi: false },
+      { label: 'NumPy', hi: false },
+      { label: 'Matplotlib', hi: false },
+      { label: 'Gemini API', hi: false },
+    ],
+  },
+  {
+    icon: Code2,
+    name: 'DevOps & Tooling',
+    hint: 'ship it',
+    chips: [
+      { label: 'Docker', hi: true },
+      { label: 'Git / GitHub', hi: true },
+      { label: 'AWS', hi: false },
+      { label: 'Vercel', hi: false },
+      { label: 'Linux / Unix', hi: false },
+      { label: 'VS Code', hi: false },
+      { label: 'PowerShell', hi: false },
+    ],
+  },
+]
+
 export function SkillsBento() {
+  const [hoveredCat, setHoveredCat] = useState<string | null>(null)
+
   return (
-    <section 
+    <section
       data-section="2"
       className="section-alt"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <ScrollAnimation>
-          <SectionHeading 
-            title="what i work with" 
-            icon={<Layers size={18} strokeWidth={1.5} />} 
+          <SectionHeading
+            title="What I Work With"
+            label="toolkit"
           />
+          <p className="font-mono text-sm text-[#6a6a6a] -mt-4 mb-10 tracking-[0.04em]">
+            tools of the trade.
+          </p>
         </ScrollAnimation>
 
-        <ScrollAnimation delay={1}>
-          <p className="font-sans text-xl md:text-2xl text-[#8a8a8a] mt-2 mb-8 lowercase">tools of the trade.</p>
-        </ScrollAnimation>
-
-        {/* Two-column asymmetric layout - 55/45 split */}
-        <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-4 mt-12">
-          {/* Left column - large glass panel */}
-          <ScrollAnimation delay={2}>
-            <div className="glass-card p-8 h-full flex flex-col gap-6">
-              <div>
-                <p className="font-mono text-xs tracking-[0.15em] text-[#8a8a8a] mb-2 uppercase">core stack</p>
-                <p className="font-sans font-normal text-sm leading-relaxed text-[#9a9a9a]">
-                  building fast interfaces and reliable backend architectures.
-                </p>
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {['Next.js', 'React', 'TypeScript', 'Python', 'FastAPI', 'Flask'].map((tech) => (
-                    <span key={tech} className="glass-chip">
-                      {tech}
-                    </span>
-                  ))}
+        <div className="mt-6 border-t border-[rgba(255,255,255,0.1)]">
+          {skillRows.map((row) => (
+            <div
+              key={row.name}
+              onMouseEnter={() => setHoveredCat(row.name)}
+              onMouseLeave={() => setHoveredCat(null)}
+              className={`grid grid-cols-1 sm:grid-cols-[220px_1fr] border-b border-[rgba(255,255,255,0.06)] transition-opacity duration-200 cursor-default ${
+                hoveredCat !== null && hoveredCat !== row.name ? 'opacity-30' : 'opacity-100'
+              }`}
+            >
+              {/* Left — icon + label */}
+              <div className="flex items-center gap-3 py-5 sm:pr-6 sm:border-r sm:border-[rgba(255,255,255,0.06)]">
+                <div className={`w-[34px] h-[34px] flex-shrink-0 border rounded-lg flex items-center justify-center transition-all duration-180 ${
+                  hoveredCat === row.name
+                    ? 'border-[rgba(255,255,255,0.28)] text-[#c8c8c8]'
+                    : 'border-[rgba(255,255,255,0.12)] text-[#6a6a6a]'
+                }`}>
+                  <row.icon size={15} strokeWidth={1.5} />
                 </div>
+                <div>
+                  <p className={`font-sans font-semibold text-[13px] transition-colors duration-180 ${
+                    hoveredCat === row.name ? 'text-[#e2e2e2]' : 'text-[#c8c8c8]'
+                  }`}>
+                    {row.name}
+                  </p>
+                  <p className={`font-mono text-[10px] tracking-[0.1em] mt-0.5 transition-colors duration-180 ${
+                    hoveredCat === row.name ? 'text-[#787878]' : 'text-[#4a4a4a]'
+                  }`}>
+                    {row.hint}
+                  </p>
+                </div>
+              </div>
+
+              {/* Right — chips */}
+              <div className="flex flex-wrap items-center gap-2.5 py-5 sm:pl-7">
+                {row.chips.map((chip) => (
+                  <span
+                    key={chip.label}
+                    className={`font-mono text-[11px] tracking-[0.08em] border rounded px-2.5 py-1.5 transition-all duration-150 ${
+                      chip.hi
+                        ? hoveredCat === row.name
+                          ? 'border-[rgba(255,255,255,0.22)] text-[#e2e2e2] bg-[rgba(255,255,255,0.06)]'
+                          : 'border-[rgba(255,255,255,0.1)] text-[#b0b0b0] bg-[rgba(255,255,255,0.03)]'
+                        : hoveredCat === row.name
+                          ? 'border-[rgba(255,255,255,0.1)] text-[#9a9a9a] bg-[rgba(255,255,255,0.02)]'
+                          : 'border-[rgba(255,255,255,0.06)] text-[#6a6a6a]'
+                    }`}
+                  >
+                    {chip.label}
+                  </span>
+                ))}
               </div>
             </div>
-          </ScrollAnimation>
-
-          {/* Right column - two stacked panels */}
-          <div className="flex flex-col gap-4">
-            {/* Top panel */}
-            <ScrollAnimation delay={2} className="flex-1">
-              <div className="glass-card p-8 h-full">
-                <p className="font-mono text-xs tracking-[0.15em] text-[#8a8a8a] mb-3 uppercase">data & storage</p>
-                <div className="flex flex-wrap gap-2">
-                  {['SQL', 'MongoDB', 'Appwrite', 'Pandas'].map((tech) => (
-                    <span key={tech} className="glass-chip">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </ScrollAnimation>
-
-            {/* Bottom panel */}
-            <ScrollAnimation delay={3} className="flex-1">
-              <div className="glass-card p-8 h-full">
-                <p className="font-mono text-xs tracking-[0.15em] text-[#8a8a8a] mb-3 uppercase">tooling & styling</p>
-                <div className="flex flex-wrap gap-2">
-                  {['Tailwind CSS', 'Git'].map((tech) => (
-                    <span key={tech} className="glass-chip">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </ScrollAnimation>
-          </div>
+          ))}
         </div>
       </div>
     </section>
