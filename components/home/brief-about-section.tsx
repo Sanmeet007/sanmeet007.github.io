@@ -35,19 +35,6 @@ export function BriefAboutSection() {
                 </h3>
               </div>
             </ScrollAnimation>
-
-            <ScrollAnimation delay={2} className="mt-8">
-              <div className="flex gap-3">
-                <Link href="/about" className="bordered-button">
-                  read the full story
-                  <ArrowRight size={14} strokeWidth={1.5} />
-                </Link>
-                <Link href="/contact" className="bordered-button">
-                  get in touch
-                  <ArrowRight size={14} strokeWidth={1.5} />
-                </Link>
-              </div>
-            </ScrollAnimation>
           </div>
 
           {/* Right: plain underlined items with geometric accents + scale hover */}
@@ -70,6 +57,22 @@ export function BriefAboutSection() {
             </div>
           </ScrollAnimation>
         </div>
+
+        {/* Centered CTAs */}
+        <ScrollAnimation delay={2} className="mt-20 flex items-center justify-center w-full">
+          <div className="flex-1 max-w-[200px] h-px bg-gradient-to-r from-transparent to-[rgba(255,255,255,0.15)] mr-6 hidden md:block" />
+          <div className="flex gap-4">
+            <Link href="/about" className="bordered-button">
+              read the full story
+              <ArrowRight size={14} strokeWidth={1.5} />
+            </Link>
+            <Link href="/contact" className="bordered-button">
+              get in touch
+              <ArrowRight size={14} strokeWidth={1.5} />
+            </Link>
+          </div>
+          <div className="flex-1 max-w-[200px] h-px bg-gradient-to-l from-transparent to-[rgba(255,255,255,0.15)] ml-6 hidden md:block" />
+        </ScrollAnimation>
       </div>
     </section>
   )

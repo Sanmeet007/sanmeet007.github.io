@@ -165,11 +165,13 @@ export function SkillsSection() {
           </div>
         </div>
 
-        <ScrollAnimation delay={2} className="mt-12 flex justify-center">
+        <ScrollAnimation delay={2} className="mt-16 flex items-center justify-center w-full">
+          <div className="flex-1 max-w-[200px] h-px bg-gradient-to-r from-transparent to-[rgba(255,255,255,0.15)] mr-6 hidden md:block" />
           <Link href="/about" className="bordered-button inline-flex">
             see the full stack
             <ArrowRight size={14} strokeWidth={1.5} />
           </Link>
+          <div className="flex-1 max-w-[200px] h-px bg-gradient-to-l from-transparent to-[rgba(255,255,255,0.15)] ml-6 hidden md:block" />
         </ScrollAnimation>
       </div>
     </section>

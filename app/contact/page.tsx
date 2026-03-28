@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Github, Linkedin, Twitter, Calendar } from 'lucide-react'
+import { Github, Linkedin, Instagram, Calendar } from 'lucide-react'
 import { PiPaperPlaneTilt, PiEnvelopeSimple } from 'react-icons/pi'
 import { motion } from 'framer-motion'
 import { ScrollAnimation } from '@/components/scroll-animation'
@@ -29,10 +29,10 @@ const contactLinks = [
     href: 'https://linkedin.com/in/garvit-nag'
   },
   {
-    icon: Twitter,
-    label: 'twitter',
+    icon: Instagram,
+    label: 'instagram',
     value: '@garwiitt',
-    href: 'https://twitter.com/garwiitt'
+    href: 'https://instagram.com/garwiitt'
   },
 ]
 

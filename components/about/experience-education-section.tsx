@@ -18,13 +18,13 @@ const experiences = [
     icon: PiBriefcase,
     year: '2025',
     title: 'software development intern',
-    subtitle: 'stardom · jan 2025 – jun 2025',
+    subtitle: 'stardom · 2025',
     description: 'built key cms functionalities — product management, content creation, secure user authentication.',
     link: null
   },
   {
     icon: PiTrophy,
-    year: 'oct 2024',
+    year: '2024',
     title: 'google genai exchange hackathon',
     subtitle: 'winner, network 18 track · google & devfolio',
     description: 'built credify — perceptual fingerprinting that survives format changes, hierarchical content attribution tracking, and gemini api integration for real-time media fact enrichment.',
@@ -138,13 +138,13 @@ export function ExperienceEducationSection() {
             </ScrollAnimation>
 
             {/* Vertical timeline */}
-            <div className="relative flex-1 flex flex-col">
+            <div className="relative flex-1 flex flex-col h-full">
               {/* Connecting line */}
-              <div className="absolute left-[11px] top-3 bottom-0 w-px bg-gradient-to-b from-[rgba(255,255,255,0.15)] via-[rgba(255,255,255,0.06)] to-transparent" />
+              <div className="absolute left-[11px] top-3 bottom-6 w-px bg-gradient-to-b from-[rgba(255,255,255,0.15)] via-[rgba(255,255,255,0.06)] to-transparent" />
 
-              <div className="flex flex-col justify-between flex-1 gap-5">
+              <div className="flex flex-col justify-between flex-1 h-full gap-5">
                 {education.map((edu, index) => (
-                  <div key={index} className="flex gap-5 relative group">
+                  <div key={index} className="flex gap-5 relative group flex-1">
                     {/* Node */}
                     <div className="w-[22px] flex-shrink-0 flex flex-col items-center pt-1.5">
                       <div className={`w-[10px] h-[10px] rounded-full border flex-shrink-0 flex items-center justify-center ${
@@ -159,26 +159,26 @@ export function ExperienceEducationSection() {
                     </div>
 
                     {/* Content card */}
-                    <div className="flex-1 bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] rounded-lg p-4">
-                      <div className="flex items-start justify-between gap-3 mb-1.5">
-                        <div>
-                          <p className="font-mono text-[10px] tracking-[0.1em] text-[#5a5a5a] uppercase mb-1.5">
-                            {edu.period}
-                          </p>
-                          <h3 className="font-sans font-semibold text-[14px] text-[#d8d8d8] leading-[1.4]">
-                            {edu.degree}
-                          </h3>
-                        </div>
-                        <span className="flex-shrink-0 font-mono text-[10px] tracking-[0.08em] text-[#5a5a5a] border border-[rgba(255,255,255,0.08)] rounded px-2 py-0.5 mt-0.5">
+                    <div className="flex-1 flex flex-col bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] rounded-lg p-5">
+                      <div className="mb-2">
+                        <p className="font-mono text-[10px] tracking-[0.1em] text-[#5a5a5a] uppercase mb-1.5">
+                          {edu.period}
+                        </p>
+                        <h3 className="font-sans font-semibold text-[14px] text-[#d8d8d8] leading-[1.4]">
+                          {edu.degree}
+                        </h3>
+                      </div>
+                      <p className="font-sans text-[12px] text-[#7a7a7a]">
+                        {edu.institution}
+                      </p>
+                      <p className="font-sans text-[12px] leading-[1.7] text-[#6a6a6a] mt-2 mb-4">
+                        {edu.blurb}
+                      </p>
+                      <div className="mt-auto">
+                        <span className="inline-block flex-shrink-0 font-mono text-[10px] tracking-[0.1em] text-[#5a5a5a] border border-[rgba(255,255,255,0.08)] rounded px-2 py-0.5">
                           {edu.grade}
                         </span>
                       </div>
-                      <p className="font-sans text-[12px] text-[#7a7a7a] mt-1">
-                        {edu.institution}
-                      </p>
-                      <p className="font-sans text-[12px] leading-[1.7] text-[#6a6a6a] mt-2">
-                        {edu.blurb}
-                      </p>
                     </div>
                   </div>
                 ))}

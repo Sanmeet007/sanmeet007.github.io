@@ -177,7 +177,8 @@ export default function BuildPage() {
             <h2 className="heading-md">There&apos;s more where that came from.</h2>
           </ScrollAnimation>
 
-          <ScrollAnimation delay={1}>
+          <ScrollAnimation delay={1} className="mt-12 flex items-center justify-center w-full">
+            <div className="flex-1 max-w-[200px] h-px bg-gradient-to-r from-transparent to-[rgba(255,255,255,0.15)] mr-6 hidden md:block" />
             <Link 
               href="https://github.com/Garvit-Nag"
               target="_blank"
@@ -186,6 +187,7 @@ export default function BuildPage() {
               <Github size={14} strokeWidth={1.5} />
               view all on github
             </Link>
+            <div className="flex-1 max-w-[200px] h-px bg-gradient-to-l from-transparent to-[rgba(255,255,255,0.15)] ml-6 hidden md:block" />
           </ScrollAnimation>
         </div>
       </section>

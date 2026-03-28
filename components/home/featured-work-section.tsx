@@ -105,11 +105,13 @@ export function FeaturedWorkSection() {
         </StaggerContainer>
 
         {/* View All Button */}
-        <ScrollAnimation delay={2} className="mt-12 flex justify-center">
-          <Link href="/build" className="bordered-button">
+        <ScrollAnimation delay={2} className="mt-16 flex items-center justify-center w-full">
+          <div className="flex-1 max-w-[200px] h-px bg-gradient-to-r from-transparent to-[rgba(255,255,255,0.15)] mr-6 hidden md:block" />
+          <Link href="/build" className="bordered-button inline-flex">
             view all work
             <ArrowRight size={14} strokeWidth={1.5} />
           </Link>
+          <div className="flex-1 max-w-[200px] h-px bg-gradient-to-l from-transparent to-[rgba(255,255,255,0.15)] ml-6 hidden md:block" />
         </ScrollAnimation>
       </div>
     </section>
