@@ -16,7 +16,7 @@ const steps = [
   },
   {
     philosophy: "if the interface needs explaining, it's broken.",
-    description: "i care about things that feel effortless to use. next.js is my default — fast, clean, no unnecessary weight.",
+    description: "i care about things that feel effortless to use. next.js is my default. fast, clean, no unnecessary weight.",
     chips: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion'],
     label: 'frontend',
   },
@@ -34,7 +34,7 @@ const steps = [
   },
   {
     philosophy: "real ml. from training to deployment.",
-    description: "shipped actual ai-native apps, not just wrappers. rag pipelines, model integrations — done the work.",
+    description: "shipped actual ai-native apps, not just wrappers. rag pipelines, model integrations. done the work.",
     chips: ['TensorFlow', 'Scikit-learn', 'Keras', 'Pandas', 'NumPy', 'Matplotlib', 'Gemini API'],
     label: 'ai / ml',
   },

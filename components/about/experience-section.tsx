@@ -12,7 +12,7 @@ const experiences = [
     year: '2024',
     title: 'freelance developer',
     subtitle: 'web application development',
-    description: 'built key cms functionalities — product management, content creation, secure user authentication. client: stardom.co.in',
+    description: 'built key cms functionalities. product management, content creation, secure user authentication. client: stardom.co.in',
     link: { text: 'view project', href: '#' }
   },
   {
@@ -20,7 +20,7 @@ const experiences = [
     year: 'oct 2024',
     title: 'gen ai exchange hackathon',
     subtitle: 'winner, network 18 track · google & devfolio',
-    description: 'built credify — perceptual fingerprinting that survives format changes, hierarchical content attribution tracking, and gemini api integration for real-time media fact enrichment.',
+    description: 'built credify. perceptual fingerprinting that survives format changes, hierarchical content attribution tracking, and gemini api integration for real-time media fact enrichment.',
     link: { text: 'view credify', href: '/build/credify' }
   },
   {
@@ -28,7 +28,7 @@ const experiences = [
     year: 'sept 2024',
     title: 'smart india hackathon',
     subtitle: 'internal winner, aicte id: 1728',
-    description: 'designed pramanik — a paperless scholarship disbursement platform for pmsss that automates validation for transparent fund allocation.',
+    description: 'designed pramanik. a paperless scholarship disbursement platform for pmsss that automates validation for transparent fund allocation.',
     link: { text: 'view pramanik', href: '/build/pramanik' }
   },
   {

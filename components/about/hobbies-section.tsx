@@ -21,7 +21,7 @@ const hobbies = [
   {
     icon: Film,
     name: 'cinema',
-    description: 'hacksaw ridge, interstellar, the dark knight — taste certified',
+    description: 'hacksaw ridge, interstellar, the dark knight, taste certified',
     tags: ['drama', 'sci-fi', 'thriller']
   },
   {

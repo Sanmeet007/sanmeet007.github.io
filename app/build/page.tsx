@@ -51,7 +51,7 @@ export default function BuildPage() {
             transition={{ duration: 0.55, ease: 'easeOut', delay: 0.2 }}
             className="font-sans font-normal text-[clamp(14px,1.8vw,16px)] leading-[1.9] text-[#6a6a6a] mt-8 max-w-[600px]"
           >
-            a collection of projects ranging from ai systems to saas platforms — all built because they seemed genuinely useful.
+            a collection of projects ranging from ai systems to saas platforms. all built because they seemed genuinely useful.
           </motion.p>
 
           {/* Filter Tags — right under the description */}
