@@ -145,6 +145,15 @@ html.theme-ready textarea {
   transition: background-color 250ms ease, border-color 250ms ease, color 250ms ease;
 }
 
+/* Transparent footer background to show animation */
+.bg-footer-base {
+  background-color: rgba(8, 8, 8, 0.8);
+}
+
+html.light .bg-footer-base {
+  background-color: rgba(245, 245, 245, 0.8);
+}
+
 @theme inline {
   --font-sans: 'Sora', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;

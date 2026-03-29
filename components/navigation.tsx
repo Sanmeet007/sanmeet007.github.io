@@ -60,7 +60,7 @@ export function Navigation() {
   const CurrentIcon = currentEntry.icon
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--nav-bg)] backdrop-blur-[20px] border-b border-[var(--border-subtle)]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(8,8,8,0.82)] backdrop-blur-[20px] border-b border-[rgba(255,255,255,0.05)]">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link
@@ -176,7 +176,7 @@ export function Navigation() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden overflow-hidden bg-[var(--nav-bg-mobile)] backdrop-blur-[20px] border-b border-[var(--border-subtle)]"
+            className="lg:hidden overflow-hidden bg-[rgba(8,8,8,0.92)] backdrop-blur-[20px] border-b border-[rgba(255,255,255,0.05)]"
           >
             <div className="px-6 py-6 flex flex-col gap-1">
               {NAV_LINKS.map((link) => (

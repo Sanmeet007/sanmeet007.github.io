@@ -6,7 +6,7 @@ import { PiXLogo } from "react-icons/pi";
 
 export function Footer() {
   return (
-    <footer className="bg-bg-base border-t border-border-subtle pt-16 pb-12">
+    <footer className="bg-footer-base border-t border-[rgba(255,255,255,0.05)] pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-12 mb-16">
           <div className="max-w-[420px] pr-0 md:pr-8 lg:pr-16 text-center md:text-left mx-auto md:mx-0">
