@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Calendar, Github, ExternalLink } from 'lucide-react'
+import { ArrowRight, Github, ExternalLink, Calendar } from 'lucide-react'
 import { ScrollAnimation, StaggerContainer, StaggerItem } from '@/components/scroll-animation'
 import { getFeaturedProjects } from '@/lib/projects'
 import { SectionHeading } from '@/components/ui/section-heading'
@@ -10,7 +10,7 @@ export function FeaturedWorkSection() {
   const featuredProjects = getFeaturedProjects()
 
   return (
-    <section 
+    <section
       id="featured"
       data-section="3"
       className="section-base"
@@ -25,7 +25,7 @@ export function FeaturedWorkSection() {
         </ScrollAnimation>
 
         <ScrollAnimation delay={1}>
-          <p className="font-sans text-xl md:text-2xl text-[#8a8a8a] mt-2 mb-12 lowercase">
+          <p className="font-sans text-xl md:text-2xl text-[var(--text-secondary)] mt-2 mb-12 lowercase">
             a couple things i&apos;m proud of.
           </p>
         </ScrollAnimation>
@@ -34,87 +34,90 @@ export function FeaturedWorkSection() {
         <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
           {featuredProjects.map((project) => (
             <StaggerItem key={project.slug}>
-              <div className="glass-card group">
-                {/* Featured Badge */}
-                <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-                  <span className="font-mono text-[9px] tracking-[0.1em] border border-[rgba(255,255,255,0.15)] rounded px-2 py-1 text-[#9a9a9a]">
-                    featured
-                  </span>
-                  <span className="w-1 h-1 rounded-full bg-[#e2e2e2] pulse-dot" />
-                </div>
+              <Link href={`/build/${project.slug}`} className="block">
+                <div className="project-card group flex flex-col">
+                  {/* Featured Badge - always visible */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="featured-badge">
+                      <span className="w-[5px] h-[5px] rounded-full bg-[var(--text-heading)] pulse-dot" />
+                      featured
+                    </span>
+                  </div>
 
-                {/* Thumbnail */}
-                <div className="relative aspect-video bg-[#0d0d0d] rounded-t-[12px] overflow-hidden">
-                  <p className="absolute inset-0 flex items-center justify-center font-sans font-bold text-[32px] text-[#e2e2e2] opacity-[0.06]">
-                    {project.name}
-                  </p>
-                </div>
+                  {/* Thumbnail */}
+                  <div className="card-thumbnail aspect-video bg-[var(--bg-alt)] rounded-t-[12px]">
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.name}
+                        className="absolute inset-0 w-full h-full object-cover object-top"
+                      />
+                    ) : (
+                      <p className="absolute inset-0 flex items-center justify-center font-sans font-bold text-[32px] text-[var(--text-heading)] opacity-[0.06]">
+                        {project.name}
+                      </p>
+                    )}
+                  </div>
 
-                {/* Body */}
-                <div className="p-6 lg:p-7">
-                  <h3 className="font-sans font-bold text-[20px] text-[#e2e2e2]">
-                    {project.name}
-                  </h3>
-                  <p className="font-sans text-[13px] text-[#6a6a6a] mt-1">
-                    {project.tagline}
-                  </p>
-
-                  {/* Meta row */}
-                  <div className="flex items-center gap-4 mt-4">
-                    <div className="flex items-center gap-1.5">
-                      <Calendar size={14} strokeWidth={1.5} className="text-[#4a4a4a]" />
-                      <span className="font-mono text-[10px] tracking-[0.1em] text-[#4a4a4a]">
-                        {project.year}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2 flex-wrap">
-                      {project.stack.map((tech) => (
-                        <span key={tech} className="glass-chip">
-                          {tech}
+                  {/* Body */}
+                  <div className="p-6 lg:p-7 flex flex-col flex-1">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-sans font-bold text-[20px] text-[var(--text-heading)]">
+                        {project.name}
+                      </h3>
+                      <div className="flex items-center gap-1.5">
+                        <Calendar size={13} strokeWidth={1.5} className="text-[var(--text-label)]" />
+                        <span className="font-mono text-[10px] tracking-widest text-[var(--text-label)]">
+                          {project.year}
                         </span>
-                      ))}
+                      </div>
+                    </div>
+
+                    <p className="font-sans text-[13px] text-[var(--text-muted)] mt-1.5">
+                      {project.tagline.replace(/\.$/, '')}
+                    </p>
+
+                    {/* Spacer */}
+                    <div className="flex-1 min-h-5" />
+
+                    {/* Links */}
+                    <div className="flex items-center gap-5 pt-5 border-t border-[var(--border-low)]">
+                      {project.github && (
+                        <span
+                          onClick={(e) => { e.preventDefault(); window.open(project.github, '_blank'); }}
+                          className="card-link"
+                        >
+                          <Github size={13} strokeWidth={1.5} />
+                          code
+                        </span>
+                      )}
+                      {project.live && (
+                        <span
+                          onClick={(e) => { e.preventDefault(); window.open(project.live, '_blank'); }}
+                          className="card-link"
+                        >
+                          <ExternalLink size={13} strokeWidth={1.5} />
+                          live
+                        </span>
+                      )}
                     </div>
                   </div>
-
-                  {/* Links */}
-                  <div className="flex items-center gap-4 mt-4 pt-4 border-t border-[rgba(255,255,255,0.06)]">
-                    {project.github && (
-                      <Link 
-                        href={project.github} 
-                        target="_blank"
-                        className="flex items-center gap-1.5 font-mono text-[10px] tracking-[0.1em] lowercase opacity-40 hover:opacity-100 transition-opacity"
-                      >
-                        <Github size={14} strokeWidth={1.5} />
-                        code
-                      </Link>
-                    )}
-                    {project.live && (
-                      <Link 
-                        href={project.live} 
-                        target="_blank"
-                        className="flex items-center gap-1.5 font-mono text-[10px] tracking-[0.1em] lowercase opacity-40 hover:opacity-100 transition-opacity"
-                      >
-                        <ExternalLink size={14} strokeWidth={1.5} />
-                        live
-                      </Link>
-                    )}
-                  </div>
                 </div>
-              </div>
+              </Link>
             </StaggerItem>
           ))}
         </StaggerContainer>
 
         {/* View All Button */}
         <ScrollAnimation delay={2} className="mt-16 flex items-center justify-center w-full">
-          <div className="flex-1 max-w-[200px] h-px bg-gradient-to-r from-transparent to-[rgba(255,255,255,0.15)] mr-6 hidden md:block" />
+          <div className="flex-1 max-w-[200px] h-px bg-linear-to-r from-transparent to-[var(--border-strong)] mr-6 hidden md:block" />
           <Link href="/build" className="bordered-button group inline-flex">
             <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
               view all work
               <ArrowRight size={14} strokeWidth={1.5} />
             </span>
           </Link>
-          <div className="flex-1 max-w-[200px] h-px bg-gradient-to-l from-transparent to-[rgba(255,255,255,0.15)] ml-6 hidden md:block" />
+          <div className="flex-1 max-w-[200px] h-px bg-linear-to-l from-transparent to-[var(--border-strong)] ml-6 hidden md:block" />
         </ScrollAnimation>
       </div>
     </section>

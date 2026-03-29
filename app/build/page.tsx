@@ -1,20 +1,35 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Calendar, Github, ExternalLink, Info } from 'lucide-react'
+import { Calendar, Github, ExternalLink, Info, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ScrollAnimation, StaggerContainer, StaggerItem } from '@/components/scroll-animation'
+import { ScrollAnimation } from '@/components/scroll-animation'
 import { Footer } from '@/components/footer'
-import { projects, categories } from '@/lib/projects'
+import { projects } from '@/lib/projects'
 import { SectionHeading } from '@/components/ui/section-heading'
 
 export default function BuildPage() {
-  const [activeCategory, setActiveCategory] = useState('all')
+  const [activeTag, setActiveTag] = useState<string | null>(null)
 
-  const filteredProjects = activeCategory === 'all' 
-    ? projects 
-    : projects.filter(p => p.category === activeCategory)
+  const filteredProjects = useMemo(() => {
+    let result = projects
+    if (activeTag) {
+      result = result.filter(p => p.stack.includes(activeTag))
+    }
+    return result
+  }, [activeTag])
+
+  // Collect all unique stack tags from all projects
+  const availableTags = useMemo(() => {
+    const tags = new Set<string>()
+    projects.forEach(p => p.stack.forEach(t => tags.add(t)))
+    return Array.from(tags).sort()
+  }, [])
+
+  const handleTagClick = (tag: string) => {
+    setActiveTag(prev => prev === tag ? null : tag)
+  }
 
   return (
     <>
@@ -37,10 +52,10 @@ export default function BuildPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: 'easeOut', delay: 0.1 }}
           >
-            <h1 className="font-sans font-bold text-[clamp(48px,5.5vw,76px)] text-[#e2e2e2] tracking-[-0.02em] leading-[1.1]">
+            <h1 className="font-sans font-bold text-[clamp(36px,5.5vw,76px)] text-[var(--text-heading)] tracking-[-0.02em] leading-[1.1]">
               Things i&apos;ve built.
             </h1>
-            <h2 className="font-sans font-bold text-[clamp(48px,5.5vw,76px)] text-[#303030] tracking-[-0.02em] leading-[1.1]">
+            <h2 className="font-sans font-bold text-[clamp(36px,5.5vw,76px)] text-[var(--text-ghost)] tracking-[-0.02em] leading-[1.1]">
               The ones that shipped.
             </h2>
           </motion.div>
@@ -49,113 +64,121 @@ export default function BuildPage() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: 'easeOut', delay: 0.2 }}
-            className="font-sans font-normal text-[clamp(14px,1.8vw,16px)] leading-[1.9] text-[#6a6a6a] mt-8 max-w-[600px]"
+            className="font-sans font-normal text-[clamp(14px,1.8vw,16px)] leading-[1.9] text-[var(--text-muted)] mt-8 max-w-[600px]"
           >
-            a collection of projects ranging from ai systems to saas platforms. all built because they seemed genuinely useful.
+            projects i've shipped over the past couple of years. some for hackathons, some just to learn.
           </motion.p>
 
-          {/* Filter Tags — right under the description */}
+          {/* Stack Tag Filter */}
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: 'easeOut', delay: 0.3 }}
-            className="flex flex-wrap gap-3 mt-10 mb-10"
+            className="flex flex-wrap gap-2.5 mt-10 mb-10"
           >
-            {categories.map((category) => (
+            {availableTags.map((tag) => (
               <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`font-mono text-[10px] tracking-[0.1em] lowercase px-3 py-1.5 rounded transition-all duration-300 ${
-                  activeCategory === category
-                    ? 'bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.45)] text-[#e2e2e2]'
-                    : 'bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] text-[#6a6a6a] hover:border-[rgba(255,255,255,0.16)]'
+                key={tag}
+                onClick={() => handleTagClick(tag)}
+                className={`filter-tag ${
+                  activeTag === tag
+                    ? 'filter-tag--active'
+                    : 'filter-tag--inactive'
                 }`}
               >
-                {category}
+                {tag}
               </button>
             ))}
+            {activeTag && (
+              <button
+                onClick={() => setActiveTag(null)}
+                className="filter-tag filter-tag--inactive flex items-center gap-1.5"
+              >
+                <X size={12} strokeWidth={1.5} />
+                clear
+              </button>
+            )}
           </motion.div>
 
           <AnimatePresence mode="wait">
             <motion.div
-              key={activeCategory}
+              key={`${activeTag || 'all'}`}
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.97 }}
               transition={{ duration: 0.3, ease: 'easeOut' }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-5"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
             >
               {filteredProjects.map((project) => (
                 <motion.div
                   key={project.slug}
                   layout
-                  className="glass-card group"
+                  className="project-card group flex flex-col"
                 >
                   {/* Thumbnail */}
-                  <div className="relative aspect-video bg-[#0d0d0d] rounded-t-[10px] overflow-hidden transition-all duration-300 group-hover:brightness-150">
-                    <p className="absolute inset-0 flex items-center justify-center font-sans font-bold text-[24px] text-[#e2e2e2] opacity-[0.06]">
-                      {project.name}
-                    </p>
+                  <div className="card-thumbnail aspect-video bg-[var(--bg-alt)] rounded-t-[10px]">
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.name}
+                        className="absolute inset-0 w-full h-full object-cover object-top"
+                      />
+                    ) : (
+                      <p className="absolute inset-0 flex items-center justify-center font-sans font-bold text-[20px] text-[var(--text-heading)] opacity-[0.06]">
+                        {project.name}
+                      </p>
+                    )}
                   </div>
 
                   {/* Body */}
-                  <div className="p-6 lg:p-7">
+                  <div className="p-5 lg:p-6 flex flex-col flex-1">
                     {/* Top row */}
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-[9px] tracking-[0.1em] text-[#6a6a6a] opacity-40 lowercase">
-                        {project.category}
-                      </span>
+                      <h3 className="font-sans font-semibold text-[17px] text-[var(--text-heading)]">
+                        {project.name}
+                      </h3>
                       <div className="flex items-center gap-1.5">
-                        <Calendar size={14} strokeWidth={1.5} className="text-[#4a4a4a]" />
-                        <span className="font-mono text-[10px] tracking-[0.1em] text-[#4a4a4a]">
+                        <Calendar size={13} strokeWidth={1.5} className="text-[var(--text-label)]" />
+                        <span className="font-mono text-[10px] tracking-widest text-[var(--text-label)]">
                           {project.year}
                         </span>
                       </div>
                     </div>
 
-                    <h3 className="font-sans font-semibold text-[19px] text-[#e2e2e2] mt-2">
-                      {project.name}
-                    </h3>
-                    <p className="font-sans text-[13px] text-[#6a6a6a] mt-1">
-                      {project.tagline}
+                    <p className="font-sans text-[12.5px] text-[var(--text-muted)] mt-1.5 leading-[1.5]">
+                      {project.tagline.replace(/\.$/, '')}
                     </p>
 
-                    {/* Stack chips */}
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {project.stack.map((tech) => (
-                        <span key={tech} className="glass-chip">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                    {/* Spacer to push links to bottom with minimum gap */}
+                    <div className="flex-1 min-h-5" />
 
                     {/* Links */}
-                    <div className="flex items-center gap-4 mt-4 pt-4 border-t border-[rgba(255,255,255,0.05)]">
+                    <div className="flex items-center gap-5 pt-5 border-t border-[var(--border-low)]">
                       {project.github && (
-                        <Link 
-                          href={project.github} 
+                        <Link
+                          href={project.github}
                           target="_blank"
-                          className="flex items-center gap-1.5 font-mono text-[10px] tracking-[0.1em] lowercase opacity-40 hover:opacity-100 transition-opacity"
+                          className="card-link"
                         >
-                          <Github size={14} strokeWidth={1.5} />
+                          <Github size={13} strokeWidth={1.5} />
                           code
                         </Link>
                       )}
                       {project.live && (
-                        <Link 
-                          href={project.live} 
+                        <Link
+                          href={project.live}
                           target="_blank"
-                          className="flex items-center gap-1.5 font-mono text-[10px] tracking-[0.1em] lowercase opacity-40 hover:opacity-100 transition-opacity"
+                          className="card-link"
                         >
-                          <ExternalLink size={14} strokeWidth={1.5} />
+                          <ExternalLink size={13} strokeWidth={1.5} />
                           live
                         </Link>
                       )}
-                      <Link 
+                      <Link
                         href={`/build/${project.slug}`}
-                        className="flex items-center gap-1.5 font-mono text-[10px] tracking-[0.1em] lowercase opacity-40 hover:opacity-100 transition-opacity"
+                        className="card-link ml-auto"
                       >
-                        <Info size={14} strokeWidth={1.5} />
+                        <Info size={13} strokeWidth={1.5} />
                         view details
                       </Link>
                     </div>
@@ -178,8 +201,8 @@ export default function BuildPage() {
           </ScrollAnimation>
 
           <ScrollAnimation delay={1} className="mt-12 flex items-center justify-center w-full">
-            <div className="flex-1 max-w-[200px] h-px bg-gradient-to-r from-transparent to-[rgba(255,255,255,0.15)] mr-6 hidden md:block" />
-            <Link 
+            <div className="flex-1 max-w-[200px] h-px bg-linear-to-r from-transparent to-[var(--border-strong)] mr-6 hidden md:block" />
+            <Link
               href="https://github.com/Garvit-Nag"
               target="_blank"
               className="bordered-button group inline-flex"
@@ -189,7 +212,7 @@ export default function BuildPage() {
                 view all on github
               </span>
             </Link>
-            <div className="flex-1 max-w-[200px] h-px bg-gradient-to-l from-transparent to-[rgba(255,255,255,0.15)] ml-6 hidden md:block" />
+            <div className="flex-1 max-w-[200px] h-px bg-linear-to-l from-transparent to-[var(--border-strong)] ml-6 hidden md:block" />
           </ScrollAnimation>
         </div>
       </section>

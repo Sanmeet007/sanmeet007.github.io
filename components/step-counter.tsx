@@ -43,14 +43,14 @@ export function StepCounter() {
   return (
     <div className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-center justify-center">
       {/* Top Divider */}
-      <div className="h-12 w-px bg-[rgba(255,255,255,0.2)] mb-4" />
+      <div className="h-12 w-px bg-[var(--border-accent)] mb-4" />
       {/* Current section */}
-      <span className="font-mono text-sm tracking-[0.2em] text-[#e2e2e2]" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
+      <span className="font-mono text-sm tracking-[0.2em] text-[var(--text-heading)]" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
         {String(currentSection).padStart(2, '0')}
       </span>
 
       {/* Divider */}
-      <div className="h-12 w-px bg-[rgba(255,255,255,0.2)] mt-4" />
+      <div className="h-12 w-px bg-[var(--border-accent)] mt-4" />
     </div>
   )
 }

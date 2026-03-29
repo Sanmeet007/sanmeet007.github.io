@@ -1,65 +1,62 @@
-import type { Metadata, Viewport } from 'next'
-import { Sora, JetBrains_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
-import { Navigation } from '@/components/navigation'
-import { StepCounter } from '@/components/step-counter'
-import { GlobalBackground } from '@/components/global-background'
+import type { Metadata, Viewport } from "next";
+import { Sora, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
+import { Navigation } from "@/components/navigation";
+import { StepCounter } from "@/components/step-counter";
+import { GlobalBackground } from "@/components/global-background";
+import { ThemeProvider } from "@/context/theme-context";
 
-const sora = Sora({ 
-  subsets: ['latin'],
-  variable: '--font-sora',
-  weight: ['400', '600', '700']
-})
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  weight: ["400", "600", "700"],
+});
 
-const jetbrainsMono = JetBrains_Mono({ 
-  subsets: ['latin'],
-  variable: '--font-jetbrains',
-  weight: ['400']
-})
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+  weight: ["400"],
+});
 
 export const metadata: Metadata = {
-  title: 'Garvit Nag | Full-Stack Developer',
-  description: 'Full-stack developer building innovative web applications with clean, functional code.',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
-}
+  title: "Garvit Nag | Developer",
+  description:
+    "Full-stack developer building innovative web applications with clean, functional code.",
+};
 
 export const viewport: Viewport = {
-  themeColor: '#080808',
-}
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#080808" },
+    { media: "(prefers-color-scheme: light)", color: "#f5f5f5" },
+  ],
+};
+
+const foucScript = `(function(){try{var s=localStorage.getItem('portfolio-theme');var t=s||'system';var r;if(t==='light'){r='light'}else if(t==='dark'){r='dark'}else{r=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}if(r==='light'){document.documentElement.classList.add('light')}}catch(e){}})();`;
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sora.variable} ${jetbrainsMono.variable}`} data-scroll-behavior="smooth">
-      <body className="font-sans antialiased bg-[#080808] text-[#e2e2e2]">
-        <GlobalBackground />
-        <Navigation />
-        <StepCounter />
-        <main className="relative z-10">
-          {children}
-        </main>
-        <Analytics />
+    <html
+      lang="en"
+      className={`${sora.variable} ${jetbrainsMono.variable}`}
+      data-scroll-behavior="smooth"
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: foucScript }} />
+      </head>
+      <body className="font-sans antialiased">
+        <ThemeProvider>
+          <GlobalBackground />
+          <Navigation />
+          <StepCounter />
+          <main className="relative z-10">{children}</main>
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
