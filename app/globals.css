@@ -420,7 +420,7 @@ html.light .bg-footer-base {
   border-radius: 6px;
   transition: all 250ms ease;
   cursor: pointer;
-  text-transform: lowercase;
+  text-transform: capitalize;
 }
 
 .filter-tag--inactive {

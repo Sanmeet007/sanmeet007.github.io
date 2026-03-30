@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Calendar, Github, ExternalLink, Info, X, Mail } from 'lucide-react'
+import { Calendar, Github, ExternalLink, Info, Mail } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ScrollAnimation } from '@/components/scroll-animation'
 import { Footer } from '@/components/footer'
@@ -76,6 +76,16 @@ export default function BuildPage() {
             transition={{ duration: 0.55, ease: 'easeOut', delay: 0.3 }}
             className="flex flex-wrap gap-2.5 mt-10 mb-10"
           >
+            <button
+              onClick={() => setActiveTag(null)}
+              className={`filter-tag ${
+                activeTag === null
+                  ? 'filter-tag--active'
+                  : 'filter-tag--inactive'
+              }`}
+            >
+              All
+            </button>
             {availableTags.map((tag) => (
               <button
                 key={tag}
@@ -89,15 +99,6 @@ export default function BuildPage() {
                 {tag}
               </button>
             ))}
-            {activeTag && (
-              <button
-                onClick={() => setActiveTag(null)}
-                className="filter-tag filter-tag--inactive flex items-center gap-1.5"
-              >
-                <X size={12} strokeWidth={1.5} />
-                clear
-              </button>
-            )}
           </motion.div>
 
           <AnimatePresence mode="wait">

@@ -17,7 +17,7 @@ export const projects: Project[] = [
     name: 'Qodex',
     tagline: 'query any github repository in plain english',
     year: '2025',
-    stack: ['NextJs', 'TypeScript', 'FastAPI', 'Python', 'Pinecone', 'PostgreSQL', 'Appwrite'],
+    stack: ['NextJs', 'TypeScript', 'FastAPI', 'Python', 'Pinecone', 'PostgreSQL', 'Appwrite', 'Stripe'],
     github: 'https://github.com/Garvit-Nag/Qodex',
     live: 'https://qodex-gules.vercel.app',
     featured: true,
