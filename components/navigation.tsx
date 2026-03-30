@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { FileText, History, Menu, X, Sun, Moon, Monitor } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { NAV_LINKS } from '@/lib/constants'
-import { useTheme } from '@/context/theme-context'
+import { useTheme } from '@/components/theme-provider'
 
 type Theme = 'system' | 'dark' | 'light'
 
@@ -60,7 +60,7 @@ export function Navigation() {
   const CurrentIcon = currentEntry.icon
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(8,8,8,0.82)] backdrop-blur-[20px] border-b border-[rgba(255,255,255,0.05)]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--nav-bg)] backdrop-blur-[8px] border-b border-[rgba(255,255,255,0.05)]">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link

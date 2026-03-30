@@ -284,7 +284,7 @@ export const SKILL_STEPS: SkillStepType[] = [
   {
     philosophy: "if the interface needs explaining, it's broken.",
     description:
-      "i obsess over the small stuff so users don't have to think. pixel-level attention, smooth interactions, zero jank.",
+      "i obsess over the small stuff so users don't have to think. pixel-level attention, smooth interactions.",
     chips: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
     label: "frontend",
   },

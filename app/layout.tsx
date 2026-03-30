@@ -5,7 +5,7 @@ import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { StepCounter } from "@/components/step-counter";
 import { GlobalBackground } from "@/components/global-background";
-import { ThemeProvider } from "@/context/theme-context";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const sora = Sora({
   subsets: ["latin"],
