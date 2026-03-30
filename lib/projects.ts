@@ -3,11 +3,11 @@ export interface Project {
   name: string
   tagline: string
   year: string
-  category: string
   stack: string[]
   github?: string
   live?: string
   featured?: boolean
+  image?: string
   description: string
 }
 
@@ -15,117 +15,146 @@ export const projects: Project[] = [
   {
     slug: 'qodex',
     name: 'Qodex',
-    tagline: 'ask your github repo anything in plain english.',
+    tagline: 'query any github repository in plain english',
     year: '2025',
-    category: 'ai / ml',
-    stack: ['Next.js 15', 'FastAPI', 'Pinecone', 'Docker'],
-    github: 'https://github.com/Garvit-Nag/qodex',
-    live: 'https://qodex.vercel.app',
+    stack: ['NextJs', 'TypeScript', 'FastAPI', 'Python', 'Pinecone', 'PostgreSQL', 'Appwrite'],
+    github: 'https://github.com/Garvit-Nag/Qodex',
+    live: 'https://qodex-gules.vercel.app',
     featured: true,
-    description: 'qodex is an ai-powered tool that lets you query your github repositories using natural language. it uses rag (retrieval-augmented generation) with pinecone vector database to understand your codebase semantically. the system indexes your repository, creates embeddings for all code files, and allows you to ask questions like "where is the authentication logic?" or "how does the payment flow work?" — getting accurate, context-aware answers instantly.'
+    image: '/projects/qodex.png',
+    description: 'a hybrid rag system for code intelligence. upload a github url and the backend clones it, chunks the code, generates 384-dim embeddings locally via sentencetransformer (all-minilm-l6-v2), stores full content in postgresql (neon), and indexes vectors in pinecone with repo-scoped namespaces. chat queries hit pinecone for top-5 semantic matches, join against postgresql for full code context, then feed into gemini 2.0 flash for cited answers. features appwrite auth, stripe subscriptions with tiered quotas (10/30 repos per month), and conversation history with json citations.'
   },
   {
     slug: 'credify',
     name: 'Credify',
-    tagline: 'detecting tampered media and tracking attribution at scale.',
+    tagline: 'hackathon-winning media verification platform',
     year: '2024',
-    category: 'ai / ml',
-    stack: ['Python', 'Gemini', 'FastAPI'],
-    github: 'https://github.com/Garvit-Nag/credify',
-    live: 'https://credify-demo.vercel.app',
+    stack: ['NextJs', 'TypeScript', 'FastAPI', 'Python', 'Gemini API', 'Appwrite'],
+    github: 'https://github.com/abhisheksharm-3/credify',
+    live: 'https://verifiedbycredify.vercel.app',
     featured: true,
-    description: 'built during the gen ai exchange hackathon (google & devfolio), credify won the network 18 track. the project tackles misinformation through three core features: perceptual fingerprinting that survives format changes and compression, hierarchical content attribution tracking to trace media origins, and gemini api integration for real-time media fact enrichment. worked with a team of four to deliver a complete solution in 48 hours.'
+    image: '/projects/credify.png',
+    description: 'built during the gen ai exchange hackathon (won the network 18 track). tackles misinformation through creator verification with secure identity auth, blockchain-inspired hashing for tamper-proof content attribution, and advanced forgery detection via machine learning models. integrates google gemini for real-time ai-powered fact-checking. built with a team of four in 48 hours.'
   },
   {
-    slug: 'pramanik',
-    name: 'Pramanik',
-    tagline: 'paperless scholarship disbursement for pmsss.',
-    year: '2024',
-    category: 'full-stack',
-    stack: ['Next.js', 'Node.js', 'MongoDB', 'AWS'],
-    github: 'https://github.com/Garvit-Nag/pramanik',
-    description: 'designed for the smart india hackathon (internal winner, aicte id: 1728). pramanik is a paperless scholarship disbursement platform for pmsss that automates document validation for transparent fund allocation. features include digital document verification, automated eligibility checking, real-time status tracking, and secure fund disbursement workflows. the system reduces manual processing time significantly while ensuring transparency.'
+    slug: 'maestro',
+    name: 'Maestro',
+    tagline: 'ai-powered conversational football assistant',
+    year: '2026',
+    stack: ['NextJs', 'TypeScript', 'Gemini API', 'Supabase'],
+    github: 'https://github.com/Garvit-Nag/maestro',
+    live: 'https://maestro-opal-psi.vercel.app',
+    image: '/projects/maestro.png',
+    description: 'an llm-orchestrated football assistant with 19 function declarations. users ask questions in natural language; gemini 2.5 flash decides which live-data apis to call across football-data.org, api-football, thesportsdb, and newsapi, executes them concurrently via promise.all, and returns combined text + visualization responses through 19 typed ui components. features in-memory ttl caching (30s-3600s), fuzzy team name resolution with ufd normalization, 3-tier personalized fixture recommendations, and multi-turn conversations stored in supabase.'
+  },
+  {
+    slug: 'weather',
+    name: 'Weather',
+    tagline: 'minimal weather app with multi-provider fallback',
+    year: '2026',
+    stack: ['React', 'TypeScript', 'Vite', 'Zustand'],
+    github: 'https://github.com/Garvit-Nag/weather',
+    live: 'https://weather-rouge-chi.vercel.app',
+    image: '/projects/weather.png',
+    description: 'a weather dashboard with 3-provider sequential fallback (openweathermap, weatherapi, open-meteo) and freshness-aware result selection (30-min threshold). each provider wrapped in isolated adapter with canonical schema translation. features dual geocoding (owm primary, open-meteo keyless fallback), react query caching (5-min stale, 10-min refetch), zustand state persistence, 8s request timeouts via abortcontroller, and theme flicker prevention with inline script.'
+  },
+  {
+    slug: 'dev-events',
+    name: 'Dev Events',
+    tagline: 'event discovery platform for dev communities',
+    year: '2026',
+    stack: ['NextJs', 'TypeScript', 'MongoDB', 'Cloudinary'],
+    github: 'https://github.com/Garvit-Nag/dev-events',
+    live: 'https://dev-events-ebon-theta.vercel.app',
+    image: '/projects/dev.png',
+    description: 'a platform for discovering developer events, hackathons, and conferences. features a public event catalog with seo-friendly slug-based routing, an admin dashboard with full crud behind cookie-based session middleware, tag-based related event recommendations, email-only booking with compound unique index enforcement, cloudinary streaming image uploads, and posthog analytics instrumentation across 6 tracked events.'
   },
   {
     slug: 'medisage',
     name: 'MediSage',
-    tagline: 'ai-powered medical diagnosis assistant.',
-    year: '2024',
-    category: 'ai / ml',
-    stack: ['Next.js', 'Python', 'Gemini', 'Medical NLP'],
-    github: 'https://github.com/Garvit-Nag/medisage',
-    description: 'medisage is an ai assistant that helps patients understand their symptoms through natural language. using gemini and medical nlp, it analyzes symptoms and provides contextual health information. built with privacy in mind, all data is encrypted and never stored.'
-  },
-  {
-    slug: 'reciperover',
-    name: 'RecipeRover',
-    tagline: 'recipe discovery based on ingredients you have.',
-    year: '2024',
-    category: 'full-stack',
-    stack: ['Next.js', 'Node.js', 'MongoDB'],
-    github: 'https://github.com/Garvit-Nag/recipeRover',
-    live: 'https://recipeRover.vercel.app',
-    description: 'input ingredients you have on hand and discover recipes you can make. the app uses smart matching to find recipes with ingredients you already have, reducing food waste. features include nutritional info, cooking time estimates, and ingredient substitution suggestions.'
+    tagline: 'ai-powered medical symptom analysis platform',
+    year: '2025',
+    stack: ['NextJs', 'TypeScript', 'FastAPI', 'Python', 'MongoDB', 'Clerk', 'Stripe'],
+    github: 'https://github.com/Garvit-Nag/MediSage',
+    live: 'https://medi-sage.vercel.app',
+    image: '/projects/medisage.png',
+    description: 'a medical symptom analysis platform with two analysis modes: holistic health assessment and anatomical precision analysis via body region mapping. uses gemini 2.5-flash with structured json schema injection for 10+ nested response fields. features redis-backed daily rate limiting (5/day free tier with midnight utc auto-expiry), stripe subscription management with webhook sync to mongodb, clerk auth, and a 3-tier feature gating system (basic/professional/clinical).'
   },
   {
     slug: 'revibe',
     name: 'Revibe',
-    tagline: 'music recommendation engine with mood detection.',
+    tagline: 'music recommender using clustering algorithms',
     year: '2024',
-    category: 'ai / ml',
-    stack: ['React', 'Node.js', 'Spotify API', 'ML'],
-    github: 'https://github.com/Garvit-Nag/revibe',
-    description: 'revibe analyzes your listening habits and mood to generate personalized music recommendations. uses spotify api and machine learning to understand music preferences and predict songs you\'ll love. features playlist generation, mood-based discovery, and social sharing.'
+    stack: ['NextJs', 'TypeScript', 'FastAPI', 'Python', 'scikit-learn'],
+    github: 'https://github.com/Garvit-Nag/Revibe-Remastered',
+    live: 'https://revibe-audio.vercel.app',
+    image: '/projects/revibe.png',
+    description: 'an ml-powered music recommendation engine over a 170k+ song dataset. uses k-means clustering as a pre-filtering mechanism to reduce the search space from 170k songs to cluster-local subsets, then ranks by euclidean distance across 9 audio features (acousticness, danceability, energy, etc). integrates itunes api for 30-second audio previews and metadata enrichment. features client-side session caching, 300ms debounced search, and a singleton audio playback controller.'
   },
   {
     slug: 'cosmic-share',
     name: 'Cosmic Share',
-    tagline: 'decentralized file sharing with blockchain verification.',
+    tagline: 'file sharing with secure, auto-expiring links',
     year: '2024',
-    category: 'full-stack',
-    stack: ['Next.js', 'Web3', 'IPFS', 'Ethereum'],
-    github: 'https://github.com/Garvit-Nag/cosmic-share',
-    description: 'a decentralized file sharing platform built on ipfs and ethereum. users can share files securely with blockchain-verified ownership and access control. features include end-to-end encryption, permanent storage options, and smart contract-based permissions.'
+    stack: ['NextJs', 'TypeScript', 'FastAPI', 'Python', 'Appwrite'],
+    github: 'https://github.com/Garvit-Nag/CosmicShare',
+    live: 'https://cosmic-share.vercel.app',
+    image: '/projects/cosmic.png',
+    description: 'an anonymous file sharing platform with auto-expiring links (30 seconds to 1 week). supports 15 file types up to 50mb. uses appwrite storage with expiration metadata encoded directly in filenames (no separate database needed). features a 1-minute apscheduler cleanup job that parses iso8601 timestamps from filenames to delete expired files, and a space-themed ui with simplex noise-driven vortex particle animation.'
   },
   {
     slug: 'taskflow',
     name: 'TaskFlow',
-    tagline: 'ai-powered task management with smart prioritization.',
-    year: '2024',
-    category: 'ai / ml',
-    stack: ['React', 'OpenAI', 'Node.js', 'MongoDB'],
-    github: 'https://github.com/Garvit-Nag/taskflow',
-    description: 'a task management app that uses ai to automatically prioritize and categorize tasks. features include natural language task input, smart deadline suggestions, workload balancing, and productivity analytics. the ai learns from user behavior to improve suggestions over time.'
-  },
-  {
-    slug: 'devevent',
-    name: 'DevEvent',
-    tagline: 'hackathon discovery and team formation platform.',
-    year: '2024',
-    category: 'saas',
-    stack: ['Next.js', 'Node.js', 'PostgreSQL'],
-    github: 'https://github.com/Garvit-Nag/devevent',
-    description: 'a platform for discovering hackathons and forming teams. developers can browse events, build profiles, and connect with teammates based on skills and interests. features include team matching algorithms, timeline tracking, and result sharing.'
+    tagline: 'full-stack task manager with jwt auth and dark ui',
+    year: '2026',
+    stack: ['React', 'JavaScript', 'FastAPI', 'Python', 'PostgreSQL', 'Supabase'],
+    github: 'https://github.com/Garvit-Nag/Taskflow',
+    live: 'https://taskflow-delta-three.vercel.app',
+    image: '/projects/taskflow.png',
+    description: 'a full-stack todo application with 14 restful endpoints across 4 modular route handlers. features jwt auth via oauth2 password flow with hs256 tokens (20-min ttl), bcrypt password hashing, role-based access control (user vs admin), per-user data isolation via owner_id constraints, alembic database migrations, and a three.js pixelsnow webgl background animation. built with fastapi backend, react frontend, and postgresql on supabase.'
   },
   {
     slug: 'inklore',
     name: 'InkLore',
-    tagline: 'ai-powered blog platform with intelligent content recommendations.',
-    year: '2023',
-    category: 'full-stack',
-    stack: ['Next.js', 'Node.js', 'MongoDB', 'OpenAI'],
-    github: 'https://github.com/Garvit-Nag/inklore',
-    description: 'a blogging platform powered by ai for content recommendations and SEO optimization. writers can publish articles and reach readers interested in similar topics. features include markdown support, reading time estimates, and AI-suggested related articles.'
+    tagline: 'ai story generator trained on custom models',
+    year: '2024',
+    stack: ['NextJs', 'TypeScript', 'FastAPI', 'Python', 'PyTorch', 'Gemini API'],
+    github: 'https://github.com/Garvit-Nag/InkLore',
+    image: '/projects/inklore.png',
+    description: 'a hybrid ai story generator combining local pytorch inference with cloud-based refinement. runs a custom lightweight gpt-2 variant (4 layers, 8 heads, 256 embedding dim) for initial generation with controllable temperature (0.1-1.0), then applies a two-pass gemini refinement pipeline (grammar normalization followed by narrative polish). features unicode-safe text processing with nfkd normalization, quantized creativity slider, and character-by-character typewriter animation at 1ms per character.'
   },
   {
-    slug: 'aodv-propt',
-    name: 'AODV-PROPT',
-    tagline: 'novel routing protocol for enhanced network performance.',
+    slug: 'sumitup',
+    name: 'SumItUp',
+    tagline: 'document summarization via nlp',
     year: '2024',
-    category: 'research',
-    stack: ['C++', 'NS3', 'Network Simulation'],
-    github: 'https://github.com/Garvit-Nag/aodv-propt',
-    description: 'published research (ijnrd, doi: 10.1729/journal.40670) introducing a novel routing protocol that enhances network performance through relational parameter indexing. the protocol improves upon aodv by considering multiple routing parameters simultaneously, resulting in better packet delivery ratios and reduced end-to-end delay in mobile ad-hoc networks.'
+    stack: ['Python', 'Streamlit', 'HuggingFace'],
+    github: 'https://github.com/Garvit-Nag/SumItUp',
+    live: 'https://huggingface.co/spaces/garvitcpp/Sum-it-up',
+    image: '/projects/sumitup.png',
+    description: 'a document summarization tool using large language models via huggingface transformers. supports multi-format ingestion (txt, pdf via pypdf2, docx via python-docx) with configurable summary length controls (100-400 tokens, dynamic min/max). offloads inference to a remote huggingface space endpoint, keeping the streamlit frontend lightweight. features slider-based summary length control and inline file parsing with error recovery.'
+  },
+  {
+    slug: 'pmsss-portal',
+    name: 'PMSSS Portal',
+    tagline: 'scholarship application and upload management',
+    year: '2024',
+    stack: ['NextJs', 'TypeScript', 'Appwrite'],
+    github: 'https://github.com/binge-coder/pmsss-website',
+    live: 'https://pramanik.vercel.app',
+    image: '/projects/pmsss.png',
+    description: 'a scholarship application portal for the prime minister\'s special scholarship scheme (pmsss), built for the smart india hackathon (internal winner, aicte id: 1728). streamlines document uploads and application tracking for students from jammu & kashmir and ladakh applying for undergraduate studies. features appwrite authentication, responsive design with magic ui components, and a structured application workflow.'
+  },
+  {
+    slug: 'reciperover',
+    name: 'Recipe Rover',
+    tagline: 'recipe discovery based on available ingredients',
+    year: '2024',
+    stack: ['NextJs', 'TypeScript', 'Flask', 'Python', 'MongoDB', 'scikit-learn'],
+    github: 'https://github.com/Garvit-Nag/RecipeRover-Production',
+    live: 'https://recipe-rover-fun.vercel.app',
+    image: '/projects/recipe.png',
+    description: 'a multi-modal recipe recommendation platform over 20k+ recipes. supports text search, food image analysis (gemini vision), and form-based filters. uses tf-idf embeddings (5k ingredient + 3k keyword features), one-hot category encoding, and 7 binary dietary flags combined into an 11k-dimension sparse matrix for cosine similarity scoring. features soft penalty-based ranking for calorie/time constraints, 5 concurrent async image scrapers with 60s timeout, and appwrite auth with mongodb search history.'
   }
 ]
 
@@ -136,10 +165,3 @@ export function getProjectBySlug(slug: string): Project | undefined {
 export function getFeaturedProjects(): Project[] {
   return projects.filter(p => p.featured)
 }
-
-export function getProjectsByCategory(category: string): Project[] {
-  if (category === 'all') return projects
-  return projects.filter(p => p.category === category)
-}
-
-export const categories = ['all', 'ai / ml', 'saas', 'full-stack', 'research']
