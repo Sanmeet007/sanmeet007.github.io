@@ -176,7 +176,7 @@ export function Navigation() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden overflow-hidden bg-[rgba(8,8,8,0.92)] backdrop-blur-[20px] border-b border-[rgba(255,255,255,0.05)]"
+            className="lg:hidden overflow-hidden bg-(--nav-bg-mobile) backdrop-blur-[20px] border-b border-border-subtle"
           >
             <div className="px-6 py-6 flex flex-col gap-1">
               {NAV_LINKS.map((link) => (
@@ -194,48 +194,49 @@ export function Navigation() {
                 </Link>
               ))}
 
-              <div className="h-3" />
+              <div className="mt-6 pt-4 border-t border-border-subtle flex flex-col gap-3">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-text-muted">theme</span>
+                  <div className="flex items-center gap-1.5">
+                    {THEME_OPTIONS.map((opt) => {
+                      const Icon = opt.icon
+                      return (
+                        <button
+                          key={opt.value}
+                          onClick={() => setTheme(opt.value)}
+                          className={`flex items-center justify-center w-8 h-8 border rounded-md transition-all duration-200 ${
+                            theme === opt.value
+                              ? 'border-border-accent text-text-heading bg-surface-mid'
+                              : 'border-border-low text-text-secondary hover:bg-surface-low'
+                          }`}
+                          aria-label={opt.label}
+                          title={opt.label}
+                        >
+                          <Icon size={13} strokeWidth={1.5} />
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
 
-              <div className="flex items-center gap-3 pt-2 flex-wrap">
                 <Link
                   href="https://v1.garvitnag.com"
                   target="_blank"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-1.5 font-mono text-[11px] tracking-widest lowercase text-text-secondary border border-border-low rounded-md px-2.5 py-1.5 hover:bg-surface-low transition-all duration-300"
+                  className="flex items-center justify-between w-full border border-border-low rounded-md px-3 py-2.5 hover:bg-surface-low hover:border-border-accent transition-all duration-300 group"
                 >
-                  <History size={12} strokeWidth={1.5} />
-                  v1.
+                  <span className="font-mono text-[12px] tracking-widest lowercase text-text-secondary group-hover:text-text-heading">v1. portfolio</span>
+                  <History size={13} strokeWidth={1.5} className="text-text-secondary group-hover:text-text-heading" />
                 </Link>
-
-                {/* Mobile theme options inline */}
-                <div className="flex items-center gap-1.5">
-                  {THEME_OPTIONS.map((opt) => {
-                    const Icon = opt.icon
-                    return (
-                      <button
-                        key={opt.value}
-                        onClick={() => setTheme(opt.value)}
-                        className={`flex items-center justify-center w-7 h-7 border rounded-md transition-all duration-200 ${
-                          theme === opt.value
-                            ? 'border-border-accent text-text-heading bg-surface-mid'
-                            : 'border-border-low text-text-secondary hover:bg-surface-low'
-                        }`}
-                        aria-label={opt.label}
-                      >
-                        <Icon size={12} strokeWidth={1.5} />
-                      </button>
-                    )
-                  })}
-                </div>
 
                 <Link
                   href="/Resume.pdf"
                   target="_blank"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-1.5 font-mono text-[11px] tracking-widest lowercase text-text-secondary border border-border-low rounded-md px-2.5 py-1.5 hover:bg-surface-low transition-all duration-300"
+                  className="flex items-center justify-between w-full border border-border-low rounded-md px-3 py-2.5 hover:bg-surface-low hover:border-border-accent transition-all duration-300 group"
                 >
-                  <FileText size={12} strokeWidth={1.5} />
-                  resume
+                  <span className="font-mono text-[12px] tracking-widest lowercase text-text-secondary group-hover:text-text-heading">resume</span>
+                  <FileText size={13} strokeWidth={1.5} className="text-text-secondary group-hover:text-text-heading" />
                 </Link>
               </div>
             </div>

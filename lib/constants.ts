@@ -371,3 +371,8 @@ export const CONTACT_LINKS: ContactLinkType[] = [
     href: "https://instagram.com/garwiitt",
   },
 ];
+
+export const CONTACT_CONFIG = {
+  BASIN_URL: "https://usebasin.com/f/8f49d73c20d1",
+  SCHEDULING_URL: "https://cal.com/garvitnag/30min",
+};
