@@ -36,7 +36,7 @@ export default function BuildPage() {
       {/* Header + Projects Section */}
       <section
         data-section="1"
-        className="bg-transparent pt-32 pb-[140px]"
+        className="bg-transparent pt-32 pb-35"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
@@ -52,10 +52,10 @@ export default function BuildPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: 'easeOut', delay: 0.1 }}
           >
-            <h1 className="font-sans font-bold text-[clamp(36px,5.5vw,76px)] text-[var(--text-heading)] tracking-[-0.02em] leading-[1.1]">
+            <h1 className="font-sans font-bold text-[clamp(36px,5.5vw,76px)] text-text-heading tracking-[-0.02em] leading-[1.1]">
               Things i&apos;ve built.
             </h1>
-            <h2 className="font-sans font-bold text-[clamp(36px,5.5vw,76px)] text-[var(--text-ghost)] tracking-[-0.02em] leading-[1.1]">
+            <h2 className="font-sans font-bold text-[clamp(36px,5.5vw,76px)] text-text-ghost tracking-[-0.02em] leading-[1.1]">
               The ones that shipped.
             </h2>
           </motion.div>
@@ -64,7 +64,7 @@ export default function BuildPage() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: 'easeOut', delay: 0.2 }}
-            className="font-sans font-normal text-[clamp(14px,1.8vw,16px)] leading-[1.9] text-[var(--text-muted)] mt-8 max-w-[600px]"
+            className="font-sans font-normal text-[clamp(14px,1.8vw,16px)] leading-[1.9] text-text-muted mt-8 max-w-150"
           >
             projects i've shipped over the past couple of years. some for hackathons, some just to learn.
           </motion.p>
@@ -116,7 +116,7 @@ export default function BuildPage() {
                   className="project-card group flex flex-col"
                 >
                   {/* Thumbnail */}
-                  <div className="card-thumbnail aspect-video bg-[var(--bg-alt)] rounded-t-[10px]">
+                  <div className="card-thumbnail aspect-video bg-bg-alt rounded-t-[10px]">
                     {project.image ? (
                       <img
                         src={project.image}
@@ -124,7 +124,7 @@ export default function BuildPage() {
                         className="absolute inset-0 w-full h-full object-cover object-top"
                       />
                     ) : (
-                      <p className="absolute inset-0 flex items-center justify-center font-sans font-bold text-[20px] text-[var(--text-heading)] opacity-[0.06]">
+                      <p className="absolute inset-0 flex items-center justify-center font-sans font-bold text-[20px] text-text-heading opacity-[0.06]">
                         {project.name}
                       </p>
                     )}
@@ -134,18 +134,18 @@ export default function BuildPage() {
                   <div className="p-5 lg:p-6 flex flex-col flex-1">
                     {/* Top row */}
                     <div className="flex items-center justify-between">
-                      <h3 className="font-sans font-semibold text-[17px] text-[var(--text-heading)]">
+                      <h3 className="font-sans font-semibold text-[17px] text-text-heading">
                         {project.name}
                       </h3>
                       <div className="flex items-center gap-1.5">
-                        <Calendar size={13} strokeWidth={1.5} className="text-[var(--text-label)]" />
-                        <span className="font-mono text-[10px] tracking-widest text-[var(--text-label)]">
+                        <Calendar size={13} strokeWidth={1.5} className="text-text-label" />
+                        <span className="font-mono text-[10px] tracking-widest text-text-label">
                           {project.year}
                         </span>
                       </div>
                     </div>
 
-                    <p className="font-sans text-[12.5px] text-[var(--text-muted)] mt-1.5 leading-[1.5]">
+                    <p className="font-sans text-[12.5px] text-text-muted mt-1.5 leading-normal">
                       {project.tagline.replace(/\.$/, '')}
                     </p>
 
@@ -153,7 +153,7 @@ export default function BuildPage() {
                     <div className="flex-1 min-h-5" />
 
                     {/* Links */}
-                    <div className="flex items-center gap-5 pt-5 border-t border-[var(--border-low)]">
+                    <div className="flex items-center gap-5 pt-5 border-t border-border-low">
                       {project.github && (
                         <Link
                           href={project.github}
@@ -201,7 +201,7 @@ export default function BuildPage() {
           </ScrollAnimation>
 
           <ScrollAnimation delay={1} className="mt-12 flex items-center justify-center w-full">
-            <div className="flex-1 max-w-[200px] h-px bg-linear-to-r from-transparent to-[var(--border-strong)] mr-6 hidden md:block" />
+            <div className="flex-1 max-w-50 h-px bg-linear-to-r from-transparent to-border-strong mr-6 hidden md:block" />
             <Link
               href="https://github.com/Garvit-Nag"
               target="_blank"
@@ -212,7 +212,7 @@ export default function BuildPage() {
                 view all on github
               </span>
             </Link>
-            <div className="flex-1 max-w-[200px] h-px bg-linear-to-l from-transparent to-[var(--border-strong)] ml-6 hidden md:block" />
+            <div className="flex-1 max-w-50 h-px bg-linear-to-l from-transparent to-border-strong ml-6 hidden md:block" />
           </ScrollAnimation>
         </div>
       </section>

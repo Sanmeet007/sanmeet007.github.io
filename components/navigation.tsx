@@ -60,12 +60,12 @@ export function Navigation() {
   const CurrentIcon = currentEntry.icon
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--nav-bg)] backdrop-blur-[8px] border-b border-[rgba(255,255,255,0.05)]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-(--nav-bg) backdrop-blur-sm border-b border-[rgba(255,255,255,0.05)]">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
-          className="font-sans font-bold text-[20px] text-[var(--text-heading)] hover:opacity-80 hover:scale-105 transition-all duration-300 cursor-target inline-block"
+          className="font-sans font-bold text-[20px] text-text-heading hover:opacity-80 hover:scale-105 transition-all duration-300 cursor-target inline-block"
         >
           gn.
         </Link>
@@ -84,7 +84,7 @@ export function Navigation() {
             >
               {link.label}
               {isActive(link.href) && (
-                <span className="absolute -bottom-1 left-0 right-0 h-px bg-[var(--border-active)]" />
+                <span className="absolute -bottom-1 left-0 right-0 h-px bg-border-active" />
               )}
             </Link>
           ))}
@@ -95,7 +95,7 @@ export function Navigation() {
           <Link
             href="https://v1.garvitnag.com"
             target="_blank"
-            className="flex items-center gap-1.5 font-mono text-[11px] tracking-widest lowercase text-[var(--text-secondary)] border border-[var(--border-low)] rounded-md px-2.5 py-1 hover:bg-[var(--surface-low)] hover:text-[var(--text-heading)] hover:scale-[1.03] transition-all duration-300 cursor-target"
+            className="flex items-center gap-1.5 font-mono text-[11px] tracking-widest lowercase text-text-secondary border border-border-low rounded-md px-2.5 py-1 hover:bg-surface-low hover:text-text-heading hover:scale-[1.03] transition-all duration-300 cursor-target"
           >
             <span className="flex items-center gap-1.5 align-middle">
               <History size={12} strokeWidth={1.5} />
@@ -107,7 +107,7 @@ export function Navigation() {
           <div ref={themeRef} className="relative">
             <button
               onClick={() => setIsThemeOpen(prev => !prev)}
-              className="flex items-center justify-center w-7 h-7 text-[var(--text-secondary)] border border-[var(--border-low)] rounded-md hover:bg-[var(--surface-low)] hover:text-[var(--text-heading)] transition-all duration-300 cursor-target"
+              className="flex items-center justify-center w-7 h-7 text-text-secondary border border-border-low rounded-md hover:bg-surface-low hover:text-text-heading transition-all duration-300 cursor-target"
               aria-label={`Theme: ${currentEntry.label}`}
             >
               <CurrentIcon size={12} strokeWidth={1.5} />
@@ -120,7 +120,7 @@ export function Navigation() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -6, scale: 0.96 }}
                   transition={{ duration: 0.15, ease: 'easeOut' }}
-                  className="absolute right-0 top-full mt-2 bg-[var(--nav-bg-mobile)] backdrop-blur-[20px] border border-[var(--border-low)] rounded-lg overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.15)] z-50 min-w-[110px]"
+                  className="absolute right-0 top-full mt-2 bg-(--nav-bg-mobile) backdrop-blur-[20px] border border-border-low rounded-lg overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.15)] z-50 min-w-27.5"
                 >
                   {THEME_OPTIONS.map((opt) => {
                     const Icon = opt.icon
@@ -130,8 +130,8 @@ export function Navigation() {
                         onClick={() => { setTheme(opt.value); setIsThemeOpen(false) }}
                         className={`w-full flex items-center gap-2.5 px-3.5 py-2.5 font-mono text-[11px] tracking-widest lowercase transition-all duration-150 ${
                           theme === opt.value
-                            ? 'text-[var(--text-heading)] bg-[var(--surface-mid)]'
-                            : 'text-[var(--text-secondary)] hover:text-[var(--text-heading)] hover:bg-[var(--surface-low)]'
+                            ? 'text-text-heading bg-surface-mid'
+                            : 'text-text-secondary hover:text-text-heading hover:bg-surface-low'
                         }`}
                       >
                         <Icon size={11} strokeWidth={1.5} />
@@ -144,7 +144,7 @@ export function Navigation() {
             </AnimatePresence>
           </div>
 
-          <div className="w-px h-4 bg-[var(--border-mid)] mx-0.5" />
+          <div className="w-px h-4 bg-border-mid mx-0.5" />
 
           <Link
             href="/Resume.pdf"
@@ -161,7 +161,7 @@ export function Navigation() {
         {/* Hamburger — mobile */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden flex items-center justify-center w-10 h-10 text-[var(--text-heading)]"
+          className="lg:hidden flex items-center justify-center w-10 h-10 text-text-heading"
           aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
         >
           {isMobileMenuOpen ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
@@ -184,10 +184,10 @@ export function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`font-mono text-[14px] tracking-widest lowercase py-3 border-b border-[var(--border-subtle)] transition-all duration-300 ${
+                  className={`font-mono text-[14px] tracking-widest lowercase py-3 border-b border-border-subtle transition-all duration-300 ${
                     isActive(link.href)
-                      ? 'text-[var(--text-heading)]'
-                      : 'text-[var(--text-muted)]'
+                      ? 'text-text-heading'
+                      : 'text-text-muted'
                   }`}
                 >
                   {link.label}
@@ -201,7 +201,7 @@ export function Navigation() {
                   href="https://v1.garvitnag.com"
                   target="_blank"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-1.5 font-mono text-[11px] tracking-widest lowercase text-[var(--text-secondary)] border border-[var(--border-low)] rounded-md px-2.5 py-1.5 hover:bg-[var(--surface-low)] transition-all duration-300"
+                  className="flex items-center gap-1.5 font-mono text-[11px] tracking-widest lowercase text-text-secondary border border-border-low rounded-md px-2.5 py-1.5 hover:bg-surface-low transition-all duration-300"
                 >
                   <History size={12} strokeWidth={1.5} />
                   v1.
@@ -217,8 +217,8 @@ export function Navigation() {
                         onClick={() => setTheme(opt.value)}
                         className={`flex items-center justify-center w-7 h-7 border rounded-md transition-all duration-200 ${
                           theme === opt.value
-                            ? 'border-[var(--border-accent)] text-[var(--text-heading)] bg-[var(--surface-mid)]'
-                            : 'border-[var(--border-low)] text-[var(--text-secondary)] hover:bg-[var(--surface-low)]'
+                            ? 'border-border-accent text-text-heading bg-surface-mid'
+                            : 'border-border-low text-text-secondary hover:bg-surface-low'
                         }`}
                         aria-label={opt.label}
                       >
@@ -232,7 +232,7 @@ export function Navigation() {
                   href="/Resume.pdf"
                   target="_blank"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-1.5 font-mono text-[11px] tracking-widest lowercase text-[var(--text-secondary)] border border-[var(--border-low)] rounded-md px-2.5 py-1.5 hover:bg-[var(--surface-low)] transition-all duration-300"
+                  className="flex items-center gap-1.5 font-mono text-[11px] tracking-widest lowercase text-text-secondary border border-border-low rounded-md px-2.5 py-1.5 hover:bg-surface-low transition-all duration-300"
                 >
                   <FileText size={12} strokeWidth={1.5} />
                   resume

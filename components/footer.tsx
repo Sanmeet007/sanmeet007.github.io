@@ -9,7 +9,7 @@ export function Footer() {
     <footer className="bg-footer-base border-t border-[rgba(255,255,255,0.05)] pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-12 mb-16">
-          <div className="max-w-[420px] pr-0 md:pr-8 lg:pr-16 text-center md:text-left mx-auto md:mx-0">
+          <div className="max-w-105 pr-0 md:pr-8 lg:pr-16 text-center md:text-left mx-auto md:mx-0">
             <Link
               href="/"
               className="font-sans font-bold text-[18px] text-text-heading mb-6 block hover:opacity-80 hover:scale-105 origin-left transition-all duration-300 w-fit mx-auto md:mx-0"
