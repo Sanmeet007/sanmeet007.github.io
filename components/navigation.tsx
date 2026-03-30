@@ -93,7 +93,7 @@ export function Navigation() {
         {/* Right side — desktop */}
         <div className="hidden lg:flex items-center gap-3">
           <Link
-            href="https://v1.garvitnag.com"
+            href="https://v1.garvitnag.in"
             target="_blank"
             className="flex items-center gap-1.5 font-mono text-[11px] tracking-widest lowercase text-text-secondary border border-border-low rounded-md px-2.5 py-1 hover:bg-surface-low hover:text-text-heading hover:scale-[1.03] transition-all duration-300 cursor-target"
           >
@@ -220,7 +220,7 @@ export function Navigation() {
                 </div>
 
                 <Link
-                  href="https://v1.garvitnag.com"
+                  href="https://v1.garvitnag.in"
                   target="_blank"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="flex items-center justify-between w-full border border-border-low rounded-md px-3 py-2.5 hover:bg-surface-low hover:border-border-accent transition-all duration-300 group"
