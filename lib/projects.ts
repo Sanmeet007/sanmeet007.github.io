@@ -167,6 +167,7 @@ export const projects: Project[] = [
       "Gemini API",
     ],
     github: "https://github.com/Garvit-Nag/InkLore",
+    live: "https://ink-lore.vercel.app",
     image: "/projects/inklore.png",
     description:
       "a hybrid ai story generator combining local pytorch inference with cloud-based refinement. runs a custom lightweight gpt-2 variant (4 layers, 8 heads, 256 embedding dim) for initial generation with controllable temperature (0.1-1.0), then applies a two-pass gemini refinement pipeline (grammar normalization followed by narrative polish). features unicode-safe text processing with nfkd normalization, quantized creativity slider, and character-by-character typewriter animation at 1ms per character.",
