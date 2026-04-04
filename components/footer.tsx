@@ -20,15 +20,15 @@ export function Footer() {
               open to new opportunities, collaborations, or just a good
               conversation about tech and design.
             </p>
-            <a
-              href="mailto:garvit1505@gmail.com"
+            <Link
+              href="/contact"
               className="inline-flex items-center gap-2 font-mono text-[12px] tracking-widest lowercase text-text-heading border border-border-mid rounded-md px-5 py-2.5 hover:bg-surface-low transition-colors group"
             >
               <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
                 let's talk
                 <ArrowUpRight size={14} />
               </span>
-            </a>
+            </Link>
           </div>
 
           <div className="flex flex-col gap-5 items-center md:items-start">

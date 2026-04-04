@@ -60,8 +60,8 @@ export function Navigation() {
   const CurrentIcon = currentEntry.icon
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-(--nav-bg) backdrop-blur-sm border-b border-[rgba(255,255,255,0.05)]">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <nav className={`fixed top-0 left-0 right-0 z-50 ${isMobileMenuOpen ? 'bottom-0 flex flex-col bg-(--nav-bg-mobile) backdrop-blur-xl' : 'bg-(--nav-bg) backdrop-blur-sm border-b border-[rgba(255,255,255,0.05)]'}`}>
+      <div className={`w-full max-w-7xl mx-auto px-6 h-16 flex items-center justify-between shrink-0 ${isMobileMenuOpen ? 'border-b border-border-subtle' : ''}`}>
         {/* Logo */}
         <Link
           href="/"
@@ -168,64 +168,79 @@ export function Navigation() {
         </button>
       </div>
 
-      {/* Mobile menu panel */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden overflow-hidden bg-(--nav-bg-mobile) backdrop-blur-[20px] border-b border-border-subtle"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+            className="lg:hidden flex-1 flex flex-col overflow-y-auto"
           >
-            <div className="px-6 py-6 flex flex-col gap-1">
-              {NAV_LINKS.map((link) => (
-                <Link
+            <div className="flex-1 flex flex-col justify-center px-8">
+              {NAV_LINKS.map((link, i) => (
+                <motion.div
                   key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`font-mono text-[14px] tracking-widest lowercase py-3 border-b border-border-subtle transition-all duration-300 ${
-                    isActive(link.href)
-                      ? 'text-text-heading'
-                      : 'text-text-muted'
-                  }`}
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.22, delay: i * 0.05, ease: 'easeOut' }}
                 >
-                  {link.label}
-                </Link>
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`flex items-center justify-between py-5 border-b border-border-subtle transition-all duration-300 ${
+                      isActive(link.href)
+                        ? 'text-text-heading'
+                        : 'text-text-muted hover:text-text-heading'
+                    }`}
+                  >
+                    <span className="font-mono text-[18px] tracking-widest lowercase">{link.label}</span>
+                    {isActive(link.href) && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-border-active" />
+                    )}
+                  </Link>
+                </motion.div>
               ))}
+            </div>
 
-              <div className="mt-6 pt-4 border-t border-border-subtle flex flex-col gap-3">
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-[10px] tracking-widest uppercase text-text-muted">theme</span>
-                  <div className="flex items-center gap-1.5">
-                    {THEME_OPTIONS.map((opt) => {
-                      const Icon = opt.icon
-                      return (
-                        <button
-                          key={opt.value}
-                          onClick={() => setTheme(opt.value)}
-                          className={`flex items-center justify-center w-8 h-8 border rounded-md transition-all duration-200 ${
-                            theme === opt.value
-                              ? 'border-border-accent text-text-heading bg-surface-mid'
-                              : 'border-border-low text-text-secondary hover:bg-surface-low'
-                          }`}
-                          aria-label={opt.label}
-                          title={opt.label}
-                        >
-                          <Icon size={13} strokeWidth={1.5} />
-                        </button>
-                      )
-                    })}
-                  </div>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.25, delay: 0.18, ease: 'easeOut' }}
+              className="px-8 pb-10 pt-6 flex flex-col gap-3 border-t border-border-subtle"
+            >
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-mono text-[10px] tracking-widest uppercase text-text-muted">theme</span>
+                <div className="flex items-center gap-1.5">
+                  {THEME_OPTIONS.map((opt) => {
+                    const Icon = opt.icon
+                    return (
+                      <button
+                        key={opt.value}
+                        onClick={() => setTheme(opt.value)}
+                        className={`flex items-center justify-center w-9 h-9 border rounded-md transition-all duration-200 ${
+                          theme === opt.value
+                            ? 'border-border-accent text-text-heading bg-surface-mid'
+                            : 'border-border-low text-text-secondary hover:bg-surface-low'
+                        }`}
+                        aria-label={opt.label}
+                        title={opt.label}
+                      >
+                        <Icon size={14} strokeWidth={1.5} />
+                      </button>
+                    )
+                  })}
                 </div>
+              </div>
 
+              <div className="flex flex-col gap-3">
                 <Link
                   href="https://v1.garvitnag.in"
                   target="_blank"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center justify-between w-full border border-border-low rounded-md px-3 py-2.5 hover:bg-surface-low hover:border-border-accent transition-all duration-300 group"
+                  className="flex items-center justify-between border border-border-low rounded-md px-3 py-3 hover:bg-surface-low hover:border-border-accent transition-all duration-300 group"
                 >
-                  <span className="font-mono text-[12px] tracking-widest lowercase text-text-secondary group-hover:text-text-heading">v1. portfolio</span>
+                  <span className="font-mono text-[11px] tracking-widest lowercase text-text-secondary group-hover:text-text-heading">v1. portfolio</span>
                   <History size={13} strokeWidth={1.5} className="text-text-secondary group-hover:text-text-heading" />
                 </Link>
 
@@ -233,13 +248,13 @@ export function Navigation() {
                   href="/Resume.pdf"
                   target="_blank"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center justify-between w-full border border-border-low rounded-md px-3 py-2.5 hover:bg-surface-low hover:border-border-accent transition-all duration-300 group"
+                  className="flex items-center justify-between border border-border-low rounded-md px-3 py-3 hover:bg-surface-low hover:border-border-accent transition-all duration-300 group"
                 >
-                  <span className="font-mono text-[12px] tracking-widest lowercase text-text-secondary group-hover:text-text-heading">resume</span>
+                  <span className="font-mono text-[11px] tracking-widest lowercase text-text-secondary group-hover:text-text-heading">resume</span>
                   <FileText size={13} strokeWidth={1.5} className="text-text-secondary group-hover:text-text-heading" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
