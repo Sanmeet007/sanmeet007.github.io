@@ -103,7 +103,7 @@ export function HeroSection() {
                 passion
               </p>
               <p className="font-sans font-medium text-[17px] text-[var(--text-strong)] tracking-[-0.01em] leading-relaxed">
-                Engineer passionate about design, detail, and doing things right.
+                Engineer passionate about intelligent systems, clean code, and thoughtful design.
               </p>
             </motion.div>
 
@@ -119,7 +119,7 @@ export function HeroSection() {
                 building
               </p>
               <p className="font-sans font-medium text-[15px] text-[var(--text-strong)] tracking-[-0.01em] leading-relaxed">
-                Crafting tools I'd actually use. No fluff. Just clean, purposeful builds that feel good.
+                Training models, reading research, and crafting products that feel right.
               </p>
             </motion.div>
 
