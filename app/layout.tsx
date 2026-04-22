@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Sanmeet Singh | Developer",
   description:
-    "Full-stack developer building innovative web applications with clean, functional code.",
+    "Engineer building scalable systems, intelligent applications, and clean user experiences.",
 };
 
 export const viewport: Viewport = {
