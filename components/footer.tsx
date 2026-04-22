@@ -101,7 +101,7 @@ export function Footer() {
 
         {/* Footer bottom */}
         <div className="flex items-center justify-center pt-6 border-t border-border-subtle font-mono text-[11px] sm:text-[12px] tracking-[0.05em] text-text-secondary text-center">
-          <span>gn. · made with way too many console logs · 2026</span>
+          <span>made with way too many refactors · 2026</span>
         </div>
       </div>
     </footer>
