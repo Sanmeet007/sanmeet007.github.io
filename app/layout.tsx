@@ -20,7 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Garvit Nag | Developer",
+  title: "Sanmeet Singh | Developer",
   description:
     "Full-stack developer building innovative web applications with clean, functional code.",
 };

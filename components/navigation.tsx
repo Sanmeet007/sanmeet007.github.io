@@ -147,7 +147,7 @@ export function Navigation() {
           <div className="w-px h-4 bg-border-mid mx-0.5" />
 
           <Link
-            href="/Resume.pdf"
+            href="/sanmeet-resume.pdf"
             target="_blank"
             className="flex items-center gap-1.5 font-mono text-[13px] tracking-widest lowercase opacity-40 hover:opacity-100 hover:scale-[1.03] transition-all duration-300 cursor-target"
           >
@@ -245,7 +245,7 @@ export function Navigation() {
                 </Link>
 
                 <Link
-                  href="/Resume.pdf"
+                  href="/sanmeet-resume.pdf"
                   target="_blank"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="flex items-center justify-between border border-border-low rounded-md px-3 py-3 hover:bg-surface-low hover:border-border-accent transition-all duration-300 group"

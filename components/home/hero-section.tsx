@@ -32,10 +32,10 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, ease: 'easeOut', delay: 0.1 }}
-              className="font-sans font-bold text-[clamp(48px,9vw,104px)] text-[var(--text-heading)] tracking-[-0.025em] leading-[1.1] mt-3"
+              className="font-sans font-bold text-[clamp(48px,9vw,84px)] text-[var(--text-heading)] tracking-[-0.025em] leading-[1.1] mt-3"
               suppressHydrationWarning
             >
-              Garvit Nag
+              Sanmeet Singh
             </motion.h1>
 
             <motion.p
@@ -45,7 +45,7 @@ export function HeroSection() {
               className="mt-6 font-mono text-sm tracking-[0.18em] text-[var(--text-muted)] lowercase"
               suppressHydrationWarning
             >
-              full-stack developer · chandigarh, india
+              full-stack developer · mohali, india
             </motion.p>
 
             <div className="h-10" />
@@ -75,7 +75,7 @@ export function HeroSection() {
                   <ArrowRight size={16} strokeWidth={1.5} />
                 </span>
               </button>
-              <Link href="/Resume.pdf" target="_blank" className="bordered-button group">
+              <Link href="/sanmeet-resume.pdf" target="_blank" className="bordered-button group">
                 <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
                   resume
                   <FileText size={16} strokeWidth={1.5} />
