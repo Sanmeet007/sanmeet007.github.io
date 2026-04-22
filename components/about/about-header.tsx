@@ -43,10 +43,7 @@ export function AboutHeader() {
             className="max-w-[560px] mt-8 mx-auto lg:mx-0"
           >
             <p className="font-sans text-[16px] leading-[1.9] text-[var(--text-body)]">
-              i build web apps that are clean, fast, and value-dense. using tech
-              that actually excites me. turning messy problems into stuff people
-              genuinely enjoy. always on the lookout for the next interesting
-              challenge.
+             I build AI-driven products, scalable backends, and Flutter apps—usually architecting systems, integrating LLMs, and arguing with poorly designed databases.
             </p>
             <p className="font-sans text-[16px] leading-[1.9] text-[var(--text-body)] mt-4">
               when i&apos;m not building, i&apos;m probably watching football,

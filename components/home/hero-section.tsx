@@ -57,7 +57,7 @@ export function HeroSection() {
               className="font-sans font-normal text-lg leading-[1.9] text-[var(--text-body)] max-w-[500px]"
               suppressHydrationWarning
             >
-              i build innovative web applications with clean, functional code, occasionally pausing to have existential conversations with my console logs.
+              I build smart applications with clean, functional code, occasionally pausing to wonder why the model hallucinated again.
             </motion.p>
 
             <div className="h-8" />

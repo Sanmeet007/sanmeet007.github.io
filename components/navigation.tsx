@@ -74,7 +74,7 @@ export function Navigation() {
           href="/"
           className="font-sans font-bold text-[20px] text-text-heading hover:opacity-80 hover:scale-105 transition-all duration-300 cursor-target inline-block"
         >
-          <Image src="/logo.svg" alt="S" width={40} height={40}/>
+          <Image src="/logo.svg" alt="S" width={40} height={40} />
         </Link>
 
         {/* Center Nav Links — desktop */}
@@ -99,17 +99,6 @@ export function Navigation() {
 
         {/* Right side — desktop */}
         <div className="hidden lg:flex items-center gap-3">
-          <Link
-            href="https://v1.garvitnag.in"
-            target="_blank"
-            className="flex items-center gap-1.5 font-mono text-[11px] tracking-widest lowercase text-text-secondary border border-border-low rounded-md px-2.5 py-1 hover:bg-surface-low hover:text-text-heading hover:scale-[1.03] transition-all duration-300 cursor-target"
-          >
-            <span className="flex items-center gap-1.5 align-middle">
-              <History size={12} strokeWidth={1.5} />
-              v1.
-            </span>
-          </Link>
-
           {/* Theme dropdown */}
           <div ref={themeRef} className="relative">
             <button
