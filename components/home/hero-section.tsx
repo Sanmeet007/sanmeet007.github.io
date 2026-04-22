@@ -45,7 +45,7 @@ export function HeroSection() {
               className="mt-6 font-mono text-sm tracking-[0.18em] text-[var(--text-muted)] lowercase"
               suppressHydrationWarning
             >
-              full-stack developer · mohali, india
+              full-stack ai engineer · mohali, india
             </motion.p>
 
             <div className="h-10" />
