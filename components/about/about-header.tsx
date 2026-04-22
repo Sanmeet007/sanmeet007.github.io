@@ -1,10 +1,11 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
-import { SectionHeading } from '@/components/ui/section-heading'
-import TiltedCard from '@/components/animate-ui/components/tilted-card'
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { SectionHeading } from "@/components/ui/section-heading";
+import TiltedCard from "@/components/animate-ui/components/tilted-card";
+import Image from "next/image";
 
 export function AboutHeader() {
   return (
@@ -14,53 +15,58 @@ export function AboutHeader() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-left">
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, ease: 'easeOut' }}
-        >
-          <SectionHeading label="about" />
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+          >
+            <SectionHeading label="about" />
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, ease: 'easeOut', delay: 0.1 }}
-        >
-          <h1 className="font-sans font-bold text-[clamp(36px,5.5vw,76px)] text-[var(--text-heading)] tracking-[-0.02em] leading-[1.1]">
-            The person
-          </h1>
-          <h2 className="font-sans font-bold text-[clamp(36px,5.5vw,76px)] text-[var(--text-ghost)] tracking-[-0.02em] leading-[1.1] mt-2">
-            behind the code.
-          </h2>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
+          >
+            <h1 className="font-sans font-bold text-[clamp(36px,5.5vw,76px)] text-[var(--text-heading)] tracking-[-0.02em] leading-[1.1]">
+              The person
+            </h1>
+            <h2 className="font-sans font-bold text-[clamp(36px,5.5vw,76px)] text-[var(--text-ghost)] tracking-[-0.02em] leading-[1.1] mt-2">
+              behind the code.
+            </h2>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, ease: 'easeOut', delay: 0.2 }}
-          className="max-w-[560px] mt-8 mx-auto lg:mx-0"
-        >
-          <p className="font-sans text-[16px] leading-[1.9] text-[var(--text-body)]">
-            i build web apps that are clean, fast, and value-dense. using tech that actually excites me. turning messy problems into stuff people genuinely enjoy. always on the lookout for the next interesting challenge.
-          </p>
-          <p className="font-sans text-[16px] leading-[1.9] text-[var(--text-body)] mt-4">
-            when i&apos;m not building, i&apos;m probably watching football, arguing over tactics, or hoping barça holds it together. (i still believe.)
-          </p>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: "easeOut", delay: 0.2 }}
+            className="max-w-[560px] mt-8 mx-auto lg:mx-0"
+          >
+            <p className="font-sans text-[16px] leading-[1.9] text-[var(--text-body)]">
+              i build web apps that are clean, fast, and value-dense. using tech
+              that actually excites me. turning messy problems into stuff people
+              genuinely enjoy. always on the lookout for the next interesting
+              challenge.
+            </p>
+            <p className="font-sans text-[16px] leading-[1.9] text-[var(--text-body)] mt-4">
+              when i&apos;m not building, i&apos;m probably watching football,
+              arguing over tactics, or hoping barça holds it together. (i still
+              believe.)
+            </p>
+          </motion.div>
         </div>
 
         {/* Right side interactive card */}
         <motion.div
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 1 }}
-           transition={{ duration: 1, delay: 0.5 }}
-           className="relative flex justify-center lg:justify-end w-full lg:w-auto shrink-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="relative flex justify-center lg:justify-end w-full lg:w-auto shrink-0"
         >
           <TiltedCard
             imageSrc="/pfp.png"
             altText="Garvit Nag - Engineer"
-            captionText="gn. / engineer"
+            captionText="sanmeet / engineer"
             containerHeight="450px"
             containerWidth="350px"
             imageHeight="450px"
@@ -76,41 +82,82 @@ export function AboutHeader() {
                 style={{ background: `rgba(var(--bg-base-raw), 0.85)` }}
               >
                 <div>
-                  <h3 className="font-sans text-xl font-bold text-[var(--text-heading)] tracking-tight">gn.</h3>
+                  <h3 className="font-sans text-xl font-bold text-[var(--text-heading)] tracking-tight">
+                    <Image src="/logo.svg" alt="SA" width={30} height={30} />
+                  </h3>
                   <p className="font-sans text-[13px] text-[var(--text-secondary)] mt-2 mb-6 leading-relaxed lowercase">
                     Powered by unhealthy amounts of caffeine and console logs.
                   </p>
 
                   <div className="flex flex-col gap-4">
                     <div className="flex flex-col gap-1.5">
-                      <span className="font-sans text-[11px] text-[var(--text-muted)]">LinkedIn</span>
-                      <a href="https://linkedin.com/in/garvit-nag" target="_blank" rel="noopener noreferrer" className="font-sans text-[14px] text-[var(--text-strong)] hover:text-[var(--text-heading)] transition-colors flex items-center justify-between group">
+                      <span className="font-sans text-[11px] text-[var(--text-muted)]">
+                        LinkedIn
+                      </span>
+                      <a
+                        href="https://linkedin.com/in/garvit-nag"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-sans text-[14px] text-[var(--text-strong)] hover:text-[var(--text-heading)] transition-colors flex items-center justify-between group"
+                      >
                         linkedin.com/in/garvit-nag
-                        <ArrowRight size={14} className="text-[var(--text-muted)] group-hover:text-[var(--text-heading)] transition-colors" />
+                        <ArrowRight
+                          size={14}
+                          className="text-[var(--text-muted)] group-hover:text-[var(--text-heading)] transition-colors"
+                        />
                       </a>
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <span className="font-sans text-[11px] text-[var(--text-muted)]">GitHub</span>
-                      <a href="https://github.com/Garvit-Nag" target="_blank" rel="noopener noreferrer" className="font-sans text-[14px] text-[var(--text-strong)] hover:text-[var(--text-heading)] transition-colors flex items-center justify-between group">
+                      <span className="font-sans text-[11px] text-[var(--text-muted)]">
+                        GitHub
+                      </span>
+                      <a
+                        href="https://github.com/Garvit-Nag"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-sans text-[14px] text-[var(--text-strong)] hover:text-[var(--text-heading)] transition-colors flex items-center justify-between group"
+                      >
                         github.com/Garvit-Nag
-                        <ArrowRight size={14} className="text-[var(--text-muted)] group-hover:text-[var(--text-heading)] transition-colors" />
+                        <ArrowRight
+                          size={14}
+                          className="text-[var(--text-muted)] group-hover:text-[var(--text-heading)] transition-colors"
+                        />
                       </a>
                     </div>
 
                     <div className="flex flex-col gap-1.5 border-b border-[var(--border-subtle)] pb-6">
-                      <span className="font-sans text-[11px] text-[var(--text-muted)]">X</span>
-                      <a href="https://x.com/garvit1505" target="_blank" rel="noopener noreferrer" className="font-sans text-[14px] text-[var(--text-strong)] hover:text-[var(--text-heading)] transition-colors flex items-center justify-between group">
+                      <span className="font-sans text-[11px] text-[var(--text-muted)]">
+                        X
+                      </span>
+                      <a
+                        href="https://x.com/garvit1505"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-sans text-[14px] text-[var(--text-strong)] hover:text-[var(--text-heading)] transition-colors flex items-center justify-between group"
+                      >
                         x.com/garvit1505
-                        <ArrowRight size={14} className="text-[var(--text-muted)] group-hover:text-[var(--text-heading)] transition-colors" />
+                        <ArrowRight
+                          size={14}
+                          className="text-[var(--text-muted)] group-hover:text-[var(--text-heading)] transition-colors"
+                        />
                       </a>
                     </div>
                   </div>
                 </div>
 
-                <Link href="/contact" className="w-full mt-4 py-3.5 px-4 rounded-xl bg-[var(--glass-bg)] border border-[var(--glass-border)] hover:bg-[var(--surface-mid)] hover:shadow-[0_0_20px_var(--border-strong)] hover:border-[var(--border-accent)] transition-all flex items-center justify-center gap-2 group">
-                  <span className="text-[13px] font-semibold text-[var(--text-heading)]">let's talk</span>
-                  <ArrowRight size={15} strokeWidth={2} className="text-[var(--text-heading)] group-hover:translate-x-1 transition-transform" />
+                <Link
+                  href="/contact"
+                  className="w-full mt-4 py-3.5 px-4 rounded-xl bg-[var(--glass-bg)] border border-[var(--glass-border)] hover:bg-[var(--surface-mid)] hover:shadow-[0_0_20px_var(--border-strong)] hover:border-[var(--border-accent)] transition-all flex items-center justify-center gap-2 group"
+                >
+                  <span className="text-[13px] font-semibold text-[var(--text-heading)]">
+                    let's talk
+                  </span>
+                  <ArrowRight
+                    size={15}
+                    strokeWidth={2}
+                    className="text-[var(--text-heading)] group-hover:translate-x-1 transition-transform"
+                  />
                 </Link>
               </div>
             }
@@ -118,5 +165,5 @@ export function AboutHeader() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
