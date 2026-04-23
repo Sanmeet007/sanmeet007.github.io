@@ -43,12 +43,10 @@ export function AboutHeader() {
             className="max-w-[560px] mt-8 mx-auto lg:mx-0"
           >
             <p className="font-sans text-[16px] leading-[1.9] text-[var(--text-body)]">
-             I build AI-driven products, scalable backends, and Flutter apps—usually architecting systems, integrating LLMs, and arguing with poorly designed databases.
+             I build AI-driven products, scalable backends, and Flutter apps usually architecting systems, integrating LLMs, and arguing with poorly designed databases.
             </p>
             <p className="font-sans text-[16px] leading-[1.9] text-[var(--text-body)] mt-4">
-              when i&apos;m not building, i&apos;m probably watching football,
-              arguing over tactics, or hoping barça holds it together. (i still
-              believe.)
+              When I’m not building, I’m either blundering winning positions in chess or binge-watching anime “for research.” Always chasing the next challenge whether it’s sacrificing my rook for no reason or following Luffy to find the One Piece before I finish my deadlines.
             </p>
           </motion.div>
         </div>
@@ -92,12 +90,12 @@ export function AboutHeader() {
                         LinkedIn
                       </span>
                       <a
-                        href="https://linkedin.com/in/garvit-nag"
+                        href="https://linkedin.com/in/sanmeet007"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-sans text-[14px] text-[var(--text-strong)] hover:text-[var(--text-heading)] transition-colors flex items-center justify-between group"
                       >
-                        linkedin.com/in/garvit-nag
+                        linkedin.com/in/sanmeet007
                         <ArrowRight
                           size={14}
                           className="text-[var(--text-muted)] group-hover:text-[var(--text-heading)] transition-colors"
@@ -110,12 +108,12 @@ export function AboutHeader() {
                         GitHub
                       </span>
                       <a
-                        href="https://github.com/Garvit-Nag"
+                        href="https://github.com/Sanmeet007"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-sans text-[14px] text-[var(--text-strong)] hover:text-[var(--text-heading)] transition-colors flex items-center justify-between group"
                       >
-                        github.com/Garvit-Nag
+                        github.com/Sanmeet007
                         <ArrowRight
                           size={14}
                           className="text-[var(--text-muted)] group-hover:text-[var(--text-heading)] transition-colors"
@@ -125,15 +123,15 @@ export function AboutHeader() {
 
                     <div className="flex flex-col gap-1.5 border-b border-[var(--border-subtle)] pb-6">
                       <span className="font-sans text-[11px] text-[var(--text-muted)]">
-                        X
+                        Chess
                       </span>
                       <a
-                        href="https://x.com/garvit1505"
+                        href="https://www.chess.com/member/blutzmonkey"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-sans text-[14px] text-[var(--text-strong)] hover:text-[var(--text-heading)] transition-colors flex items-center justify-between group"
                       >
-                        x.com/garvit1505
+                        chess.com/blutzmonkey
                         <ArrowRight
                           size={14}
                           className="text-[var(--text-muted)] group-hover:text-[var(--text-heading)] transition-colors"
