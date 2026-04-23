@@ -392,7 +392,7 @@ export const CONTACT_LINKS: ContactLinkType[] = [
   {
     icon: Linkedin,
     label: "linkedin",
-    value: "sanmeet007",
+    value: "linkedin/sanmeet007",
     href: "https://linkedin.com/in/sanmeet007",
   },
 ];
