@@ -113,7 +113,7 @@ export function AboutHeader() {
                         rel="noopener noreferrer"
                         className="font-sans text-[14px] text-[var(--text-strong)] hover:text-[var(--text-heading)] transition-colors flex items-center justify-between group"
                       >
-                        github.com/Sanmeet007
+                        github.com/sanmeet007
                         <ArrowRight
                           size={14}
                           className="text-[var(--text-muted)] group-hover:text-[var(--text-heading)] transition-colors"

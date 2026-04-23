@@ -16,6 +16,7 @@ import {
   Instagram,
 } from "lucide-react";
 import {
+  PiGithubLogo,
   PiTrophy,
   PiBriefcase,
   PiCode,
@@ -48,30 +49,33 @@ export interface ExperienceType {
 export const EXPERIENCES: ExperienceType[] = [
   {
     icon: PiCode,
-    year: "2025",
-    title: "freelance web developer",
-    subtitle: "ongoing",
+    year: "2026",
+    title: "AI Engineer Intern",
+    subtitle: "ongoing - innofarms.ai",
     description:
-      "partnering closely with founders and businesses to architect full-stack web applications. managing end-to-end lifecycles, from initial ui/ux system design to robust next.js frontend execution, backed by scalable architectures.",
+      "partnering with stakeholders to architect multi-agentic ai systems. managing end-to-end lifecycles, from fine-tuning llms to robust fastapi backend execution, backed by scalable python and langgraph architectures.",
     link: null,
   },
   {
-    icon: PiBriefcase,
+    icon: PiGithubLogo,
     year: "2025",
-    title: "software development intern",
-    subtitle: "stardom",
+    title: "open source developer",
+    subtitle: "logger",
     description:
-      "architected an ssr-first admin cms using next.js and appwrite, eliminating static redeploy cycles. bypassed serverless payload limits via direct client-to-storage media uploads, and heavily optimized backend bandwidth while enforcing strict mime-type validation.",
-    link: null,
+      "built and maintaining a privacy-first android app for local call log analysis managing everything from flutter and kotlin native integration to complex data visualization, with secure on-device processing and support for 15+ languages worldwid.",
+    link: {
+      text: "view logger",
+      href: "/build/logger",
+    },
   },
   {
     icon: PiTrophy,
     year: "2024",
-    title: "google genai exchange hackathon",
-    subtitle: "winner, network 18 track · google & devfolio",
+    title: "founder & developer",
+    subtitle: "InkScribe / self-employed / independent project",
     description:
-      "won first place in the network 18 track. developed an innovative solution to combat video misinformation by engineering a robust media attribution and tampering detection system, running multiple pre-trained models concurrently for real-time analysis.",
-    link: { text: "view credify", href: "/build/credify" },
+      "engineered a scalable blogging platform with a custom orm, role-based dashboards, sentiment moderation, personalized recommendations, and text-to-speech accessibility.",
+    link: { text: "view inkscribe", href: "/build/inkscribe" },
   },
 ];
 
@@ -87,8 +91,7 @@ export interface EducationType {
 export const EDUCATION: EducationType[] = [
   {
     degree: "Master of Computer Applications (MCA)",
-    institution:
-      "Thapar Institute of Engineering & Technology, Patiala",
+    institution: "Thapar Institute of Engineering & Technology, Patiala",
     grade: "CGPA: 9.6",
     period: "2024 – 2026",
     current: true,
@@ -97,8 +100,7 @@ export const EDUCATION: EducationType[] = [
   },
   {
     degree: "Bachelor of Computer Applications (BCA)",
-    institution:
-      "Chandigarh Group of Colleges (CGC), Landran",
+    institution: "Chandigarh Group of Colleges (CGC), Landran",
     grade: "CGPA: 8.4",
     period: "2024 – 2026",
     current: true,
