@@ -103,7 +103,7 @@ export const EDUCATION: EducationType[] = [
     institution: "Chandigarh Group of Colleges (CGC), Landran",
     grade: "CGPA: 8.4",
     period: "2024 – 2026",
-    current: true,
+    current: false,
     blurb:
       "graduated with distinction yeah ! seriously, thrived in hackathons and long answers; my real growth {coding_one} happened off the syllabus.",
   },

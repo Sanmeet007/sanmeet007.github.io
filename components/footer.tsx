@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, ArrowUpRight, Mail } from "lucide-react";
 import { PiXLogo } from "react-icons/pi";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -14,7 +15,7 @@ export function Footer() {
               href="/"
               className="font-sans font-bold text-[18px] text-text-heading mb-6 block hover:opacity-80 hover:scale-105 origin-left transition-all duration-300 w-fit mx-auto md:mx-0"
             >
-              gn.
+              <Image src="/logo.svg" alt="S" width={30} height={30} />
             </Link>
             <p className="font-sans text-[13px] text-text-secondary leading-[1.8] mb-6">
               open to new opportunities, collaborations, or just a good
@@ -69,7 +70,7 @@ export function Footer() {
             </span>
             <div className="flex flex-row gap-5 text-text-secondary items-center">
               <a
-                href="https://github.com/Garvit-Nag"
+                href="https://github.com/Sanmeet007"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-text-heading hover:scale-110 transition-all duration-300"
@@ -78,7 +79,7 @@ export function Footer() {
                 <Github size={18} />
               </a>
               <a
-                href="https://linkedin.com/in/garvit-nag"
+                href="https://linkedin.com/in/sanmeet007"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-text-heading hover:scale-110 transition-all duration-300"
@@ -87,13 +88,13 @@ export function Footer() {
                 <Linkedin size={18} />
               </a>
               <a
-                href="https://twitter.com/garvit1505"
+                href="mailto:ssanmeet007@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-text-heading hover:scale-110 transition-all duration-300"
-                aria-label="X"
+                aria-label="Gmail"
               >
-                <PiXLogo size={18} />
+                <Mail size={18} />
               </a>
             </div>
           </div>

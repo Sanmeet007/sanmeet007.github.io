@@ -74,7 +74,7 @@ export function Navigation() {
           href="/"
           className="font-sans font-bold text-[20px] text-text-heading hover:opacity-80 hover:scale-105 transition-all duration-300 cursor-target inline-block"
         >
-          <Image src="/logo.svg" alt="S" width={40} height={40} />
+          <Image src="/logo.svg" alt="S" width={35} height={35} />
         </Link>
 
         {/* Center Nav Links — desktop */}
