@@ -304,15 +304,15 @@ export const SKILL_STEPS: SkillStepType[] = [
   {
     philosophy: "it all starts with the right language.",
     description:
-      "the ones i actually think in. python for ai and scripting, typescript/js for the web side of everything.",
-    chips: ["Python", "TypeScript", "JavaScript", "SQL", "C / C++"],
+      "the ones i actually think in. python for agentic frameworks and scalable backends, dart for native mobile experiences, and typescript/js for the web side of everything.",
+    chips: ["Python", "JavaScript", "Dart", "SQL", "C / C++"],
     label: "languages",
   },
   {
     philosophy: "if the interface needs explaining, it's broken.",
     description:
       "i obsess over the small stuff so users don't have to think. pixel-level attention, smooth interactions.",
-    chips: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+    chips: ["Flutter","Next.js", "React", "MUI", "Tailwind CSS", "Framer Motion"],
     label: "frontend",
   },
   {
@@ -322,10 +322,9 @@ export const SKILL_STEPS: SkillStepType[] = [
     chips: [
       "FastAPI",
       "Flask",
+      "Langgraph",
       "Express.js",
-      "Appwrite",
       "Firebase",
-      "Clerk",
       "Stripe",
     ],
     label: "backend & apis",
@@ -334,7 +333,7 @@ export const SKILL_STEPS: SkillStepType[] = [
     philosophy: "data that isn't structured isn't useful.",
     description:
       "relational or not, structure it right from the start. lately deep in vector search and rag.",
-    chips: ["PostgreSQL", "MongoDB", "Pinecone", "Redis", "Supabase"],
+    chips: ["PostgreSQL", "MongoDB", "Pinecone", "MySQL","CosmoDB", "Redis"],
     label: "data & storage",
   },
   {
@@ -342,13 +341,18 @@ export const SKILL_STEPS: SkillStepType[] = [
     description:
       "shipped actual ai-native apps, not just wrappers. rag pipelines, model integrations. done the work.",
     chips: [
+      "LLM",
+      "RAG",
+      "Torch",
       "TensorFlow",
       "Scikit-learn",
       "Keras",
       "Pandas",
       "NumPy",
       "Matplotlib",
+      "Hugging Face",
       "Gemini API",
+      "Groq API",
     ],
     label: "ai / ml",
   },
