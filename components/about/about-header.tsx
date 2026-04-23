@@ -81,7 +81,7 @@ export function AboutHeader() {
                     <Image src="/logo.svg" alt="SA" width={30} height={30} />
                   </h3>
                   <p className="font-sans text-[13px] text-[var(--text-secondary)] mt-2 mb-6 leading-relaxed lowercase">
-                    Powered by unhealthy amounts of caffeine and console logs.
+                    Powered by caffeine, rendering bugs and questionable fixes.
                   </p>
 
                   <div className="flex flex-col gap-4">

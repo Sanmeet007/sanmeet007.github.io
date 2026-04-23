@@ -86,32 +86,42 @@ export interface EducationType {
 
 export const EDUCATION: EducationType[] = [
   {
-    degree: "B.E. Computer Science & Engineering",
+    degree: "Master of Computer Applications (MCA)",
     institution:
-      "Chandigarh College of Engineering & Technology · Panjab University",
-    grade: "CGPA: 8.04",
-    period: "2021 – 2025",
+      "Thapar Institute of Engineering & Technology, Patiala",
+    grade: "CGPA: 9.6",
+    period: "2024 – 2026",
     current: true,
     blurb:
-      "survived the lectures, thrived in the hackathons. my best code was definitely written outside the syllabus.",
+      "survived the lectures, maintained the merit scholarship, and somehow put more logic into logs than into my own life",
+  },
+  {
+    degree: "Bachelor of Computer Applications (BCA)",
+    institution:
+      "Chandigarh Group of Colleges (CGC), Landran",
+    grade: "CGPA: 8.4",
+    period: "2024 – 2026",
+    current: true,
+    blurb:
+      "graduated with distinction yeah ! seriously, thrived in hackathons and long answers; my real growth {coding_one} happened off the syllabus.",
   },
   {
     degree: "12th Grade · Science Stream",
     institution: "Ryan International School, Chandigarh · CBSE",
-    grade: "92.4%",
+    grade: "Classified",
     period: "2018–2020",
     current: false,
     blurb:
-      "the pcm grind. pushed through the syllabus, unknowingly building the raw logic i'd need for everything that came next.",
+      "the PCB grind, only to realize i was secretly training my logic for debugging code instead of becoming a doctor",
   },
   {
     degree: "10th Grade",
     institution: "Ryan International School, Chandigarh · CBSE",
-    grade: "95%",
+    grade: "85%",
     period: "2017–2018",
     current: false,
     blurb:
-      "the starter pack era. decent grades, but spent way too much time breaking and fixing the home pc.",
+      "the starter pack era. decent grades, questionable screwdriver access, and a laptop that didn’t survive my first cleaning",
   },
 ];
 
