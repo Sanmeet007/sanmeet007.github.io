@@ -367,7 +367,7 @@ export const CONTACT_LINKS: ContactLinkType[] = [
     icon: Github,
     label: "github",
     value: "Garvit-Nag",
-    href: "https://github.com/Garvit-Nag",
+    href: "https://github.com/Sanmeet007",
   },
   {
     icon: PiEnvelopeSimple,

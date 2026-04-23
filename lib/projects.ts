@@ -27,7 +27,7 @@ export const projects: Project[] = [
       "Appwrite",
       "Stripe",
     ],
-    github: "https://github.com/Garvit-Nag/Qodex",
+    github: "https://github.com/Sanmeet007/Qodex",
     live: "https://qodex-gules.vercel.app",
     featured: true,
     image: "/projects/qodex.png",
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     tagline: "ai-powered conversational football assistant",
     year: "2026",
     stack: ["NextJs", "TypeScript", "Gemini API", "Supabase"],
-    github: "https://github.com/Garvit-Nag/maestro",
+    github: "https://github.com/Sanmeet007/maestro",
     live: "https://maestro-opal-psi.vercel.app",
     image: "/projects/maestro.png",
     description:
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     tagline: "minimal weather app with multi-provider fallback",
     year: "2026",
     stack: ["React", "TypeScript", "Vite", "Zustand"],
-    github: "https://github.com/Garvit-Nag/weather",
+    github: "https://github.com/Sanmeet007/weather",
     live: "https://weather-rouge-chi.vercel.app",
     image: "/projects/weather.png",
     description:
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     tagline: "event discovery platform for dev communities",
     year: "2026",
     stack: ["NextJs", "TypeScript", "MongoDB", "Cloudinary"],
-    github: "https://github.com/Garvit-Nag/dev-events",
+    github: "https://github.com/Sanmeet007/dev-events",
     live: "https://dev-events-ebon-theta.vercel.app",
     image: "/projects/dev.png",
     description:
@@ -104,7 +104,7 @@ export const projects: Project[] = [
       "Clerk",
       "Stripe",
     ],
-    github: "https://github.com/Garvit-Nag/MediSage",
+    github: "https://github.com/Sanmeet007/MediSage",
     live: "https://medi-sage.vercel.app",
     image: "/projects/medisage.png",
     description:
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     tagline: "music recommender using clustering algorithms",
     year: "2024",
     stack: ["NextJs", "TypeScript", "FastAPI", "Python", "scikit-learn"],
-    github: "https://github.com/Garvit-Nag/Revibe-Remastered",
+    github: "https://github.com/Sanmeet007/Revibe-Remastered",
     live: "https://revibe-audio.vercel.app",
     image: "/projects/revibe.png",
     description:
@@ -128,7 +128,7 @@ export const projects: Project[] = [
     tagline: "file sharing with secure, auto-expiring links",
     year: "2024",
     stack: ["NextJs", "TypeScript", "FastAPI", "Python", "Appwrite"],
-    github: "https://github.com/Garvit-Nag/CosmicShare",
+    github: "https://github.com/Sanmeet007/CosmicShare",
     live: "https://cosmic-share.vercel.app",
     image: "/projects/cosmic.png",
     description:
@@ -147,7 +147,7 @@ export const projects: Project[] = [
       "PostgreSQL",
       "Supabase",
     ],
-    github: "https://github.com/Garvit-Nag/Taskflow",
+    github: "https://github.com/Sanmeet007/Taskflow",
     live: "https://taskflow-delta-three.vercel.app",
     image: "/projects/taskflow.png",
     description:
@@ -166,7 +166,7 @@ export const projects: Project[] = [
       "PyTorch",
       "Gemini API",
     ],
-    github: "https://github.com/Garvit-Nag/InkLore",
+    github: "https://github.com/Sanmeet007/InkLore",
     live: "https://ink-lore.vercel.app",
     image: "/projects/inklore.png",
     description:
@@ -178,7 +178,7 @@ export const projects: Project[] = [
     tagline: "document summarization via nlp",
     year: "2024",
     stack: ["Python", "Streamlit", "HuggingFace"],
-    github: "https://github.com/Garvit-Nag/SumItUp",
+    github: "https://github.com/Sanmeet007/SumItUp",
     live: "https://huggingface.co/spaces/garvitcpp/Sum-it-up",
     image: "/projects/sumitup.png",
     description:
@@ -209,7 +209,7 @@ export const projects: Project[] = [
       "MongoDB",
       "scikit-learn",
     ],
-    github: "https://github.com/Garvit-Nag/RecipeRover-Production",
+    github: "https://github.com/Sanmeet007/RecipeRover-Production",
     live: "https://recipe-rover-fun.vercel.app",
     image: "/projects/recipe.png",
     description:

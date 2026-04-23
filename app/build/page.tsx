@@ -205,7 +205,7 @@ export default function BuildPage() {
             <div className="flex-1 max-w-50 h-px bg-linear-to-r from-transparent to-border-strong mr-6 hidden md:block" />
             <div className="flex items-center gap-4">
               <Link
-                href="https://github.com/Garvit-Nag"
+                href="https://github.com/Sanmeet007"
                 target="_blank"
                 className="bordered-button group inline-flex"
               >
