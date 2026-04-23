@@ -366,30 +366,24 @@ export const CONTACT_LINKS: ContactLinkType[] = [
   {
     icon: Github,
     label: "github",
-    value: "Garvit-Nag",
+    value: "Sanmeet007",
     href: "https://github.com/Sanmeet007",
   },
   {
     icon: PiEnvelopeSimple,
     label: "email",
-    value: "garvit1505@gmail.com",
-    href: "mailto:garvit1505@gmail.com",
+    value: "ssanmeet007@gmail.com",
+    href: "mailto:ssanmeet007@gmail.com",
   },
   {
     icon: Linkedin,
     label: "linkedin",
-    value: "garvit-nag",
-    href: "https://linkedin.com/in/garvit-nag",
-  },
-  {
-    icon: Instagram,
-    label: "instagram",
-    value: "@garwiitt",
-    href: "https://instagram.com/garwiitt",
+    value: "sanmeet007",
+    href: "https://linkedin.com/in/sanmeet007",
   },
 ];
 
 export const CONTACT_CONFIG = {
   BASIN_URL: "https://usebasin.com/f/8f49d73c20d1",
-  SCHEDULING_URL: "https://cal.com/garvitnag/30min",
+  SCHEDULING_URL: "https://cal.com/sanmeet007/30min",
 };
