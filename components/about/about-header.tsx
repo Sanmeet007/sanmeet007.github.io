@@ -43,10 +43,16 @@ export function AboutHeader() {
             className="max-w-[560px] mt-8 mx-auto lg:mx-0"
           >
             <p className="font-sans text-[16px] leading-[1.9] text-[var(--text-body)]">
-             I build AI-driven products, scalable backends, and Flutter apps usually architecting systems, integrating LLMs, and arguing with poorly designed databases.
+              I build AI-driven products, scalable backends, and Flutter apps
+              usually architecting systems, integrating LLMs, and arguing with
+              poorly designed databases.
             </p>
             <p className="font-sans text-[16px] leading-[1.9] text-[var(--text-body)] mt-4">
-              When I’m not building, I’m either blundering winning positions in chess or binge-watching anime “for research.” Always chasing the next challenge whether it’s sacrificing my rook for no reason or following Luffy to find the One Piece before I finish my deadlines.
+              When I’m not building, I’m either blundering winning positions in
+              chess or binge-watching anime “for research.” Always chasing the
+              next challenge whether it’s sacrificing my rook for no reason or
+              following Luffy to find the One Piece before I finish my
+              deadlines.
             </p>
           </motion.div>
         </div>
@@ -60,7 +66,7 @@ export function AboutHeader() {
         >
           <TiltedCard
             imageSrc="/pfp.png"
-            altText="Garvit Nag - Engineer"
+            altText="Sanmeet / Engineer"
             captionText="sanmeet / engineer"
             containerHeight="450px"
             containerWidth="350px"

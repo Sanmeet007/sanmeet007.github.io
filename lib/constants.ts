@@ -137,7 +137,7 @@ export interface HobbyType {
 export const HOBBIES: HobbyType[] = [
   {
     icon: PiTrophy,
-    name: "football",
+    name: "Chess",
     description: "watching, arguing tactics, praying barça holds it together",
     tags: ["la liga", "premier league", "tactics"],
   },

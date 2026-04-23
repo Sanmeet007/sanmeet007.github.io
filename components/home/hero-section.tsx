@@ -150,7 +150,7 @@ export function HeroSection() {
         className="absolute bottom-8 left-6 font-mono text-xs tracking-widest hidden sm:block"
         suppressHydrationWarning
       >
-        © garvit nag 2026
+        © sanmeet singh 2026
       </motion.p>
       <motion.p
         initial={{ opacity: 0 }}
@@ -159,7 +159,7 @@ export function HeroSection() {
         className="absolute bottom-8 right-6 font-mono text-xs tracking-widest hidden sm:block"
         suppressHydrationWarning
       >
-        garvit1505@gmail.com
+        ssanmeet007@gmail.com
       </motion.p>
     </section>
   )
