@@ -148,12 +148,7 @@ export const HOBBIES: HobbyType[] = [
     name: "gaming",
     description:
       "the other debugging session—usually involving high-stakes boss patterns and frame-perfect combos",
-    tags: [
-      "god of war",
-      "breath of the wild",
-      "strategy",
-      "open world",
-    ],
+    tags: ["god of war", "breath of the wild", "strategy", "open world"],
   },
   {
     icon: Film,
