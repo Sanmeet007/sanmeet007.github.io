@@ -384,6 +384,6 @@ export const CONTACT_LINKS: ContactLinkType[] = [
 ];
 
 export const CONTACT_CONFIG = {
-  BASIN_URL: "https://usebasin.com/f/8f49d73c20d1",
+  BASIN_URL: "https://usebasin.com/f/05300f711df3",
   SCHEDULING_URL: "https://cal.com/sanmeet007/30min",
 };
