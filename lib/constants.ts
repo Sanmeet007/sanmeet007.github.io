@@ -366,7 +366,7 @@ export interface SnapshotType {
 export const SNAPSHOTS: SnapshotType[] = [
   { label: "building", value: "something new" },
   { label: "into lately", value: "agents & llm tooling" },
-  { label: "fueled by", value: "football & late nights" },
+  { label: "fueled by", value: "caffeine, terminal glows & the quiet of 3 am" },
 ];
 
 export interface ContactLinkType {
