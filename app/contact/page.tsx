@@ -159,7 +159,7 @@ export default function ContactPage() {
             className="mt-10 max-w-135"
           >
             <p className="font-sans text-base leading-[1.9] text-text-body">
-              currently building professionally but always exploring what's next. open to high-impact collaborations, open-source contributions, or just building cool things—whether the source is open or closed.
+              currently building professionally but always exploring what's next. open to high-impact collaborations, open-source contributions, or just building cool things whether the source is open or closed.
             </p>
             <p className="font-sans text-base leading-[1.9] text-text-body mt-3">
               if you&apos;re building something worth caring about, let&apos;s
