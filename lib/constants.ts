@@ -20,6 +20,7 @@ import {
   PiTrophy,
   PiBriefcase,
   PiCode,
+  PiWind,
   PiStarFour,
   PiEnvelopeSimple,
 } from "react-icons/pi";
@@ -137,34 +138,47 @@ export interface HobbyType {
 export const HOBBIES: HobbyType[] = [
   {
     icon: PiTrophy,
-    name: "Chess",
-    description: "watching, arguing tactics, praying barça holds it together",
-    tags: ["la liga", "premier league", "tactics"],
+    name: "chess",
+    description:
+      "calculating lines, studying magnus endgames, and navigating mid-game transitions",
+    tags: ["tactics", "strategy", "the long game"],
   },
   {
     icon: Gamepad2,
     name: "gaming",
-    description: "the other debugging session",
-    tags: ["strategy", "open world"],
+    description:
+      "the other debugging session—usually involving high-stakes boss patterns and frame-perfect combos",
+    tags: [
+      "god of war",
+      "breath of the wild",
+      "strategy",
+      "open world",
+    ],
   },
   {
     icon: Film,
     name: "cinema",
     description:
-      "hacksaw ridge, interstellar, the dark knight, taste certified",
+      "the shawshank redemption, 12 angry men, the pursuit of happyness—storytelling certified",
     tags: ["drama", "sci-fi", "thriller"],
   },
   {
     icon: BookOpen,
     name: "reading",
-    description: "inputs that shape the outputs",
-    tags: ["tech", "fiction", "philosophy"],
+    description: "gathering weights for the next backprop",
+    tags: ["research papers", "manga", "medium.com", "technical docs"],
   },
   {
     icon: PiStarFour,
-    name: "astronomy",
-    description: "scale that makes your problems feel tiny",
-    tags: ["cosmos", "physics"],
+    name: "anime",
+    description: "waiting for the final panel of a 20-year odyssey",
+    tags: [
+      "one piece",
+      "attack on titan",
+      "fullmetal alchemist",
+      "shonen",
+      "world building",
+    ],
   },
   {
     icon: PenLine,
@@ -173,10 +187,11 @@ export const HOBBIES: HobbyType[] = [
     tags: ["design", "creative"],
   },
   {
-    icon: Activity,
-    name: "volleyball",
-    description: "the non-digital sport",
-    tags: ["outdoor", "sports"],
+    icon: PiWind,
+    name: "badminton",
+    description:
+      "trading the chessboard for the court for high-speed rallies and split-second decisions",
+    tags: ["smash", "agility", "reflexes"],
   },
   {
     icon: Mountain,
