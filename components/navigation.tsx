@@ -246,22 +246,6 @@ export function Navigation() {
 
               <div className="flex flex-col gap-3">
                 <Link
-                  href="https://v1.garvitnag.in"
-                  target="_blank"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center justify-between border border-border-low rounded-md px-3 py-3 hover:bg-surface-low hover:border-border-accent transition-all duration-300 group"
-                >
-                  <span className="font-mono text-[11px] tracking-widest lowercase text-text-secondary group-hover:text-text-heading">
-                    v1. portfolio
-                  </span>
-                  <History
-                    size={13}
-                    strokeWidth={1.5}
-                    className="text-text-secondary group-hover:text-text-heading"
-                  />
-                </Link>
-
-                <Link
                   href="/sanmeet-resume.pdf"
                   target="_blank"
                   onClick={() => setIsMobileMenuOpen(false)}
