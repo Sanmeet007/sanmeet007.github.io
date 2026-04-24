@@ -6,7 +6,7 @@ export interface Project {
   stack: string[];
   github?: string;
   live?: string;
-  fdroid?:string;
+  fdroid?: string;
   featured?: boolean;
   image?: string;
   description: string;
@@ -68,6 +68,25 @@ export const projects: Project[] = [
       "an llm-orchestrated football assistant with 19 function declarations. users ask questions in natural language; gemini 2.5 flash decides which live-data apis to call across football-data.org, api-football, thesportsdb, and newsapi, executes them concurrently via promise.all, and returns combined text + visualization responses through 19 typed ui components. features in-memory ttl caching (30s-3600s), fuzzy team name resolution with ufd normalization, 3-tier personalized fixture recommendations, and multi-turn conversations stored in supabase.",
   },
   {
+    slug: "visionate",
+    name: "Visionate",
+    tagline: "full-stack task manager with jwt auth and dark ui",
+    year: "2026",
+    stack: [
+      "React",
+      "JavaScript",
+      "FastAPI",
+      "Python",
+      "PostgreSQL",
+      "Supabase",
+    ],
+    github: "https://github.com/Sanmeet007/Taskflow",
+    live: "https://taskflow-delta-three.vercel.app",
+    image: "/projects/visionate.png",
+    description:
+      "a full-stack todo application with 14 restful endpoints across 4 modular route handlers. features jwt auth via oauth2 password flow with hs256 tokens (20-min ttl), bcrypt password hashing, role-based access control (user vs admin), per-user data isolation via owner_id constraints, alembic database migrations, and a three.js pixelsnow webgl background animation. built with fastapi backend, react frontend, and postgresql on supabase.",
+  },
+  {
     slug: "pacman",
     name: "Pacman",
     tagline: "minimal weather app with multi-provider fallback",
@@ -79,20 +98,20 @@ export const projects: Project[] = [
       "a weather dashboard with 3-provider sequential fallback (openweathermap, weatherapi, open-meteo) and freshness-aware result selection (30-min threshold). each provider wrapped in isolated adapter with canonical schema translation. features dual geocoding (owm primary, open-meteo keyless fallback), react query caching (5-min stale, 10-min refetch), zustand state persistence, 8s request timeouts via abortcontroller, and theme flicker prevention with inline script.",
   },
   {
-    slug: "dev-events",
-    name: "Dev Events",
+    slug: "planetry",
+    name: "Planetry",
     tagline: "event discovery platform for dev communities",
     year: "2026",
     stack: ["NextJs", "TypeScript", "MongoDB", "Cloudinary"],
-    github: "https://github.com/Sanmeet007/dev-events",
-    live: "https://dev-events-ebon-theta.vercel.app",
-    image: "/projects/dev.png",
+    github: "https://github.com/Sanmeet007/planetry",
+    live: "https://sanmeet007.github.io/planetry/",
+    image: "/projects/planetry.png",
     description:
       "a platform for discovering developer events, hackathons, and conferences. features a public event catalog with seo-friendly slug-based routing, an admin dashboard with full crud behind cookie-based session middleware, tag-based related event recommendations, email-only booking with compound unique index enforcement, cloudinary streaming image uploads, and posthog analytics instrumentation across 6 tracked events.",
   },
   {
-    slug: "medisage",
-    name: "MediSage",
+    slug: "grid-rush",
+    name: "Grid Rush",
     tagline: "ai-powered medical symptom analysis platform",
     year: "2025",
     stack: [
@@ -104,9 +123,9 @@ export const projects: Project[] = [
       "Clerk",
       "Stripe",
     ],
-    github: "https://github.com/Sanmeet007/MediSage",
-    live: "https://medi-sage.vercel.app",
-    image: "/projects/medisage.png",
+    github: "https://github.com/Sanmeet007/ai-game",
+    live: "https://sanmeet007.github.io/ai-game/",
+    image: "/projects/grid-rush.png",
     description:
       "a medical symptom analysis platform with two analysis modes: holistic health assessment and anatomical precision analysis via body region mapping. uses gemini 2.5-flash with structured json schema injection for 10+ nested response fields. features redis-backed daily rate limiting (5/day free tier with midnight utc auto-expiry), stripe subscription management with webhook sync to mongodb, clerk auth, and a 3-tier feature gating system (basic/professional/clinical).",
   },
@@ -134,25 +153,7 @@ export const projects: Project[] = [
     description:
       "an anonymous file sharing platform with auto-expiring links (30 seconds to 1 week). supports 15 file types up to 50mb. uses appwrite storage with expiration metadata encoded directly in filenames (no separate database needed). features a 1-minute apscheduler cleanup job that parses iso8601 timestamps from filenames to delete expired files, and a space-themed ui with simplex noise-driven vortex particle animation.",
   },
-  {
-    slug: "taskflow",
-    name: "TaskFlow",
-    tagline: "full-stack task manager with jwt auth and dark ui",
-    year: "2026",
-    stack: [
-      "React",
-      "JavaScript",
-      "FastAPI",
-      "Python",
-      "PostgreSQL",
-      "Supabase",
-    ],
-    github: "https://github.com/Sanmeet007/Taskflow",
-    live: "https://taskflow-delta-three.vercel.app",
-    image: "/projects/taskflow.png",
-    description:
-      "a full-stack todo application with 14 restful endpoints across 4 modular route handlers. features jwt auth via oauth2 password flow with hs256 tokens (20-min ttl), bcrypt password hashing, role-based access control (user vs admin), per-user data isolation via owner_id constraints, alembic database migrations, and a three.js pixelsnow webgl background animation. built with fastapi backend, react frontend, and postgresql on supabase.",
-  },
+
   {
     slug: "inklore",
     name: "InkLore",
