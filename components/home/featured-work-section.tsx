@@ -1,27 +1,24 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { ArrowRight, Github, ExternalLink, Calendar } from 'lucide-react'
-import { ScrollAnimation, StaggerContainer, StaggerItem } from '@/components/scroll-animation'
-import { getFeaturedProjects } from '@/lib/projects'
-import { SectionHeading } from '@/components/ui/section-heading'
-
+import Link from "next/link";
+import { ArrowRight, Github, ExternalLink, Calendar } from "lucide-react";
+import {
+  ScrollAnimation,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/scroll-animation";
+import { getFeaturedProjects } from "@/lib/projects";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { PiAndroidLogo, PiShieldCheckered, PiCpu } from "react-icons/pi";
 export function FeaturedWorkSection() {
-  const featuredProjects = getFeaturedProjects()
+  const featuredProjects = getFeaturedProjects();
 
   return (
-    <section
-      id="featured"
-      data-section="3"
-      className="section-base"
-    >
+    <section id="featured" data-section="3" className="section-base">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <ScrollAnimation className="mb-8">
-          <SectionHeading
-            title="featured work"
-            label="craft"
-          />
+          <SectionHeading title="featured work" label="craft" />
         </ScrollAnimation>
 
         <ScrollAnimation delay={1}>
@@ -66,7 +63,11 @@ export function FeaturedWorkSection() {
                         {project.name}
                       </h3>
                       <div className="flex items-center gap-1.5">
-                        <Calendar size={13} strokeWidth={1.5} className="text-[var(--text-label)]" />
+                        <Calendar
+                          size={13}
+                          strokeWidth={1.5}
+                          className="text-[var(--text-label)]"
+                        />
                         <span className="font-mono text-[10px] tracking-widest text-[var(--text-label)]">
                           {project.year}
                         </span>
@@ -74,7 +75,7 @@ export function FeaturedWorkSection() {
                     </div>
 
                     <p className="font-sans text-[13px] text-[var(--text-muted)] mt-1.5">
-                      {project.tagline.replace(/\.$/, '')}
+                      {project.tagline.replace(/\.$/, "")}
                     </p>
 
                     {/* Spacer */}
@@ -84,7 +85,10 @@ export function FeaturedWorkSection() {
                     <div className="flex items-center gap-5 pt-5 border-t border-[var(--border-low)]">
                       {project.github && (
                         <span
-                          onClick={(e) => { e.preventDefault(); window.open(project.github, '_blank'); }}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            window.open(project.github, "_blank");
+                          }}
                           className="card-link"
                         >
                           <Github size={13} strokeWidth={1.5} />
@@ -93,11 +97,26 @@ export function FeaturedWorkSection() {
                       )}
                       {project.live && (
                         <span
-                          onClick={(e) => { e.preventDefault(); window.open(project.live, '_blank'); }}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            window.open(project.live, "_blank");
+                          }}
                           className="card-link"
                         >
                           <ExternalLink size={13} strokeWidth={1.5} />
                           live
+                        </span>
+                      )}
+                      {project.fdroid && (
+                          <span
+                          onClick={(e) => {
+                            e.preventDefault();
+                            window.open(project.fdroid, "_blank");
+                          }}
+                          className="card-link"
+                        >
+                          <PiAndroidLogo size={13} strokeWidth={1.5} />
+                          f-droid
                         </span>
                       )}
                     </div>
@@ -109,7 +128,10 @@ export function FeaturedWorkSection() {
         </StaggerContainer>
 
         {/* View All Button */}
-        <ScrollAnimation delay={2} className="mt-16 flex items-center justify-center w-full">
+        <ScrollAnimation
+          delay={2}
+          className="mt-16 flex items-center justify-center w-full"
+        >
           <div className="flex-1 max-w-[200px] h-px bg-linear-to-r from-transparent to-[var(--border-strong)] mr-6 hidden md:block" />
           <Link href="/build" className="bordered-button group inline-flex">
             <span className="flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
@@ -121,5 +143,5 @@ export function FeaturedWorkSection() {
         </ScrollAnimation>
       </div>
     </section>
-  )
+  );
 }
