@@ -174,13 +174,13 @@ export const projects: Project[] = [
       "a hybrid ai story generator combining local pytorch inference with cloud-based refinement. runs a custom lightweight gpt-2 variant (4 layers, 8 heads, 256 embedding dim) for initial generation with controllable temperature (0.1-1.0), then applies a two-pass gemini refinement pipeline (grammar normalization followed by narrative polish). features unicode-safe text processing with nfkd normalization, quantized creativity slider, and character-by-character typewriter animation at 1ms per character.",
   },
   {
-    slug: "sumitup",
-    name: "SumItUp",
+    slug: "simple-express",
+    name: "Simple Express",
     tagline: "document summarization via nlp",
     year: "2024",
     stack: ["Python", "Streamlit", "HuggingFace"],
-    github: "https://github.com/Sanmeet007/SumItUp",
-    live: "https://huggingface.co/spaces/garvitcpp/Sum-it-up",
+    github: "https://github.com/Sanmeet007/simple-express",
+    live: "https://www.npmjs.com/package/@sanmeet007/simple-express",
     image: "/projects/sumitup.png",
     description:
       "a document summarization tool using large language models via huggingface transformers. supports multi-format ingestion (txt, pdf via pypdf2, docx via python-docx) with configurable summary length controls (100-400 tokens, dynamic min/max). offloads inference to a remote huggingface space endpoint, keeping the streamlit frontend lightweight. features slider-based summary length control and inline file parsing with error recovery.",
