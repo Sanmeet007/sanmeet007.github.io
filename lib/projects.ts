@@ -147,9 +147,8 @@ export const projects: Project[] = [
     tagline: "file sharing with secure, auto-expiring links",
     year: "2024",
     stack: ["NextJs", "TypeScript", "FastAPI", "Python", "Appwrite"],
-    github: "https://github.com/Sanmeet007/CosmicShare",
     live: "https://pyrix.vercel.app",
-    image: "/projects/cosmic.png",
+    image: "/projects/pyrix.png",
     description:
       "an anonymous file sharing platform with auto-expiring links (30 seconds to 1 week). supports 15 file types up to 50mb. uses appwrite storage with expiration metadata encoded directly in filenames (no separate database needed). features a 1-minute apscheduler cleanup job that parses iso8601 timestamps from filenames to delete expired files, and a space-themed ui with simplex noise-driven vortex particle animation.",
   },
