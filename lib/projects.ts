@@ -198,8 +198,8 @@ export const projects: Project[] = [
       "a scholarship application portal for the prime minister's special scholarship scheme (pmsss), built for the smart india hackathon (internal winner, aicte id: 1728). streamlines document uploads and application tracking for students from jammu & kashmir and ladakh applying for undergraduate studies. features appwrite authentication, responsive design with magic ui components, and a structured application workflow.",
   },
   {
-    slug: "reciperover",
-    name: "Recipe Rover",
+    slug: "my-design",
+    name: "MyDesign",
     tagline: "recipe discovery based on available ingredients",
     year: "2024",
     stack: [
@@ -212,7 +212,7 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/Sanmeet007/RecipeRover-Production",
     live: "https://recipe-rover-fun.vercel.app",
-    image: "/projects/recipe.png",
+    image: "/projects/my-design.png",
     description:
       "a multi-modal recipe recommendation platform over 20k+ recipes. supports text search, food image analysis (gemini vision), and form-based filters. uses tf-idf embeddings (5k ingredient + 3k keyword features), one-hot category encoding, and 7 binary dietary flags combined into an 11k-dimension sparse matrix for cosine similarity scoring. features soft penalty-based ranking for calorie/time constraints, 5 concurrent async image scrapers with 60s timeout, and appwrite auth with mongodb search history.",
   },
