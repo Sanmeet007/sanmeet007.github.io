@@ -27,7 +27,7 @@ export const projects: Project[] = [
       "Appwrite",
     ],
     github: "https://github.com/Sanmeet007/logger",
-    fdroid: "https://verifiedbycredify.vercel.app",
+    fdroid: "https://f-droid.org/en/packages/com.logger.app/",
     featured: true,
     image: "/projects/logger.png",
     description:
