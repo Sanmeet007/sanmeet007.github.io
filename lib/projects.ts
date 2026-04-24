@@ -131,17 +131,18 @@ export const projects: Project[] = [
       "a medical symptom analysis platform with two analysis modes: holistic health assessment and anatomical precision analysis via body region mapping. uses gemini 2.5-flash with structured json schema injection for 10+ nested response fields. features redis-backed daily rate limiting (5/day free tier with midnight utc auto-expiry), stripe subscription management with webhook sync to mongodb, clerk auth, and a 3-tier feature gating system (basic/professional/clinical).",
   },
   {
-    slug: "secure",
-    name: "Secure",
-    tagline: "music recommender using clustering algorithms",
+    slug: "simple-express",
+    name: "Simple Express",
+    tagline: "document summarization via nlp",
     year: "2024",
-    stack: ["NextJs", "TypeScript", "FastAPI", "Python", "scikit-learn"],
-    github: "https://github.com/Sanmeet007/Revibe-Remastered",
-    live: "https://revibe-audio.vercel.app",
-    image: "/projects/secure.png",
+    stack: ["Python", "Streamlit", "HuggingFace"],
+    github: "https://github.com/Sanmeet007/simple-express",
+    live: "https://www.npmjs.com/package/@sanmeet007/simple-express",
+    image: "/projects/simple-express.png",
     description:
-      "an ml-powered music recommendation engine over a 170k+ song dataset. uses k-means clustering as a pre-filtering mechanism to reduce the search space from 170k songs to cluster-local subsets, then ranks by euclidean distance across 9 audio features (acousticness, danceability, energy, etc). integrates itunes api for 30-second audio previews and metadata enrichment. features client-side session caching, 300ms debounced search, and a singleton audio playback controller.",
+      "a document summarization tool using large language models via huggingface transformers. supports multi-format ingestion (txt, pdf via pypdf2, docx via python-docx) with configurable summary length controls (100-400 tokens, dynamic min/max). offloads inference to a remote huggingface space endpoint, keeping the streamlit frontend lightweight. features slider-based summary length control and inline file parsing with error recovery.",
   },
+
   {
     slug: "pyrix",
     name: "Pyrix",
@@ -152,57 +153,6 @@ export const projects: Project[] = [
     image: "/projects/pyrix.png",
     description:
       "an anonymous file sharing platform with auto-expiring links (30 seconds to 1 week). supports 15 file types up to 50mb. uses appwrite storage with expiration metadata encoded directly in filenames (no separate database needed). features a 1-minute apscheduler cleanup job that parses iso8601 timestamps from filenames to delete expired files, and a space-themed ui with simplex noise-driven vortex particle animation.",
-  },
-
-  {
-    slug: "cliopts",
-    name: "Cliopts",
-    tagline: "ai story generator trained on custom models",
-    year: "2024",
-    stack: [
-      "NextJs",
-      "TypeScript",
-      "FastAPI",
-      "Python",
-      "PyTorch",
-      "Gemini API",
-    ],
-    github: "https://github.com/Sanmeet007/cliopts",
-    live: "https://pypi.org/project/cliopts/",
-    image: "/projects/inklore.png",
-    description:
-      "a hybrid ai story generator combining local pytorch inference with cloud-based refinement. runs a custom lightweight gpt-2 variant (4 layers, 8 heads, 256 embedding dim) for initial generation with controllable temperature (0.1-1.0), then applies a two-pass gemini refinement pipeline (grammar normalization followed by narrative polish). features unicode-safe text processing with nfkd normalization, quantized creativity slider, and character-by-character typewriter animation at 1ms per character.",
-  },
-  {
-    slug: "simple-express",
-    name: "Simple Express",
-    tagline: "document summarization via nlp",
-    year: "2024",
-    stack: ["Python", "Streamlit", "HuggingFace"],
-    github: "https://github.com/Sanmeet007/simple-express",
-    live: "https://www.npmjs.com/package/@sanmeet007/simple-express",
-    image: "/projects/sumitup.png",
-    description:
-      "a document summarization tool using large language models via huggingface transformers. supports multi-format ingestion (txt, pdf via pypdf2, docx via python-docx) with configurable summary length controls (100-400 tokens, dynamic min/max). offloads inference to a remote huggingface space endpoint, keeping the streamlit frontend lightweight. features slider-based summary length control and inline file parsing with error recovery.",
-  },
-  {
-    slug: "my-design",
-    name: "MyDesign",
-    tagline: "recipe discovery based on available ingredients",
-    year: "2024",
-    stack: [
-      "NextJs",
-      "TypeScript",
-      "Flask",
-      "Python",
-      "MongoDB",
-      "scikit-learn",
-    ],
-    github: "https://github.com/Sanmeet007/RecipeRover-Production",
-    live: "https://recipe-rover-fun.vercel.app",
-    image: "/projects/my-design.png",
-    description:
-      "a multi-modal recipe recommendation platform over 20k+ recipes. supports text search, food image analysis (gemini vision), and form-based filters. uses tf-idf embeddings (5k ingredient + 3k keyword features), one-hot category encoding, and 7 binary dietary flags combined into an 11k-dimension sparse matrix for cosine similarity scoring. features soft penalty-based ranking for calorie/time constraints, 5 concurrent async image scrapers with 60s timeout, and appwrite auth with mongodb search history.",
   },
 ];
 
