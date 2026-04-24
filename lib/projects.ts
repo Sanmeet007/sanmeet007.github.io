@@ -130,14 +130,14 @@ export const projects: Project[] = [
       "a medical symptom analysis platform with two analysis modes: holistic health assessment and anatomical precision analysis via body region mapping. uses gemini 2.5-flash with structured json schema injection for 10+ nested response fields. features redis-backed daily rate limiting (5/day free tier with midnight utc auto-expiry), stripe subscription management with webhook sync to mongodb, clerk auth, and a 3-tier feature gating system (basic/professional/clinical).",
   },
   {
-    slug: "revibe",
-    name: "Revibe",
+    slug: "secure",
+    name: "Secure",
     tagline: "music recommender using clustering algorithms",
     year: "2024",
     stack: ["NextJs", "TypeScript", "FastAPI", "Python", "scikit-learn"],
     github: "https://github.com/Sanmeet007/Revibe-Remastered",
     live: "https://revibe-audio.vercel.app",
-    image: "/projects/revibe.png",
+    image: "/projects/secure.png",
     description:
       "an ml-powered music recommendation engine over a 170k+ song dataset. uses k-means clustering as a pre-filtering mechanism to reduce the search space from 170k songs to cluster-local subsets, then ranks by euclidean distance across 9 audio features (acousticness, danceability, energy, etc). integrates itunes api for 30-second audio previews and metadata enrichment. features client-side session caching, 300ms debounced search, and a singleton audio playback controller.",
   },
