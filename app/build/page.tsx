@@ -2,6 +2,10 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import { 
+  PiAndroidLogo, 
+} from "react-icons/pi";
+import { SiFdroid } from "react-icons/si"; // Simple Icons set
 import { Calendar, Github, ExternalLink, Info, Mail } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ScrollAnimation } from '@/components/scroll-animation'
@@ -173,6 +177,16 @@ export default function BuildPage() {
                         >
                           <ExternalLink size={13} strokeWidth={1.5} />
                           live
+                        </Link>
+                      )}
+                        {project.fdroid && (
+                        <Link
+                          href={project.fdroid}
+                          target="_blank"
+                          className="card-link"
+                        >
+                          <PiAndroidLogo size={13} strokeWidth={1.5} />
+                          f-droid
                         </Link>
                       )}
                       <Link

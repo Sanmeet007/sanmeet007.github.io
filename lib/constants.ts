@@ -73,7 +73,7 @@ export const EXPERIENCES: ExperienceType[] = [
     icon: PiTrophy,
     year: "2024",
     title: "founder & developer",
-    subtitle: "InkScribe / self-employed / independent project",
+    subtitle: "Inkscribe / self-employed / independent project",
     description:
       "engineered a scalable blogging platform with a custom orm, role-based dashboards, sentiment moderation, personalized recommendations, and text-to-speech accessibility.",
     link: { text: "view inkscribe", href: "/build/inkscribe" },
