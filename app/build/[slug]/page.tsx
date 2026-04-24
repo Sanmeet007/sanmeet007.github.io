@@ -1,46 +1,50 @@
-import { notFound } from 'next/navigation'
-import Link from 'next/link'
-import { ArrowLeft, Github, ExternalLink, Wrench, ArrowRight, Calendar, Layers } from 'lucide-react'
-import { projects, getProjectBySlug } from '@/lib/projects'
-import { ProjectDetailClient } from '@/components/build/project-detail-client'
-import { Footer } from '@/components/footer'
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import {
+  ArrowLeft,
+  Github,
+  ExternalLink,
+  Wrench,
+  ArrowRight,
+  Calendar,
+  Layers,
+} from "lucide-react";
+import { projects, getProjectBySlug } from "@/lib/projects";
+import { ProjectDetailClient } from "@/components/build/project-detail-client";
+import { Footer } from "@/components/footer";
 
 export function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
-  }))
+  }));
 }
 
 interface ProjectDetailPageProps {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }
 
-export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-  const { slug } = await params
-  const project = getProjectBySlug(slug)
+export default async function ProjectDetailPage({
+  params,
+}: ProjectDetailPageProps) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
-    notFound()
+    notFound();
   }
 
   return (
     <>
       {/* Back Button */}
       <div className="fixed top-24 left-6 z-40">
-        <Link
-          href="/build"
-          className="bordered-button text-sm"
-        >
+        <Link href="/build" className="bordered-button text-sm">
           <ArrowLeft size={14} strokeWidth={1.5} />
           back to projects
         </Link>
       </div>
 
       {/* Hero Section with Project Image */}
-      <section
-        data-section="1"
-        className="relative pt-20 min-h-[60vh]"
-      >
+      <section data-section="1" className="relative pt-20 min-h-[60vh]">
         {/* Background Image */}
         {project.image && (
           <div className="absolute inset-0 z-0">
@@ -59,27 +63,38 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
       </section>
 
       {/* Project Details Card */}
-      <section
-        data-section="2"
-        className="relative z-10 -mt-8"
-      >
+      <section data-section="2" className="relative z-10 -mt-8">
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
           <div className="detail-info-card p-8 lg:p-10">
             <div className="flex flex-col sm:flex-row gap-8 sm:gap-16">
               {/* Year */}
               <div className="shrink-0">
                 <div className="flex items-center gap-2 mb-3">
-                  <Calendar size={14} strokeWidth={1.5} className="text-[var(--text-label)]" />
-                  <span className="font-mono text-[10px] tracking-[0.15em] text-[var(--text-label)] uppercase">year</span>
+                  <Calendar
+                    size={14}
+                    strokeWidth={1.5}
+                    className="text-[var(--text-label)]"
+                  />
+                  <span className="font-mono text-[10px] tracking-[0.15em] text-[var(--text-label)] uppercase">
+                    year
+                  </span>
                 </div>
-                <p className="font-sans text-[15px] text-[var(--text-strong)]">{project.year}</p>
+                <p className="font-sans text-[15px] text-[var(--text-strong)]">
+                  {project.year}
+                </p>
               </div>
 
               {/* Stack */}
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-3">
-                  <Layers size={14} strokeWidth={1.5} className="text-[var(--text-label)]" />
-                  <span className="font-mono text-[10px] tracking-[0.15em] text-[var(--text-label)] uppercase">stack</span>
+                  <Layers
+                    size={14}
+                    strokeWidth={1.5}
+                    className="text-[var(--text-label)]"
+                  />
+                  <span className="font-mono text-[10px] tracking-[0.15em] text-[var(--text-label)] uppercase">
+                    stack
+                  </span>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {project.stack.map((tech) => (
@@ -100,7 +115,9 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                   className="bordered-button group"
                 >
                   <Github size={14} strokeWidth={1.5} />
-                  <span className="group-hover:translate-x-0.5 transition-transform">source code</span>
+                  <span className="group-hover:translate-x-0.5 transition-transform">
+                    source code
+                  </span>
                 </Link>
               )}
               {project.live && (
@@ -110,8 +127,18 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                   className="bordered-button group"
                 >
                   <ExternalLink size={14} strokeWidth={1.5} />
-                  <span className="group-hover:translate-x-0.5 transition-transform">live demo</span>
+                  <span className="group-hover:translate-x-0.5 transition-transform">
+                    live demo
+                  </span>
                 </Link>
+              )}
+              {project.confidential && (
+                <span>
+                  <ExternalLink size={14} strokeWidth={1.5} />
+                  <span className="group-hover:translate-x-0.5 transition-transform">
+                    confidential
+                  </span>
+                </span>
               )}
             </div>
           </div>
@@ -119,10 +146,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
       </section>
 
       {/* About Section */}
-      <section
-        data-section="3"
-        className="section-base"
-      >
+      <section data-section="3" className="section-base">
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
           <div className="flex items-center gap-3 mb-8">
             <div className="accent-line" />
@@ -145,10 +169,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
       </section>
 
       {/* Tech Breakdown Section */}
-      <section
-        data-section="4"
-        className="section-alt"
-      >
+      <section data-section="4" className="section-alt">
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
           <div className="flex items-center gap-3 mb-8">
             <div className="accent-line" />
@@ -175,16 +196,10 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
       </section>
 
       {/* Navigation */}
-      <section
-        data-section="5"
-        className="section-base"
-      >
+      <section data-section="5" className="section-base">
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
           <div className="text-center">
-            <Link
-              href="/build"
-              className="bordered-button inline-flex"
-            >
+            <Link href="/build" className="bordered-button inline-flex">
               view all projects
               <ArrowRight size={14} strokeWidth={1.5} />
             </Link>
@@ -194,5 +209,5 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
       <Footer />
     </>
-  )
+  );
 }

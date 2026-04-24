@@ -1,52 +1,47 @@
-'use client'
+"use client";
 
-import { useState, useMemo } from 'react'
-import Link from 'next/link'
-import { 
-  PiAndroidLogo, 
-} from "react-icons/pi";
+import { useState, useMemo } from "react";
+import Link from "next/link";
+import { PiAndroidLogo, PiLock } from "react-icons/pi";
 import { SiFdroid } from "react-icons/si"; // Simple Icons set
-import { Calendar, Github, ExternalLink, Info, Mail } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ScrollAnimation } from '@/components/scroll-animation'
-import { Footer } from '@/components/footer'
-import { projects } from '@/lib/projects'
-import { SectionHeading } from '@/components/ui/section-heading'
+import { Calendar, Github, ExternalLink, Info, Mail } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ScrollAnimation } from "@/components/scroll-animation";
+import { Footer } from "@/components/footer";
+import { projects } from "@/lib/projects";
+import { SectionHeading } from "@/components/ui/section-heading";
 
 export default function BuildPage() {
-  const [activeTag, setActiveTag] = useState<string | null>(null)
+  const [activeTag, setActiveTag] = useState<string | null>(null);
 
   const filteredProjects = useMemo(() => {
-    let result = projects
+    let result = projects;
     if (activeTag) {
-      result = result.filter(p => p.stack.includes(activeTag))
+      result = result.filter((p) => p.stack.includes(activeTag));
     }
-    return result
-  }, [activeTag])
+    return result;
+  }, [activeTag]);
 
   // Collect all unique stack tags from all projects
   const availableTags = useMemo(() => {
-    const tags = new Set<string>()
-    projects.forEach(p => p.stack.forEach(t => tags.add(t)))
-    return Array.from(tags).sort()
-  }, [])
+    const tags = new Set<string>();
+    projects.forEach((p) => p.stack.forEach((t) => tags.add(t)));
+    return Array.from(tags).sort();
+  }, []);
 
   const handleTagClick = (tag: string) => {
-    setActiveTag(prev => prev === tag ? null : tag)
-  }
+    setActiveTag((prev) => (prev === tag ? null : tag));
+  };
 
   return (
     <>
       {/* Header + Projects Section */}
-      <section
-        data-section="1"
-        className="bg-transparent pt-32 pb-35"
-      >
+      <section data-section="1" className="bg-transparent pt-32 pb-35">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: 'easeOut' }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
           >
             <SectionHeading label="builds" />
           </motion.div>
@@ -54,7 +49,7 @@ export default function BuildPage() {
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: 'easeOut', delay: 0.1 }}
+            transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
           >
             <h1 className="font-sans font-bold text-[clamp(36px,5.5vw,76px)] text-text-heading tracking-[-0.02em] leading-[1.1]">
               Things i&apos;ve built.
@@ -67,25 +62,26 @@ export default function BuildPage() {
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: 'easeOut', delay: 0.2 }}
+            transition={{ duration: 0.55, ease: "easeOut", delay: 0.2 }}
             className="font-sans font-normal text-[clamp(14px,1.8vw,16px)] leading-[1.9] text-text-muted mt-8 max-w-150"
           >
-            projects i've shipped over the past couple of years. some for hackathons, some just to learn.
+            projects i've shipped over the past couple of years. some for
+            hackathons, some just to learn.
           </motion.p>
 
           {/* Stack Tag Filter */}
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: 'easeOut', delay: 0.3 }}
+            transition={{ duration: 0.55, ease: "easeOut", delay: 0.3 }}
             className="flex flex-wrap gap-2.5 mt-10 mb-10"
           >
             <button
               onClick={() => setActiveTag(null)}
               className={`filter-tag ${
                 activeTag === null
-                  ? 'filter-tag--active'
-                  : 'filter-tag--inactive'
+                  ? "filter-tag--active"
+                  : "filter-tag--inactive"
               }`}
             >
               All
@@ -96,8 +92,8 @@ export default function BuildPage() {
                 onClick={() => handleTagClick(tag)}
                 className={`filter-tag ${
                   activeTag === tag
-                    ? 'filter-tag--active'
-                    : 'filter-tag--inactive'
+                    ? "filter-tag--active"
+                    : "filter-tag--inactive"
                 }`}
               >
                 {tag}
@@ -107,11 +103,11 @@ export default function BuildPage() {
 
           <AnimatePresence mode="wait">
             <motion.div
-              key={`${activeTag || 'all'}`}
+              key={`${activeTag || "all"}`}
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.97 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
             >
               {filteredProjects.map((project) => (
@@ -143,7 +139,11 @@ export default function BuildPage() {
                         {project.name}
                       </h3>
                       <div className="flex items-center gap-1.5">
-                        <Calendar size={13} strokeWidth={1.5} className="text-text-label" />
+                        <Calendar
+                          size={13}
+                          strokeWidth={1.5}
+                          className="text-text-label"
+                        />
                         <span className="font-mono text-[10px] tracking-widest text-text-label">
                           {project.year}
                         </span>
@@ -151,7 +151,7 @@ export default function BuildPage() {
                     </div>
 
                     <p className="font-sans text-[12.5px] text-text-muted mt-1.5 leading-normal">
-                      {project.tagline.replace(/\.$/, '')}
+                      {project.tagline.replace(/\.$/, "")}
                     </p>
 
                     {/* Spacer to push links to bottom with minimum gap */}
@@ -179,7 +179,7 @@ export default function BuildPage() {
                           live
                         </Link>
                       )}
-                        {project.fdroid && (
+                      {project.fdroid && (
                         <Link
                           href={project.fdroid}
                           target="_blank"
@@ -189,6 +189,19 @@ export default function BuildPage() {
                           f-droid
                         </Link>
                       )}
+
+                      {project.confidential && (
+                        <span
+                          className="card-link"
+                          style={{
+                            pointerEvents: "none",
+                          }}
+                        >
+                          <PiLock size={14} strokeWidth={1.5} />
+                          <span>confidential</span>
+                        </span>
+                      )}
+
                       <Link
                         href={`/build/${project.slug}`}
                         className="card-link ml-auto"
@@ -206,16 +219,18 @@ export default function BuildPage() {
       </section>
 
       {/* Closer Section */}
-      <section
-        data-section="2"
-        className="section-base"
-      >
+      <section data-section="2" className="section-base">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <ScrollAnimation>
-            <h2 className="heading-md">There&apos;s more where that came from.</h2>
+            <h2 className="heading-md">
+              There&apos;s more where that came from.
+            </h2>
           </ScrollAnimation>
 
-          <ScrollAnimation delay={1} className="mt-12 flex items-center justify-center w-full gap-4">
+          <ScrollAnimation
+            delay={1}
+            className="mt-12 flex items-center justify-center w-full gap-4"
+          >
             <div className="flex-1 max-w-50 h-px bg-linear-to-r from-transparent to-border-strong mr-6 hidden md:block" />
             <div className="flex items-center gap-4">
               <Link
@@ -245,5 +260,5 @@ export default function BuildPage() {
 
       <Footer />
     </>
-  )
+  );
 }
