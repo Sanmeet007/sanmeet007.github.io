@@ -186,18 +186,6 @@ export const projects: Project[] = [
       "a document summarization tool using large language models via huggingface transformers. supports multi-format ingestion (txt, pdf via pypdf2, docx via python-docx) with configurable summary length controls (100-400 tokens, dynamic min/max). offloads inference to a remote huggingface space endpoint, keeping the streamlit frontend lightweight. features slider-based summary length control and inline file parsing with error recovery.",
   },
   {
-    slug: "pmsss-portal",
-    name: "PMSSS Portal",
-    tagline: "scholarship application and upload management",
-    year: "2024",
-    stack: ["NextJs", "TypeScript", "Appwrite"],
-    github: "https://github.com/binge-coder/pmsss-website",
-    live: "https://pramanik.vercel.app",
-    image: "/projects/pmsss.png",
-    description:
-      "a scholarship application portal for the prime minister's special scholarship scheme (pmsss), built for the smart india hackathon (internal winner, aicte id: 1728). streamlines document uploads and application tracking for students from jammu & kashmir and ladakh applying for undergraduate studies. features appwrite authentication, responsive design with magic ui components, and a structured application workflow.",
-  },
-  {
     slug: "my-design",
     name: "MyDesign",
     tagline: "recipe discovery based on available ingredients",
