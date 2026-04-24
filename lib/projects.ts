@@ -142,8 +142,8 @@ export const projects: Project[] = [
       "an ml-powered music recommendation engine over a 170k+ song dataset. uses k-means clustering as a pre-filtering mechanism to reduce the search space from 170k songs to cluster-local subsets, then ranks by euclidean distance across 9 audio features (acousticness, danceability, energy, etc). integrates itunes api for 30-second audio previews and metadata enrichment. features client-side session caching, 300ms debounced search, and a singleton audio playback controller.",
   },
   {
-    slug: "cosmic-share",
-    name: "Cosmic Share",
+    slug: "pyrix",
+    name: "Pyrix",
     tagline: "file sharing with secure, auto-expiring links",
     year: "2024",
     stack: ["NextJs", "TypeScript", "FastAPI", "Python", "Appwrite"],
@@ -155,8 +155,8 @@ export const projects: Project[] = [
   },
 
   {
-    slug: "inklore",
-    name: "InkLore",
+    slug: "cliopts",
+    name: "Cliopts",
     tagline: "ai story generator trained on custom models",
     year: "2024",
     stack: [
@@ -167,8 +167,8 @@ export const projects: Project[] = [
       "PyTorch",
       "Gemini API",
     ],
-    github: "https://github.com/Sanmeet007/InkLore",
-    live: "https://ink-lore.vercel.app",
+    github: "https://github.com/Sanmeet007/cliopts",
+    live: "https://pypi.org/project/cliopts/",
     image: "/projects/inklore.png",
     description:
       "a hybrid ai story generator combining local pytorch inference with cloud-based refinement. runs a custom lightweight gpt-2 variant (4 layers, 8 heads, 256 embedding dim) for initial generation with controllable temperature (0.1-1.0), then applies a two-pass gemini refinement pipeline (grammar normalization followed by narrative polish). features unicode-safe text processing with nfkd normalization, quantized creativity slider, and character-by-character typewriter animation at 1ms per character.",
