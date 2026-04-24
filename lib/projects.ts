@@ -6,6 +6,7 @@ export interface Project {
   stack: string[];
   github?: string;
   live?: string;
+  fdroid?:string;
   featured?: boolean;
   image?: string;
   description: string;
@@ -13,8 +14,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "qodex",
-    name: "Qodex",
+    slug: "logger",
+    name: "Logger",
+    tagline: "hackathon-winning media verification platform",
+    year: "2024",
+    stack: [
+      "NextJs",
+      "TypeScript",
+      "FastAPI",
+      "Python",
+      "Gemini API",
+      "Appwrite",
+    ],
+    github: "https://github.com/Sanmeet007/logger",
+    fdroid: "https://verifiedbycredify.vercel.app",
+    featured: true,
+    image: "/projects/logger.png",
+    description:
+      "built during the gen ai exchange hackathon (won the network 18 track). tackles misinformation through creator verification with secure identity auth, blockchain-inspired hashing for tamper-proof content attribution, and advanced forgery detection via machine learning models. integrates google gemini for real-time ai-powered fact-checking.",
+  },
+  {
+    slug: "inkscribe",
+    name: "Inkscribe",
     tagline: "query any github repository in plain english",
     year: "2025",
     stack: [
@@ -27,33 +48,13 @@ export const projects: Project[] = [
       "Appwrite",
       "Stripe",
     ],
-    github: "https://github.com/Sanmeet007/Qodex",
-    live: "https://qodex-gules.vercel.app",
+    live: "https://inkscrib-azure.vercel.app",
     featured: true,
-    image: "/projects/qodex.png",
+    image: "/projects/inkscribe.png",
     description:
       "a hybrid rag system for code intelligence. upload a github url and the backend clones it, chunks the code, generates 384-dim embeddings locally via sentencetransformer (all-minilm-l6-v2), stores full content in postgresql (neon), and indexes vectors in pinecone with repo-scoped namespaces. chat queries hit pinecone for top-5 semantic matches, join against postgresql for full code context, then feed into gemini 2.0 flash for cited answers. features appwrite auth, stripe subscriptions with tiered quotas (10/30 repos per month), and conversation history with json citations.",
   },
-  {
-    slug: "credify",
-    name: "Credify",
-    tagline: "hackathon-winning media verification platform",
-    year: "2024",
-    stack: [
-      "NextJs",
-      "TypeScript",
-      "FastAPI",
-      "Python",
-      "Gemini API",
-      "Appwrite",
-    ],
-    github: "https://github.com/abhisheksharm-3/credify",
-    live: "https://verifiedbycredify.vercel.app",
-    featured: true,
-    image: "/projects/credify.png",
-    description:
-      "built during the gen ai exchange hackathon (won the network 18 track). tackles misinformation through creator verification with secure identity auth, blockchain-inspired hashing for tamper-proof content attribution, and advanced forgery detection via machine learning models. integrates google gemini for real-time ai-powered fact-checking.",
-  },
+
   {
     slug: "maestro",
     name: "Maestro",
