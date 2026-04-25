@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { PiAndroidLogo, PiLock , PiPackage } from "react-icons/pi";
+import { PiAndroidLogo, PiLock, PiPackage } from "react-icons/pi";
 import { SiFdroid } from "react-icons/si"; // Simple Icons set
 import { Calendar, Github, ExternalLink, Info, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -65,8 +65,8 @@ export default function BuildPage() {
             transition={{ duration: 0.55, ease: "easeOut", delay: 0.2 }}
             className="font-sans font-normal text-[clamp(14px,1.8vw,16px)] leading-[1.9] text-text-muted mt-8 max-w-150"
           >
-            projects i've shipped over the past couple of years. some for
-            hackathons, some just to learn.
+            projects i've built and shipped over the years powered by curiosity
+            and a habit of learning by building.
           </motion.p>
 
           {/* Stack Tag Filter */}
