@@ -31,16 +31,16 @@ export function FeaturedWorkSection() {
         <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
           {featuredProjects.map((project) => (
             <StaggerItem key={project.slug}>
-              <Link href={`/build/${project.slug}`} className="block">
-                <div className="project-card group flex flex-col">
-                  {/* Featured Badge - always visible */}
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="featured-badge">
-                      <span className="w-[5px] h-[5px] rounded-full bg-[var(--text-heading)] pulse-dot" />
-                      featured
-                    </span>
-                  </div>
+              <div className="project-card group flex flex-col">
+                {/* Featured Badge - always visible */}
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="featured-badge">
+                    <span className="w-[5px] h-[5px] rounded-full bg-[var(--text-heading)] pulse-dot" />
+                    featured
+                  </span>
+                </div>
 
+                <Link href={`/build/${project.slug}`} className="block">
                   {/* Thumbnail */}
                   <div className="card-thumbnail aspect-video bg-[var(--bg-alt)] rounded-t-[12px]">
                     {project.image ? (
@@ -55,74 +55,74 @@ export function FeaturedWorkSection() {
                       </p>
                     )}
                   </div>
+                </Link>
 
-                  {/* Body */}
-                  <div className="p-6 lg:p-7 flex flex-col flex-1">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-sans font-bold text-[20px] text-[var(--text-heading)]">
-                        {project.name}
-                      </h3>
-                      <div className="flex items-center gap-1.5">
-                        <Calendar
-                          size={13}
-                          strokeWidth={1.5}
-                          className="text-[var(--text-label)]"
-                        />
-                        <span className="font-mono text-[10px] tracking-widest text-[var(--text-label)]">
-                          {project.year}
-                        </span>
-                      </div>
-                    </div>
-
-                    <p className="font-sans text-[13px] text-[var(--text-muted)] mt-1.5">
-                      {project.tagline.replace(/\.$/, "")}
-                    </p>
-
-                    {/* Spacer */}
-                    <div className="flex-1 min-h-5" />
-
-                    {/* Links */}
-                    <div className="flex items-center gap-5 pt-5 border-t border-[var(--border-low)]">
-                      {project.github && (
-                        <span
-                          onClick={(e) => {
-                            e.preventDefault();
-                            window.open(project.github, "_blank");
-                          }}
-                          className="card-link"
-                        >
-                          <Github size={13} strokeWidth={1.5} />
-                          code
-                        </span>
-                      )}
-                      {project.live && (
-                        <span
-                          onClick={(e) => {
-                            e.preventDefault();
-                            window.open(project.live, "_blank");
-                          }}
-                          className="card-link"
-                        >
-                          <ExternalLink size={13} strokeWidth={1.5} />
-                          live
-                        </span>
-                      )}
-                      {project.fdroid && (
-                          <span
-                          onClick={(e) => {
-                            e.preventDefault();
-                            window.open(project.fdroid, "_blank");
-                          }}
-                          className="card-link"
-                        >
-                          <PiAndroidLogo size={13} strokeWidth={1.5} />
-                          f-droid
-                        </span>
-                      )}
+                {/* Body */}
+                <div className="p-6 lg:p-7 flex flex-col flex-1">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-sans font-bold text-[20px] text-[var(--text-heading)]">
+                      {project.name}
+                    </h3>
+                    <div className="flex items-center gap-1.5">
+                      <Calendar
+                        size={13}
+                        strokeWidth={1.5}
+                        className="text-[var(--text-label)]"
+                      />
+                      <span className="font-mono text-[10px] tracking-widest text-[var(--text-label)]">
+                        {project.year}
+                      </span>
                     </div>
                   </div>
+
+                  <p className="font-sans text-[13px] text-[var(--text-muted)] mt-1.5">
+                    {project.tagline.replace(/\.$/, "")}
+                  </p>
+
+                  {/* Spacer */}
+                  <div className="flex-1 min-h-5" />
+
+                  {/* Links */}
+                  <div className="flex items-center gap-5 pt-5 border-t border-[var(--border-low)]">
+                    {project.github && (
+                      <span
+                        onClick={(e) => {
+                          e.preventDefault();
+                          window.open(project.github, "_blank");
+                        }}
+                        className="card-link cursor-pointer"
+                      >
+                        <Github size={13} strokeWidth={1.5} />
+                        code
+                      </span>
+                    )}
+                    {project.live && (
+                      <span
+                        onClick={(e) => {
+                          e.preventDefault();
+                          window.open(project.live, "_blank");
+                        }}
+                        className="card-link cursor-pointer"
+                      >
+                        <ExternalLink size={13} strokeWidth={1.5} />
+                        live
+                      </span>
+                    )}
+                    {project.fdroid && (
+                      <span
+                        onClick={(e) => {
+                          e.preventDefault();
+                          window.open(project.fdroid, "_blank");
+                        }}
+                        className="card-link cursor-pointer"
+                      >
+                        <PiAndroidLogo size={13} strokeWidth={1.5} />
+                        f-droid
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </Link>
+              </div>
             </StaggerItem>
           ))}
         </StaggerContainer>

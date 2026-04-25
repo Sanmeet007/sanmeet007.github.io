@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -50,10 +50,10 @@
   /* Semantic border tiers */
   --border-subtle: rgba(255, 255, 255, 0.05);
   --border-low: rgba(255, 255, 255, 0.07);
-  --border-mid: rgba(255, 255, 255, 0.10);
+  --border-mid: rgba(255, 255, 255, 0.1);
   --border-strong: rgba(255, 255, 255, 0.15);
-  --border-accent: rgba(255, 255, 255, 0.20);
-  --border-emphasis: rgba(255, 255, 255, 0.30);
+  --border-accent: rgba(255, 255, 255, 0.2);
+  --border-emphasis: rgba(255, 255, 255, 0.3);
   --border-active: rgba(255, 255, 255, 0.38);
 
   /* Nav backgrounds */
@@ -142,7 +142,10 @@ html.theme-ready h4,
 html.theme-ready label,
 html.theme-ready input,
 html.theme-ready textarea {
-  transition: background-color 250ms ease, border-color 250ms ease, color 250ms ease;
+  transition:
+    background-color 250ms ease,
+    border-color 250ms ease,
+    color 250ms ease;
 }
 
 /* Transparent footer background to show animation */
@@ -155,8 +158,8 @@ html.light .bg-footer-base {
 }
 
 @theme inline {
-  --font-sans: 'Sora', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: "Sora", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -233,7 +236,7 @@ html.light .bg-footer-base {
   body {
     background-color: var(--bg-base);
     color: var(--text-heading);
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
     overflow-x: hidden;
   }
 }
@@ -244,11 +247,22 @@ html.light .bg-footer-base {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image:
-    radial-gradient(circle, var(--border-strong) 1px, transparent 1px);
+  background-image: radial-gradient(
+    circle,
+    var(--border-strong) 1px,
+    transparent 1px
+  );
   background-size: 40px 40px;
-  mask-image: radial-gradient(ellipse at center, transparent 35%, rgba(var(--bg-base-raw), 0.97) 100%);
-  -webkit-mask-image: radial-gradient(ellipse at center, transparent 35%, rgba(var(--bg-base-raw), 0.97) 100%);
+  mask-image: radial-gradient(
+    ellipse at center,
+    transparent 35%,
+    rgba(var(--bg-base-raw), 0.97) 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    transparent 35%,
+    rgba(var(--bg-base-raw), 0.97) 100%
+  );
 }
 
 /* Section styles */
@@ -307,7 +321,7 @@ html.light .bg-footer-base {
 
 /* Corner geometric accents */
 .project-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -322,7 +336,7 @@ html.light .bg-footer-base {
 }
 
 .project-card::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -363,7 +377,9 @@ html.light .bg-footer-base {
 }
 
 .card-thumbnail img {
-  transition: transform 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 400ms ease;
+  transition:
+    transform 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter 400ms ease;
 }
 
 .project-card:hover .card-thumbnail img,
@@ -374,7 +390,7 @@ html.light .bg-footer-base {
 
 /* Gradient overlays on card image */
 .card-thumbnail::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -386,10 +402,14 @@ html.light .bg-footer-base {
 }
 
 .card-thumbnail::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(var(--bg-base-raw), 0.6) 0%, transparent 50%);
+  background: linear-gradient(
+    to top,
+    rgba(var(--bg-base-raw), 0.6) 0%,
+    transparent 50%
+  );
   pointer-events: none;
   z-index: 1;
 }
@@ -400,7 +420,7 @@ html.light .bg-footer-base {
   border: 1px solid var(--border-emphasis);
   border-radius: 6px;
   padding: 5px 12px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 9px;
   letter-spacing: 0.12em;
   color: var(--text-heading);
@@ -413,7 +433,7 @@ html.light .bg-footer-base {
 
 /* Filter tag */
 .filter-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 11px;
   letter-spacing: 0.08em;
   padding: 6px 14px;
@@ -448,7 +468,7 @@ html.light .bg-footer-base {
   border: 1px solid var(--border-mid);
   border-radius: 6px;
   padding: 4px 10px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 10px;
   letter-spacing: 0.08em;
   color: var(--text-body);
@@ -465,7 +485,7 @@ html.light .bg-footer-base {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: lowercase;
@@ -476,7 +496,7 @@ html.light .bg-footer-base {
 }
 
 .card-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 4px;
   left: 0;
@@ -498,7 +518,7 @@ html.light .bg-footer-base {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: lowercase;
@@ -520,7 +540,7 @@ html.light .bg-footer-base {
   border: 1px solid var(--border-accent);
   border-radius: 8px;
   padding: 10px 20px;
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   font-size: 13px;
   color: var(--text-strong);
   transition: all 200ms ease;
@@ -535,8 +555,13 @@ html.light .bg-footer-base {
 
 /* Pulse animation for featured dot */
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
 }
 
 .pulse-dot {
@@ -563,13 +588,18 @@ html.light .bg-footer-base {
 }
 
 .detail-info-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -1px;
   left: 20%;
   right: 20%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border-accent),
+    transparent
+  );
 }
 
 /* Decorative accent line */
@@ -581,12 +611,16 @@ html.light .bg-footer-base {
 
 /* Vignette gradient for BackgroundCircles */
 .vignette-gradient {
-  background: radial-gradient(ellipse at center, transparent 0%, var(--bg-base) 70%);
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    var(--bg-base) 70%
+  );
 }
 
 /* Typography helpers */
 .heading-xl {
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 700;
   color: var(--text-heading);
   font-size: clamp(44px, 6vw, 80px);
@@ -595,7 +629,7 @@ html.light .bg-footer-base {
 }
 
 .heading-lg {
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 700;
   color: var(--text-heading);
   font-size: clamp(42px, 5.5vw, 72px);
@@ -604,7 +638,7 @@ html.light .bg-footer-base {
 }
 
 .heading-md {
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 700;
   color: var(--text-heading);
   font-size: clamp(36px, 4.5vw, 56px);
@@ -613,7 +647,7 @@ html.light .bg-footer-base {
 }
 
 .body-text {
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.9;
@@ -621,7 +655,7 @@ html.light .bg-footer-base {
 }
 
 .mono-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-weight: 400;
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -630,7 +664,7 @@ html.light .bg-footer-base {
 }
 
 .mono-nav {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-weight: 400;
   font-size: 11px;
   letter-spacing: 0.1em;
@@ -644,7 +678,7 @@ html.light .bg-footer-base {
   border-bottom: 1px solid var(--border-mid);
   border-radius: 0;
   padding: 12px 0;
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   font-size: 14px;
   color: var(--text-heading);
   width: 100%;
@@ -657,7 +691,7 @@ html.light .bg-footer-base {
 }
 
 .form-input::placeholder {
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   font-size: 14px;
   color: var(--text-label);
   opacity: 1;

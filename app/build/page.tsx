@@ -116,20 +116,22 @@ export default function BuildPage() {
                   layout
                   className="project-card group flex flex-col"
                 >
-                  {/* Thumbnail */}
-                  <div className="card-thumbnail aspect-video bg-bg-alt rounded-t-[10px]">
-                    {project.image ? (
-                      <img
-                        src={project.image}
-                        alt={project.name}
-                        className="absolute inset-0 w-full h-full object-cover object-top"
-                      />
-                    ) : (
-                      <p className="absolute inset-0 flex items-center justify-center font-sans font-bold text-[20px] text-text-heading opacity-[0.06]">
-                        {project.name}
-                      </p>
-                    )}
-                  </div>
+                  <Link href={`/build/${project.slug}`} className="block">
+                    {/* Thumbnail */}
+                    <div className="card-thumbnail aspect-video bg-bg-alt rounded-t-[10px]">
+                      {project.image ? (
+                        <img
+                          src={project.image}
+                          alt={project.name}
+                          className="absolute inset-0 w-full h-full object-cover object-top"
+                        />
+                      ) : (
+                        <p className="absolute inset-0 flex items-center justify-center font-sans font-bold text-[20px] text-text-heading opacity-[0.06]">
+                          {project.name}
+                        </p>
+                      )}
+                    </div>
+                  </Link>
 
                   {/* Body */}
                   <div className="p-5 lg:p-6 flex flex-col flex-1">
