@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { PiAndroidLogo, PiLock } from "react-icons/pi";
+import { PiAndroidLogo, PiLock , PiPackage } from "react-icons/pi";
 import { SiFdroid } from "react-icons/si"; // Simple Icons set
 import { Calendar, Github, ExternalLink, Info, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -179,6 +179,17 @@ export default function BuildPage() {
                           live
                         </Link>
                       )}
+                      {project.npm && (
+                        <Link
+                          href={project.npm}
+                          target="_blank"
+                          className="card-link"
+                        >
+                          <PiPackage size={13} strokeWidth={1.5} />
+                          npm
+                        </Link>
+                      )}
+
                       {project.fdroid && (
                         <Link
                           href={project.fdroid}

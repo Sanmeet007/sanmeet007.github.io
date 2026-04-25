@@ -120,6 +120,18 @@ export default async function ProjectDetailPage({
                   </span>
                 </Link>
               )}
+              {project.npm && (
+                <Link
+                  href={project.npm}
+                  target="_blank"
+                  className="bordered-button group"
+                >
+                  <ExternalLink size={14} strokeWidth={1.5} />
+                  <span className="group-hover:translate-x-0.5 transition-transform">
+                    npm
+                  </span>
+                </Link>
+              )}
               {project.live && (
                 <Link
                   href={project.live}

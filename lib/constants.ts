@@ -265,7 +265,7 @@ export const SKILL_ROWS: SkillRowType[] = [
     name: "AI / ML",
     hint: "intelligence",
     chips: [
-      { label: "Torch", hi: true },
+      { label: "PyTorch", hi: true },
       { label: "TensorFlow", hi: true },
       { label: "Scikit-learn", hi: true },
       { label: "Keras", hi: false },
@@ -343,7 +343,7 @@ export const SKILL_STEPS: SkillStepType[] = [
     chips: [
       "LLM",
       "RAG",
-      "Torch",
+      "PyTorch",
       "TensorFlow",
       "Scikit-learn",
       "Keras",
