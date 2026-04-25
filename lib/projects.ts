@@ -42,7 +42,7 @@ export const projects: Project[] = [
       "Cloudinary",
       "EJS",
     ],
-    live: "https://inkscrib-azure.vercel.app",
+    live: "https://inkscribe-azure.vercel.app",
     featured: true,
     image: "/projects/inkscribe.png",
     description:
