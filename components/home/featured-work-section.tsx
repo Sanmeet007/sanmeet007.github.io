@@ -85,40 +85,34 @@ export function FeaturedWorkSection() {
                   {/* Links */}
                   <div className="flex items-center gap-5 pt-5 border-t border-[var(--border-low)]">
                     {project.github && (
-                      <span
-                        onClick={(e) => {
-                          e.preventDefault();
-                          window.open(project.github, "_blank");
-                        }}
-                        className="card-link cursor-pointer"
+                      <Link
+                        href={project.github}
+                        target="_blank"
+                        className="card-link"
                       >
                         <Github size={13} strokeWidth={1.5} />
                         code
-                      </span>
+                      </Link>
                     )}
                     {project.live && (
-                      <span
-                        onClick={(e) => {
-                          e.preventDefault();
-                          window.open(project.live, "_blank");
-                        }}
-                        className="card-link cursor-pointer"
+                      <Link
+                        href={project.live}
+                        target="_blank"
+                        className="card-link"
                       >
                         <ExternalLink size={13} strokeWidth={1.5} />
                         live
-                      </span>
+                      </Link>
                     )}
                     {project.fdroid && (
-                      <span
-                        onClick={(e) => {
-                          e.preventDefault();
-                          window.open(project.fdroid, "_blank");
-                        }}
-                        className="card-link cursor-pointer"
+                      <Link
+                        href={project.fdroid}
+                        target="_blank"
+                        className="card-link"
                       >
                         <PiAndroidLogo size={13} strokeWidth={1.5} />
                         f-droid
-                      </span>
+                      </Link>
                     )}
                   </div>
                 </div>
